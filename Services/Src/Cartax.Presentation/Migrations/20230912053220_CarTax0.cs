@@ -15,6 +15,7 @@ namespace Cartax.Presentation.Migrations
         {
             migrationBuilder.CreateTable(
                 name: "Area",
+
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
