@@ -26,20 +26,20 @@ namespace Cartax.Test
         private const int idPublicEntry = 1;
         private const int idPublicEntry_2 = 1;
 
-        private const int idCity = 1;
-        private const int idCar = 1;
+        private const int idCity    = 1;
+        private const int idCar     = 1;
         private const int idCarTyps = 1;
-        private const int idArea = 1;
+        private const int idArea    = 1;
 
         private const int Tax1 = 10;
         private const int Tax2 = 20;
         private const int Tax3 = 30;
 
         private const bool isTax_Yes = true;
-        private const bool isTax_No = false;
+        private const bool isTax_No  = false;
 
         private const bool isActive_Yes = true;
-        private const bool isActive_No = false;
+        private const bool isActive_No  = false;
 
 
         private const int NoError = 0;

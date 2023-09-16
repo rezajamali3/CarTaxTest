@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace Cartax.Domain.Entites.CarTypes
 {
+
+
+
     public class CarType : Entity
     {
+
+
+
         private CarType(int? Id) : base(Id)
         {
 
@@ -27,17 +33,11 @@ namespace Cartax.Domain.Entites.CarTypes
       
         public string CarName { get; private set; }
 
-
         public int Idcity { get; private set; }
 
-        
         public bool? IsActive { get; private set; }
 
-
-
-
         public bool? IsTaxActive { get; private set; }
-
 
         public static CarType Create(int? id, int carType, int idcity, string carName, bool isActive,bool isTaxActive)
         {
@@ -65,6 +65,9 @@ namespace Cartax.Domain.Entites.CarTypes
         {
             IsTaxActive = true;
         }
+
+
+       
 
     }
 }
