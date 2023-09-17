@@ -1,4 +1,5 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Tax.TaxLimitDays;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,11 @@ namespace Cartax.Domain.Entites.Tax.TaxLimitMoneyDays
 
         private TaxLimitMoneyDay(int? id, decimal? tax, int? idArea) : base(id)
         {
+            Id = id;
             Tax = tax;
            
             IdArea = idArea;
+
         }
 
         public static TaxLimitMoneyDay Create(int id ,decimal Tax, int? idArea)
@@ -49,5 +52,8 @@ namespace Cartax.Domain.Entites.Tax.TaxLimitMoneyDays
         {
             _isActive = true;
         }
+
+
+        public Area Area { get; }
     }
 }

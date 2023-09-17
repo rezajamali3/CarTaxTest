@@ -39,7 +39,6 @@ namespace Cartax.Presentation.Configurtions
                         }
                         else
                         {
-
                             Console.WriteLine("No migrations found.");
                         }
 

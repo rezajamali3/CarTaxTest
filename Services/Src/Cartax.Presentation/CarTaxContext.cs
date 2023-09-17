@@ -11,6 +11,7 @@ using Cartax.Domain.Entites.Tax.TaxPublicholidays;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Data.EntitiesConfig;
+using Cartax.Presentation.Migrations.FluentConfigure;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,23 @@ namespace Cartax.Presentation
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            #region You are the table 
+            modelBuilder
+            .CarTypeFluntConfigure()
+            .CarFluntConfigure()
+            .CityFluntConfigure()
+            .AreaFluntConfigure()
+            .TaxCarFluntConfigure()
+            .TaxLimitMoneyDaysFluntConfigure()
+            .TaxLimitTimeFluntConfigure()
+            .TaxPublicholidayFluntConfigure()
+            .TaxTaxLongTermFluntConfigure()
+            .TaxTimeFluntConfigure()
+            .TaxWeekDayFluntConfigure();
+
+            #endregion You are the table
+
+            #region Defult Data
             #region City
             modelBuilder.ApplyConfiguration(new CityDataConfiguertions());
             modelBuilder.ApplyConfiguration(new AreaDataConfiguertions());
@@ -49,7 +67,11 @@ namespace Cartax.Presentation
             modelBuilder.ApplyConfiguration(new TaxTaxLongTermDataConfiguertion());
             modelBuilder.ApplyConfiguration(new TaxTimeDataConfiguertions());
             modelBuilder.ApplyConfiguration(new TaxWeekDayDataConfigurtions());
+            modelBuilder.ApplyConfiguration(new TaxLimitDayDateConfigurtions());
+
             #endregion tax
+            #endregion Defult Data
+
 
             base.OnModelCreating(modelBuilder);
         }

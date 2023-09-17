@@ -1,4 +1,6 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
+using Cartax.Domain.Entites.CarTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +24,9 @@ namespace Cartax.Domain.Entites.Citys
         }
 
 
-        public string? CityName { get; set; }
+        public string? CityName { get; private set; }
 
-        public string? CityCode { get; set; }
+        public string? CityCode { get; private set; }
 
 
         public static City Create(int? id,string cityName, string cityCode)
@@ -42,5 +44,8 @@ namespace Cartax.Domain.Entites.Citys
             return new City(city.Id,city.CityName,city.CityCode);
         }
 
+
+        public virtual ICollection<CarType> CarTypes { get; }
+        public virtual ICollection<Area> Areas { get;  }
     }
 }

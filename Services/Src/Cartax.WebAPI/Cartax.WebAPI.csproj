@@ -32,8 +32,4 @@
     <ProjectReference Include="..\Cartax.Presentation\Cartax.Presentation.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configotions\" />
-  </ItemGroup>
-
 </Project>

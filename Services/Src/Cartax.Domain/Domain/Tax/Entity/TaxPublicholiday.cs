@@ -1,4 +1,5 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,26 +11,25 @@ namespace Cartax.Domain.Entites.Tax.TaxPublicholidays
 {
     public class TaxPublicholiday : Entity
     {
-
-       
-        [Column(TypeName = "Date")]
         public DateTime? Day { get; private set; }
         public bool? IsActive { get; private set; }
+        public int? IdArea { get; private set; }
 
         private TaxPublicholiday(int? id) : base(id)
         {
         }
 
-        private TaxPublicholiday(int? id, DateTime day) : base(id)
+        private TaxPublicholiday(int? id, DateTime day, int? idArea) : base(id)
         {
-            Id= id;
+            Id = id;
             Day = day;
             IsActive = true;
+            IdArea = idArea;
         }
 
-        public static TaxPublicholiday Create(int? id,DateTime day)
+        public static TaxPublicholiday Create(int? id,DateTime day, int? idArea)
         {
-            return new TaxPublicholiday(id, day);
+            return new TaxPublicholiday(id, day,  idArea);
         }
 
         public void Deactivate()
@@ -41,5 +41,8 @@ namespace Cartax.Domain.Entites.Tax.TaxPublicholidays
         {
             IsActive = true;
         }
+
+        public Area Area { get;  }
+
     }
 }

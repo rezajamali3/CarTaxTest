@@ -1,5 +1,6 @@
 ﻿using Cartax.Domain.Base;
 using Cartax.Domain.Entites.CarTypes;
+using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Sharid.Enume;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,14 @@ namespace Cartax.Domain.Entites.Cars
 
         private Car(int? id, int idcarType, string carName) : base(id)
         {
+
             IdCarType = idcarType;
             CarName = carName;
         }
 
 
 
-        public int IdCarType { get; private set; }
+        public int? IdCarType { get; private set ; }
       
         public string CarName { get; private set; }
 
@@ -37,6 +39,8 @@ namespace Cartax.Domain.Entites.Cars
             return car;
         }
 
-     
+        public CarType CarType { get; }
+        public ICollection<TaxCar> TaxCars { get; private set; }
+
     }
 }

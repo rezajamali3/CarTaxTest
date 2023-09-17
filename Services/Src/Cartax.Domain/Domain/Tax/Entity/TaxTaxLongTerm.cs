@@ -1,4 +1,5 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace Cartax.Domain.Entites.Tax.TaxLongTerms
 {
     public class TaxTaxLongTerm : Entity
     {
-        private bool? _isActive;
-        public bool? IsActive => _isActive;
+     
+        public bool? IsActive { get; private set; }
 
         public int? IdArea { get; private set; }
         public DateTime? DayStart { get; private set; }
@@ -28,18 +29,21 @@ namespace Cartax.Domain.Entites.Tax.TaxLongTerms
                 IdArea = idArea,
                 DayStart = dayStart,
                 DayEnd = dayEnd,
-                _isActive = true
+                IsActive = true
             };
         }
 
         public void Deactivate()
         {
-            _isActive = false;
+            IsActive = false;
         }
 
         public void Activate()
         {
-            _isActive = true;
+            IsActive = true;
         }
+
+        public Area Area { get;  }
+
     }
 }

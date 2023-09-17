@@ -1,11 +1,10 @@
 using Cartax.Presentation.Configurtions;
 using Cartax.Applications.Configure;
-
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
+using Cartax.WebAPI.Configotions;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-
 
 builder.Services.AddControllers();
 
@@ -19,21 +18,15 @@ builder.Services
        .PersistenceServesiesConfigure(builder.Configuration)
        .BaseAllRepositoryDatabaserConfigure()
        .AutoMapperApplicationsServeces()
-       .MediatRConfigureApplicationsServeces();
-                 
+       .MediatRConfigureApplicationsServeces()
+       .SwaggerGenConfig();
 
 var app = builder.Build();
 
 
+    app.UseSwagger()
+       .UseSwaggerUI();
 
-
-
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-//}
 
 
 

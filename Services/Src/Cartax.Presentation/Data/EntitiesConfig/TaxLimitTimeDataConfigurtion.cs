@@ -23,7 +23,7 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxLimitTime[]
             {
 
-                TaxLimitTime.Create(1,TimeSpan.FromMinutes(60)),
+                TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),1),
                  
 
             };

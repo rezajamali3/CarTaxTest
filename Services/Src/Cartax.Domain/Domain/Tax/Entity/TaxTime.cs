@@ -67,7 +67,7 @@ namespace Cartax.Domain.Entites.Tax.TaxTimes
             Tax = tax;
         }
 
-
+        public Area Area { get;  }
     }
 
 }

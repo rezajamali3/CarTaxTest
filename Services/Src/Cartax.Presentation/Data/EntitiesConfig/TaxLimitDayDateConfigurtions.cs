@@ -1,5 +1,5 @@
 ﻿using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
+using Cartax.Domain.Entites.Tax.TaxLimitDays;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {
-    public class TaxPublicholidayDataConfigurtions : BaseDataConfiguertions<TaxPublicholiday>
+    public class TaxLimitDayDateConfigurtions : BaseDataConfiguertions<TaxLimitDay>
     {
 
-        public TaxPublicholidayDataConfigurtions()
+        public TaxLimitDayDateConfigurtions()
         {
 
             setData();
@@ -20,14 +20,14 @@ namespace Cartax.Presentation.Data.EntitiesConfig
 
         private void setData()
         {
-            Data = new TaxPublicholiday[]
+            Data = new TaxLimitDay[]
             {
 
-                TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
+                TaxLimitDay.Create(1,new TimeSpan(0,59,0),1),
+                
 
             };
         }
     }
 }
-
 

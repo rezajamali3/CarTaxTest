@@ -1,5 +1,6 @@
 ﻿using Cartax.Domain.Base;
 using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Citys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,7 +68,7 @@ namespace Cartax.Domain.Entites.CarTypes
         }
 
 
-       
-
+        public City City { get;  set; }
+        public ICollection<Car> Cars { get; }
     }
 }

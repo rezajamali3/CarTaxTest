@@ -1,4 +1,5 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,16 @@ namespace Cartax.Domain.Entites.Tax.TaxWeekDays
 
         }
 
-        public int IdArea { get; private set; }
+        public TaxWeekDay(int? id, int datyTyps, int taxDays, bool isActive, int? idArea) : base(id)
+        {
+            Id = id;
+            DatyTyps = datyTyps;
+            TaxDays = taxDays;
+            IsActive = isActive;
+            IdArea = idArea;
+        }
+
+        public int? IdArea { get; private set; }
 
         public int DatyTyps { get; private set; }
 
@@ -22,15 +32,14 @@ namespace Cartax.Domain.Entites.Tax.TaxWeekDays
 
         public bool IsActive { get; private set; }
 
-        public static TaxWeekDay Create(int? id, int datyTyps, int taxDays, bool isActive, int idArea)
+        public static TaxWeekDay Create(int? id, int datyTyps, int taxDays, bool isActive, int? idArea)
         {
-            return new TaxWeekDay(id)
-            {
-                DatyTyps = datyTyps,
-                TaxDays = taxDays,
-                IsActive = isActive,
-                IdArea= idArea
-            };
+            return new TaxWeekDay(id,
+                  datyTyps,
+                taxDays,
+                 isActive,
+                 idArea
+            );
         }
 
         public void Activate()
@@ -42,5 +51,8 @@ namespace Cartax.Domain.Entites.Tax.TaxWeekDays
         {
             IsActive = false;
         }
+
+        public Area Area { get;  }
+
     }
 }

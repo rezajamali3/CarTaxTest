@@ -1,4 +1,5 @@
 ﻿using Cartax.Domain.Base;
+using Cartax.Domain.Entites.Areas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,36 +11,43 @@ namespace Cartax.Domain.Entites.Tax.TaxLimitDays
     public class TaxLimitDay : Entity
     {
 
-        private bool? _isActive;
+       
 
         public TimeSpan? Time { get; private set; }
 
-
-        public bool? IsActive => _isActive;
+        public int? IdArea { get; private set; }
+        public bool? IsActive { get; private set; }
 
         private TaxLimitDay(int? id) : base(id)
         {
 
         }
 
-        public static TaxLimitDay Create(TimeSpan? time)
+        public static TaxLimitDay Create(int? id,  TimeSpan? time,int? idArea)
         {
-            return new TaxLimitDay(null)
+            return new TaxLimitDay(id)
             {
                 Time = time,
-                _isActive = true
+                IsActive = true ,
+                IdArea = idArea
             };
         }
 
         public void Deactivate()
         {
-            _isActive = false;
+            IsActive = false;
         }
 
         public void Activate()
         {
-            _isActive = true;
+            IsActive = true;
         }
+
+        public Area Area { get; }
+
+     
+
+
 
     }
 }

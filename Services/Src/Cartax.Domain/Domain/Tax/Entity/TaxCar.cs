@@ -39,5 +39,13 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
             return taxCar;
         }
 
+
+
+        public Area Area { get;  }
+
+        public Car Car { get; }
+     
+
+
     }
 }
