@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using Cartax.Applications.Base;
 using Cartax.Applications.Services.TaxCarServices.Command;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.Domain.Sharid.Enume;
 using Cartax.WebAPI.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Http;

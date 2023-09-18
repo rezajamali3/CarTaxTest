@@ -1,5 +1,4 @@
-﻿using Cartax.Domain.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,7 @@ using Cartax.Domain.Entites.Tax.TaxPublicholidays;
 using Cartax.Domain.Entites.Tax.TaxLongTerms;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
+using Cartax.Domain.Common.Base;
 
 namespace Cartax.Domain.Entites.Areas
 {

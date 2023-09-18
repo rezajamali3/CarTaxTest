@@ -1,9 +1,9 @@
 ﻿
+using Cartax.Domain.Common.Enume;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.Domain.Sharid.Enume;
 
 
 
@@ -318,11 +318,13 @@ namespace CarTax.Test1
             // Arrange
 
             var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            
             List<TaxCar> listTaxCar = new()
             {
               TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
               TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
             };
+
             decimal taxCarTody = 50;
 
             List<TaxWeekDay> taxWeekDays = new()

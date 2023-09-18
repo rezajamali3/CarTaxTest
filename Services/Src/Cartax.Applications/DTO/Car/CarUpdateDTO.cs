@@ -1,4 +1,5 @@
-﻿using Cartax.Applications.Base;
+﻿using Cartax.Applications.Common.Base;
+using Cartax.Applications.DTO.Car.IContract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.DTO.Car
 {
-    public class CarUpdateDTO : BaseDTO
+    public class CarUpdateDTO : BaseDTO, ICarDTO
     {
       
         public int IdCarType { get; set; }

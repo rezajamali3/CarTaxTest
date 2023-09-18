@@ -1,4 +1,4 @@
-﻿using Cartax.Applications.Base;
+﻿
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;

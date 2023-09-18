@@ -1,13 +1,13 @@
-﻿using Cartax.Domain.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Primitives;
+
 using System.ComponentModel.DataAnnotations.Schema;
+using Cartax.Domain.Common.Base;
 
 namespace Cartax.Domain.Entites.Tax.TaxCars
 {

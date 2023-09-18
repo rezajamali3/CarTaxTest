@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NPOI.SS.Formula.Functions;
-using Cartax.Domain.Base;
+using Cartax.Domain.Common.Base;
 
 namespace Cartax.Presentation.Base
 {

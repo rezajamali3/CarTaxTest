@@ -1,10 +1,12 @@
-﻿using Cartax.Domain.Base;
+﻿
+using Cartax.Domain.Common.Base;
+using Cartax.Domain.Common.Errors;
+using Cartax.Domain.Common.Model;
+using Cartax.Domain.Domain.Tax.Aggregate;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.Domain.Errors;
-using Cartax.Domain.Sharid;
-using Cartax.Domain.Sharid.Enume;
+
 
 namespace Cartax.Domain.Entites.Tax.TaxCars
 {
@@ -61,7 +63,7 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
                 isHolidaysTomorrow   = holidaysTomorrow,
                 isTaxTaxLongTermArea = taxTaxLongTermArea,
                 dateCreateRequst     = dateCreate
-        };
+          };
 
             return taxCarArea;
         }
@@ -140,6 +142,9 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
             
             #endregion  Calculator Tax
 
+            
+            
+            
             return domainResult;
 
         }

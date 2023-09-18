@@ -1,5 +1,4 @@
-﻿using Cartax.Applications.Base;
-using Cartax.Applications.Interfaces;
+﻿using Cartax.Applications.Common.Base;
 using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
 using Cartax.Presentation;

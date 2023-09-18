@@ -1,4 +1,4 @@
-﻿using Cartax.Domain.Base;
+﻿using Cartax.Domain.Common.Base;
 using Cartax.Domain.Entites.Cars;
 using System;
 using System.Collections.Generic;

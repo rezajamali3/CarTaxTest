@@ -1,5 +1,4 @@
-﻿using Cartax.Applications.Base;
-using Cartax.Applications.Interfaces;
+﻿using Cartax.Applications.Common.Base;
 using Cartax.Domain.Entites.Areas;
 
 using Cartax.Domain.Entites.Tax.TaxTimes;

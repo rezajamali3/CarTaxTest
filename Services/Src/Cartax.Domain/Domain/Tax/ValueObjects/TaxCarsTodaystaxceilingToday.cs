@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Base;
-
+﻿using Cartax.Domain.Common.Base;
+using Cartax.Domain.Domain.Tax.Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;

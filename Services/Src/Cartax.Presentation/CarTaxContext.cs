@@ -1,5 +1,6 @@
 ﻿
 
+using Cartax.Applications.Common.Intercpter;
 using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.Citys;
@@ -12,6 +13,7 @@ using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Data.EntitiesConfig;
 using Cartax.Presentation.Migrations.FluentConfigure;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,10 +25,14 @@ namespace Cartax.Presentation
 {
     public class CarTaxContext : DbContext
     {
+        private readonly IMediator _mediator;
+        private readonly PublishDomainEventIntercpter _interceptor;
 
-        public CarTaxContext(DbContextOptions<CarTaxContext> options) : base(options)
+        public CarTaxContext(DbContextOptions<CarTaxContext> options, IMediator mediator) : base(options)
         {
-
+            _mediator = mediator;
+            _interceptor = new PublishDomainEventIntercpter(mediator);
+           
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

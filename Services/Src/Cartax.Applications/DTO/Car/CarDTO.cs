@@ -1,4 +1,5 @@
-﻿using Cartax.Applications.Base;
+﻿using Cartax.Applications.Common.Base;
+using Cartax.Applications.DTO.Car.IContract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.DTO.Car
 {
-    public class CarDTO : BaseDTO
+    public class CarDTO : BaseDTO, ICarDTO
     {
-      
-        public int IdCarType { get; set; }
-        public string CarName { get; set; }
+        public int IdCarType { get ; set ; }
+        public string CarName { get ; set ; }
     }
 }

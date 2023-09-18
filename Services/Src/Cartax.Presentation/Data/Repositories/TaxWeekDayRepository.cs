@@ -8,9 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cartax.Applications.Interfaces;
 using Cartax.Presentation;
-using Cartax.Applications.Base;
+using Cartax.Applications.Common.Base;
 
 namespace Cartax.Applications.Persistence.Repositories
 {

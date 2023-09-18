@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Cartax.Applications.Base;
+using Cartax.Applications.Common.Base;
 using Cartax.Applications.DTO.Car;
+using Cartax.Applications.Features.TaxCar.Event;
 using Cartax.Applications.Services.TaxCarServices;
 using Cartax.Applications.Services.TaxCarServices.Command;
-using Cartax.Domain.Errors;
-
+using Cartax.Domain.Common.Primitives;
+using Cartax.Domain.Domain.Tax.Event;
 using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
@@ -21,14 +22,24 @@ namespace Cartax.WebAPI.Controllers
 
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly IDomainEventAdd DomainEvent;
 
-        
 
-        public CarTaxController(IMediator mediator, IMapper mapper)
+
+        public CarTaxController(IMediator mediator, IMapper mapper,IDomainEventAdd domainEvent)
         {
             _mediator = mediator;
             _mapper = mapper;
+             DomainEvent = domainEvent;
+        }
 
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+
+            DomainEvent.StartEvent(new NewTaxCarEnterEvent());
+            return Ok();
         }
 
 
