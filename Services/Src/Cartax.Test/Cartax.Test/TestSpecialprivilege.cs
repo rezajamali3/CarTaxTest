@@ -1,18 +1,7 @@
-﻿using AutoMapper;
-using Cartax.Applications.Services.TaxCarServices.Command;
+﻿using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
-using Cartax.Domain.Entites.Tax.TaxTimes;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.WebAPI.Controllers;
-using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Controller;
-using Moq;
-using System;
-using System.Threading.Tasks;
+
 
 namespace Cartax.Test
 {

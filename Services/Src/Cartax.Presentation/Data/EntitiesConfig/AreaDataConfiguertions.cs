@@ -1,15 +1,6 @@
-﻿using Cartax.Domain.Entites.Citys;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cartax.Domain.Entites.Areas;
+﻿
 using Cartax.Presentation.Base;
-using System.Data;
-using NPOI.XSSF.Streaming.Values;
+using Cartax.Domain.Domain.Citys.Entitys;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {

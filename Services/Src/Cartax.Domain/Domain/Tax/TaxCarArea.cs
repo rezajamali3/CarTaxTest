@@ -1,7 +1,8 @@
 ﻿
-using Cartax.Domain.Common.Base;
+
 using Cartax.Domain.Common.Errors;
 using Cartax.Domain.Common.Model;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Domain.Tax.Aggregate;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxTimes;

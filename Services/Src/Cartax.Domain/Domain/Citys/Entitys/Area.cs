@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cartax.Domain.Entites.Citys;
+using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.Tax.TaxCars;
-using Cartax.Domain.Entites.Tax.TaxLimitDays;
-using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
-using Cartax.Domain.Entites.Tax.TaxLimitTimes;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
-using Cartax.Domain.Entites.Tax.TaxTimes;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.Domain.Common.Base;
 
-namespace Cartax.Domain.Entites.Areas
+
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
 
     public class Area : Entity

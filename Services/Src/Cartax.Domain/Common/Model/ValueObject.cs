@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cartax.Domain.Common.Base
+namespace Cartax.Domain.Common.Model
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {

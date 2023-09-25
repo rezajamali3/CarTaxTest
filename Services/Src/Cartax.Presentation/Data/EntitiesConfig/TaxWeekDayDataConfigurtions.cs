@@ -1,5 +1,4 @@
 ﻿using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Base;
 using System;
 using Cartax.Presentation.Data.EntitiesConfig;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cartax.Domain.Common.Enume;
+using Cartax.Domain.Domain.Citys.Entitys;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {

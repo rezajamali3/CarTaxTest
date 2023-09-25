@@ -9,17 +9,10 @@ using Cartax.Applications.DTO.TaxLongTerms;
 using Cartax.Applications.DTO.TaxPublicholidays;
 using Cartax.Applications.DTO.TaxTimes;
 using Cartax.Applications.DTO.TaxWeekDay;
-using Cartax.Domain.Entites.Areas;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
-
-using Cartax.Domain.Entites.Tax.TaxLimitDays;
-using Cartax.Domain.Entites.Tax.TaxLimitTimes;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
-using Cartax.Domain.Entites.Tax.TaxTimes;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
 
 
 namespace Cartax.Applications.Common.Base

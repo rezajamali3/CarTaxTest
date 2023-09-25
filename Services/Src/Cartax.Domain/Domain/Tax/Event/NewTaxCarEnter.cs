@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cartax.Domain.Domain.Tax.Event;
-using Cartax.Domain.Common.Base;
+
 
 namespace Cartax.Domain.Domain.Tax.Event;
 

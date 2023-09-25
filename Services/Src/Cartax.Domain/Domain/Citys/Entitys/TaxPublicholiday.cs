@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Common.Base;
-using Cartax.Domain.Entites.Areas;
+﻿
+using Cartax.Domain.Common.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cartax.Domain.Entites.Tax.TaxPublicholidays
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
     public class TaxPublicholiday : Entity
     {

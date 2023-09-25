@@ -1,34 +1,36 @@
-﻿using Cartax.Domain.Common.Base;
-using Cartax.Domain.Entites.Areas;
+﻿
+using Cartax.Domain.Common.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cartax.Domain.Entites.Tax.TaxLimitDays
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxLimitDay : Entity
+    public class TaxLimitTime : Entity
     {
 
-       
 
         public TimeSpan? Time { get; private set; }
 
         public int? IdArea { get; private set; }
         public bool? IsActive { get; private set; }
 
-        private TaxLimitDay(int? id) : base(id)
-        {
 
+
+
+        private TaxLimitTime(int? id) : base(id)
+        {
         }
 
-        public static TaxLimitDay Create(int? id,  TimeSpan? time,int? idArea)
+        public static TaxLimitTime Create(int? id, TimeSpan? time, int? idArea)
         {
-            return new TaxLimitDay(id)
+            return new TaxLimitTime(null)
             {
+                Id = id,
                 Time = time,
-                IsActive = true ,
+                IsActive = true,
                 IdArea = idArea
             };
         }
@@ -44,10 +46,5 @@ namespace Cartax.Domain.Entites.Tax.TaxLimitDays
         }
 
         public Area Area { get; }
-
-     
-
-
-
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cartax.Domain.Common.Primitives;
 
-namespace Cartax.Domain.Common.Base
+namespace Cartax.Domain.Common.Model
 {
     public class Entity : IEquatable<Entity>, IEntity<int?>
     {

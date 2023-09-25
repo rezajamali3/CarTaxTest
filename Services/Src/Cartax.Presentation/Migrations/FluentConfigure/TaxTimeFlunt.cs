@@ -1,5 +1,6 @@
-﻿using Cartax.Domain.Entites.Tax.TaxLongTerms;
-using Cartax.Domain.Entites.Tax.TaxTimes;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;

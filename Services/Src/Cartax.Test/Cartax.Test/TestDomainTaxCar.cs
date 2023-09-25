@@ -1,5 +1,6 @@
 ﻿
 using Cartax.Domain.Common.Enume;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Entites.Tax.TaxTimes;

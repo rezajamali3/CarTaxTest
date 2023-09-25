@@ -1,5 +1,4 @@
 ﻿using Cartax.Domain.Entites.CarTypes;
-using Cartax.Domain.Entites.Citys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
@@ -40,63 +39,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 
                 b.ToTable("CarType");
 
-                //b.HasData(
-                //    new
-                //    {
-                //        Id = 1,
-                //        CarName = "Normal",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = true
-                //    },
-                //    new
-                //    {
-                //        Id = 2,
-                //        CarName = "Emergency",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    },
-                //    new
-                //    {
-                //        Id = 3,
-                //        CarName = "Busses",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    },
-                //    new
-                //    {
-                //        Id = 4,
-                //        CarName = "Diplomat",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    },
-                //    new
-                //    {
-                //        Id = 5,
-                //        CarName = "Motorcycles",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    },
-                //    new
-                //    {
-                //        Id = 6,
-                //        CarName = "Military",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    },
-                //    new
-                //    {
-                //        Id = 7,
-                //        CarName = "Foreign",
-                //        Idcity = 1,
-                //        IsActive = true,
-                //        IsTaxActive = false
-                //    });
+              
             });
 
 

@@ -1,7 +1,7 @@
 ﻿
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
+
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Tax.TaxTimes;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;

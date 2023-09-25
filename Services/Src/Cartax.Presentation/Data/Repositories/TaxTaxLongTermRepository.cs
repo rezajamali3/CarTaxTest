@@ -1,5 +1,5 @@
 ﻿using Cartax.Applications.Common.Base;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;
 using System;

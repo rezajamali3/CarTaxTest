@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using Cartax.Applications.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Cartax.Domain.Common.Base;
+using Cartax.Domain.Common.Model;
 
 namespace Cartax.Applications.Common.Base
 {

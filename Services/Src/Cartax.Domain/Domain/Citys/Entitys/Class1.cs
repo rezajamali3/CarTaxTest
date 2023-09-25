@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cartax.Domain.Common.Model
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class DomainExiption : Exception
+    internal class Class1
     {
-
     }
 }

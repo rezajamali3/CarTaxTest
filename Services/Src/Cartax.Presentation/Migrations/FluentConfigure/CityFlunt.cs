@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Entites.Areas;
-using Cartax.Domain.Entites.Citys;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 using MathNet.Numerics.Distributions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;

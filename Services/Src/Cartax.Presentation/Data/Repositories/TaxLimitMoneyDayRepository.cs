@@ -1,6 +1,6 @@
 ﻿using Cartax.Applications.Common.Base;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;
 using System;

@@ -1,14 +1,9 @@
-﻿using Cartax.Domain.Entites.Areas;
+﻿
 using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.CarTypes;
-using Cartax.Domain.Entites.Citys;
+
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
-using Cartax.Domain.Entites.Tax.TaxLimitDays;
-using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
-using Cartax.Domain.Entites.Tax.TaxLimitTimes;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
 
 using Cartax.Presentation.Base;
 using Cartax.Presentation.Data.Repositories;

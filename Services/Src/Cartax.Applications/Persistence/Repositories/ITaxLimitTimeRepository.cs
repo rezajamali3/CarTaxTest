@@ -1,6 +1,5 @@
-﻿using Cartax.Domain.Entites.Tax.TaxLimitTimes;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
-
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;

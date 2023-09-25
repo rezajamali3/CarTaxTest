@@ -1,6 +1,5 @@
 ﻿using Cartax.Applications.Common.Base;
-using Cartax.Domain.Entites.Areas;
-using Cartax.Domain.Entites.Citys;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;
 using System;

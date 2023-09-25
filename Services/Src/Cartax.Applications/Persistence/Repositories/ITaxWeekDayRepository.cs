@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Entites.Tax.TaxWeekDays;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 
 namespace Cartax.Applications.Persistence.Repositories
 {

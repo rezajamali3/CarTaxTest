@@ -1,17 +1,15 @@
 ﻿using Cartax.Domain.Entites.Tax.TaxCars;
-using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
 using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxLimitTimes;
+
 using AutoMapper;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Domain.Entites.CarTypes;
-using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Domain.Common.Errors;
 using Cartax.Domain.Common.Model;
 using Cartax.Applications.Common.Base;
 using Cartax.Applications.Persistence.Repositories;
 using Cartax.Applications.Common.Primitives;
 using MediatR;
+using Cartax.Domain.Domain.Citys.Entitys;
 
 namespace Cartax.Applications.Services.TaxCarServices.Command
 {

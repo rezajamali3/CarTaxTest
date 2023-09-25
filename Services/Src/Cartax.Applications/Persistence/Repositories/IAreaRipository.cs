@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Entites.Areas;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
 
 using System;

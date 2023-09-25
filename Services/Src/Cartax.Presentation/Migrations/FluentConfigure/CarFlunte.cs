@@ -1,4 +1,4 @@
-﻿using Cartax.Domain.Entites.Areas;
+﻿
 using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.CarTypes;
 using Microsoft.EntityFrameworkCore;

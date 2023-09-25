@@ -1,16 +1,7 @@
-﻿
-
-using Cartax.Applications.Common.Intercpter;
-using Cartax.Domain.Entites.Areas;
+﻿using Cartax.Applications.Common.Intercpter;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Citys;
 using Cartax.Domain.Entites.Tax.TaxCars;
-using Cartax.Domain.Entites.Tax.TaxLimitDays;
-using Cartax.Domain.Entites.Tax.TaxLimitTimes;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
-using Cartax.Domain.Entites.Tax.TaxTimes;
-using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Data.EntitiesConfig;
 using Cartax.Presentation.Migrations.FluentConfigure;
 using MediatR;
@@ -32,7 +23,6 @@ namespace Cartax.Presentation
         {
             _mediator = mediator;
             _interceptor = new PublishDomainEventIntercpter(mediator);
-           
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

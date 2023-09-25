@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Common.Base;
+﻿
+using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.Cars;
 using System;
 using System.Collections.Generic;

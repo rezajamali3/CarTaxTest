@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxPublicholidays;
+﻿using Cartax.Domain.Domain.Citys.Entitys;
+using Cartax.Domain.Entites.Cars;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;

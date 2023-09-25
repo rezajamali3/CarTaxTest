@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Entites.Tax.TaxLimitDays;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;

@@ -1,6 +1,8 @@
-﻿using Cartax.Domain.Common.Base;
+﻿
+using Cartax.Domain.Common.Model;
+using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Citys;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

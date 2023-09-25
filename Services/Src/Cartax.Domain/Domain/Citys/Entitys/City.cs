@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Common.Base;
-using Cartax.Domain.Entites.Areas;
+﻿
+using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.CarTypes;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cartax.Domain.Entites.Citys
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
     public class City : Entity
     {

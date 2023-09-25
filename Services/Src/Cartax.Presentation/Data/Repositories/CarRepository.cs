@@ -1,5 +1,5 @@
 ﻿using Cartax.Applications.Common.Base;
-using Cartax.Domain.Entites.Areas;
+
 using Cartax.Domain.Entites.Cars;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;

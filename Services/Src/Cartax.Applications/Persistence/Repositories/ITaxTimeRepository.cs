@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Entites.Tax.TaxTimes;
+﻿
+using Cartax.Domain.Domain.Citys.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;

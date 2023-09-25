@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Domain.Common.Model
 {
-    public class DomainExiption : Exception
+    internal class Class1
     {
-
     }
 }

@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cartax.Domain.Entites.Areas;
 using System.ComponentModel.DataAnnotations.Schema;
-using Cartax.Domain.Common.Base;
+using Cartax.Domain.Common.Model;
 
-namespace Cartax.Domain.Entites.Tax.TaxTimes
+namespace Cartax.Domain.Domain.Citys.Entitys
 {
     public class TaxTime : Entity
     {

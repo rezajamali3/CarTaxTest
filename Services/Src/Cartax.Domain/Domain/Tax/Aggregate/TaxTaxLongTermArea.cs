@@ -1,5 +1,6 @@
-﻿using Cartax.Domain.Common.Base;
-using Cartax.Domain.Entites.Tax.TaxLongTerms;
+﻿
+using Cartax.Domain.Common.Model;
+using Cartax.Domain.Domain.Citys.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
