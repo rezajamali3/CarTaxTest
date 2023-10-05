@@ -19,41 +19,14 @@ namespace Cartax.WebAPI.Controllers
     public class CarTaxController : ControllerBase
     {
 
-
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
-        private readonly IDomainEventAdd DomainEvent;
-
-
-
-        public CarTaxController(IMediator mediator, IMapper mapper,IDomainEventAdd domainEvent)
-        {
-            _mediator = mediator;
-            _mapper = mapper;
-             DomainEvent = domainEvent;
-        }
-
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-
-            DomainEvent.StartEvent(new NewTaxCarEnterEvent());
-            return Ok();
-        }
-
-
+       
+        public CarTaxController(IMediator mediator)
+        => _mediator = mediator;
+         
         [HttpPost]
         public   async Task<ActionResult<CommandResponse>> NewCarTaxAsync(int idCar,int idArea,DateTime dateTime ,TimeSpan timeSpan)
-        {
-
-            DateTime combinedDateTime = dateTime + timeSpan;
-            var result =await  _mediator.Send(new TaxCarCommand(idCar, idArea, combinedDateTime));
-
-            return Ok(result);
-
-        }
-
+         =>   await  _mediator.Send(new TaxCarCommand(idCar, idArea, dateTime + timeSpan));
 
     }
 }

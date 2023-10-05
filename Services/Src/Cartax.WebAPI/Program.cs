@@ -15,12 +15,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 
-
-
-
-
-
-
 builder.Services
        .PersistenceServesiesConfigure(builder.Configuration)
        .BaseAllRepositoryDatabaserConfigure()
@@ -31,11 +25,9 @@ builder.Services
 
 var app = builder.Build();
 
-
-    app.UseSwagger()
-       .UseSwaggerUI();
-
-
+   
+app.UseSwagger()
+   .UseSwaggerUI();
 
 
 app.UseAuthorization();

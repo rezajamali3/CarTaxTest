@@ -1,4 +1,5 @@
 ﻿
+using Cartax.Domain.Common.Base;
 using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;

@@ -40,15 +40,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 b.ToTable("TaxCar");
             });
 
-            modelBuilder.Entity<TaxCar>()
-         .HasOne(c => c.Area)
-         .WithMany(a => a.TaxCars)
-         .HasForeignKey(a => a.Idarea);
-
-            modelBuilder.Entity<TaxCar>()
-          .HasOne(c => c.Car)
-          .WithMany(a => a.TaxCars)
-          .HasForeignKey(a => a.Idcar);
+           
 
 
             return modelBuilder;
