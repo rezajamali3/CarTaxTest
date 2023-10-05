@@ -16,32 +16,28 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder TaxLimitMoneyDaysFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxLimitMoneyDay), b =>
+            modelBuilder.Entity<TaxLimitMoneyDay>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                    .ValueGeneratedNever()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p=>p.Id));
 
-                b.Property<int?>("IdArea")
+                x.Property<int?>(p => p.IdArea)
                     .HasColumnType("int");
 
-                b.Property<decimal?>("Tax")
+                x.Property<decimal?>(p => p.Tax)
                     .HasColumnType("decimal(18, 2)");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxLimitMoneyDay");
+               x.ToTable("TaxLimitMoneyDay");
 
                
             });
 
-            modelBuilder.Entity<TaxLimitMoneyDay>()
-              .HasOne(a => a.Area)
-              .WithOne(b => b.TaxMoneyDay)
-              .HasForeignKey<TaxLimitMoneyDay>(c => c.IdArea)
-                .OnDelete(DeleteBehavior.SetNull);
+          
 
             return modelBuilder;
         }

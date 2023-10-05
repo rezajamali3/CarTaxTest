@@ -15,35 +15,29 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
     {
         public static ModelBuilder TaxPublicholidayFluntConfigure(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity(typeof(TaxPublicholiday), b =>
+            modelBuilder.Entity<TaxPublicholiday>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                b.Property<int?>("IdArea")
+                x.Property<int?>(p => p.IdArea)
                    .HasColumnType("int");
                 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<DateTime?>("Day")
+                x.Property<DateTime?>(p => p.Day)
                     .HasColumnType("Date");
 
-                b.Property<bool?>("IsActive")
+                x.Property<bool?>(p => p.IsActive)
                     .HasColumnType("bit");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxPublicholiday");
+                x.ToTable("TaxPublicholiday");
 
               
             });
-
-         //   modelBuilder.Entity<TaxPublicholiday>()
-         //.HasOne(a => a.Area)
-         //.WithOne(b => b.TaxPublicholiday)
-         //.HasForeignKey<TaxPublicholiday>(c => c.IdArea)
-         //  .OnDelete(DeleteBehavior.SetNull);
 
             return modelBuilder;
         }

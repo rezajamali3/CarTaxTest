@@ -16,38 +16,34 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder TaxTimeFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxTime), b =>
+            modelBuilder.Entity<TaxTime>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<TimeSpan?>("EndDate")
+                x.Property<TimeSpan?>(p => p.EndDate)
                     .HasColumnType("time");
 
-                b.Property<int?>("Idarea")
+                x.Property<int?>(p => p.Idarea)
                     .HasColumnType("int");
 
-                b.Property<TimeSpan?>("StartDate")
+                x.Property<TimeSpan?>(p => p.StartDate)
                     .HasColumnType("time");
 
-                b.Property<decimal?>("Tax")
+                x.Property<decimal?>(p => p.Tax)
                     .HasColumnType("decimal(18, 2)");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxTime");
+                x.ToTable("TaxTime");
 
                 
             });
 
-      //      modelBuilder.Entity<TaxTime>()
-      //.HasOne(a => a.Area)
-      //.WithOne(b => b.TaxTime)
-      //.HasForeignKey<TaxTime>(c => c.Idarea)
-      //  .OnDelete(DeleteBehavior.SetNull);
+  
 
             return modelBuilder;
         }

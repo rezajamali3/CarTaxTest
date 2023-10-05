@@ -18,43 +18,25 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder CityFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(City), b =>
+            modelBuilder.Entity<City>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<string>("CityCode")
+                x.Property<string>(p => p.CityCode)
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("CityName")
+                x.Property<string>(p => p.CityName)
                     .HasColumnType("nvarchar(max)");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("City");
+                x.ToTable("City");
 
-                b.HasData(
-                    new
-                    {
-                        Id = 1,
-                        CityCode = "FitNet10",
-                        CityName = "Gothenburg"
-                    },
-                    new
-                    {
-                        Id = 2,
-                        CityCode = "FitNet45",
-                        CityName = "Eroica"
-                    },
-                    new
-                    {
-                        Id = 3,
-                        CityCode = "FitNet48",
-                        CityName = "Avesta"
-                    });
+              
             });
 
 

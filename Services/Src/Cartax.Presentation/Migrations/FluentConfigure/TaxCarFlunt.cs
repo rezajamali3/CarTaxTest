@@ -10,34 +10,34 @@ using System.Threading.Tasks;
 
 namespace Cartax.Presentation.Migrations.FluentConfigure
 {
-    public static class TaxCarFlunt
+    public static class TaxCarFlunt 
     {
         public static ModelBuilder TaxCarFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxCar), b =>
+            modelBuilder.Entity<TaxCar>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<DateTime?>("CreateDate")
+                x.Property<DateTime?>(p => p.CreateDate)
                     .HasColumnType("datetime2");
 
-                b.Property<int?>("Idarea")
+                x.Property<int?>(p => p.Idarea)
                     .HasColumnType("int");
 
-                b.Property<int?>("Idcar")
+                x.Property<int?>(p => p.Idcar)
                     .HasColumnType("int");
 
-                b.Property<decimal?>("Tax")
+                x.Property<decimal?>(p => p.Tax)
                     .HasColumnType("decimal(18, 2)");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxCar");
+                x.ToTable("TaxCar");
             });
 
            

@@ -1,15 +1,7 @@
 ﻿
 using Cartax.Domain.Domain.Citys.Entitys;
-using MathNet.Numerics.Distributions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
-using NPOI.SS.Formula.Functions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Cartax.Presentation.Migrations.FluentConfigure
 {
@@ -19,24 +11,24 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder AreaFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(Area), b =>
+            modelBuilder.Entity<Area>(x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p=>p.Id)
                     .ValueGeneratedNever()
                     .IsRequired()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<string>("AreaCode")
+                x.Property<string>(p => p.AreaCode)
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("AreaName")
+                x.Property<string>(p => p.AreaName)
                     .HasColumnType("nvarchar(max)");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("Area");
+                x.ToTable("Area");
 
             });
 

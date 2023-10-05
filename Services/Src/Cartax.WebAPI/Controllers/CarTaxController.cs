@@ -21,7 +21,6 @@ namespace Cartax.WebAPI.Controllers
 
         private readonly IMediator _mediator;
 
-
         public CarTaxController(IMediator mediator)
         => _mediator = mediator;
          

@@ -14,30 +14,30 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder CarTypeFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(CarType), b =>
+            modelBuilder.Entity<CarType>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<string>("CarName")
+                x.Property<string>(p => p.CarName)
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
 
-                b.Property<int>("Idcity")
+                x.Property<int>(p => p.Idcity)
                     .HasColumnType("int");
 
-                b.Property<bool?>("IsActive")
+                x.Property<bool?>(p => p.IsActive)
                     .HasColumnType("bit");
 
-                b.Property<bool?>("IsTaxActive")
+                x.Property<bool?>(p => p.IsTaxActive)
                     .HasColumnType("bit");
 
-                b.HasKey("Id");
+               x.HasKey(p => p.Id);
 
-                b.ToTable("CarType");
+                x.ToTable("CarType");
 
               
             });
