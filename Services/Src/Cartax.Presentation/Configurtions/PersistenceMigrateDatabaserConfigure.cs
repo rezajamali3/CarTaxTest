@@ -12,43 +12,37 @@ namespace Cartax.Presentation.Configurtions
         {
             using (var scope = webApp.CreateScope())
             {
-                using (var appContext = scope.ServiceProvider.GetRequiredService<CarTaxContext>())
+                var appContext = scope.ServiceProvider.GetRequiredService<CarTaxContext>();
+
+                var retry = Policy.Handle<Exception>().WaitAndRetry(new[]
                 {
-                    var retry = Policy.Handle<Exception>().WaitAndRetry(new[]
+                 TimeSpan.FromSeconds(5),
+                 TimeSpan.FromSeconds(10),
+                 TimeSpan.FromSeconds(15)
+                });
+
+                retry.Execute(() =>
+                {
+                    bool areMigrationsPending = appContext.AreMigrationsPending();
+                    bool hasMigrationsApplied = appContext.HasMigrationsApplied();
+
+                    if (!areMigrationsPending)
                     {
-
-                       TimeSpan.FromSeconds(5),
-                       TimeSpan.FromSeconds(10),
-                       TimeSpan.FromSeconds(15),});
-
-                    retry.Execute(() =>
+                        appContext.Database.Migrate();
+                        Console.WriteLine("There are pending migrations.");
+                    }
+                    else if (!hasMigrationsApplied)
                     {
-
-                        bool areMigrationsPending = appContext.AreMigrationsPending();
-                        bool hasMigrationsApplied = appContext.HasMigrationsApplied();
-
-                        if (areMigrationsPending)
-                        {
-                            appContext.Database.Migrate();
-                            Console.WriteLine("There are pending migrations.");
-                        }
-                        else if (hasMigrationsApplied)
-                        {
-                            appContext.Database.EnsureCreated();
-                            Console.WriteLine("All migrations have been applied.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No migrations found.");
-                        }
-
-
-
-
-                    });
-
-                }
+                        appContext.Database.EnsureCreated();
+                        Console.WriteLine("All migrations have been applied.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No migrations found.");
+                    }
+                });
             }
+
             return webApp;
         }
 

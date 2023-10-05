@@ -1,5 +1,5 @@
 ﻿
-using Cartax.Domain.Common.Base;
+
 using Cartax.Domain.Common.Model;
 using System;
 using System.Collections.Generic;

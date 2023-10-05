@@ -1,4 +1,5 @@
 ﻿
+
 using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.CarTypes;
 using System;

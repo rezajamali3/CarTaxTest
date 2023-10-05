@@ -38,34 +38,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 
                 b.ToTable("Area");
 
-              
-          
-
-
             });
-
-            modelBuilder.Entity<Area>()
-           .HasOne(a => a.City)
-           .WithMany(b=>b.Areas)
-           .HasForeignKey(a => a.idCity);
-
-
-            modelBuilder.Entity<Area>()
-         .HasMany(a => a.TaxCars)
-         .WithOne(b => b.Area)
-         .HasForeignKey(a => a.Idarea);
-
-          //  modelBuilder.Entity<Area>()
-          //.HasOne(a => a.TaxLimitDay)
-          //.WithMany()
-          //.HasPrincipalKey(sc => sc.IdArea)
-          //.OnDelete(DeleteBehavior.SetNull);
-
-          //  modelBuilder.Entity<Area>()
-          //.HasOne(a => a.TaxWeekDay)
-          //.WithMany()
-          //.HasPrincipalKey(sc => sc.IdArea)
-          //.OnDelete(DeleteBehavior.SetNull);
 
             return modelBuilder;
         }

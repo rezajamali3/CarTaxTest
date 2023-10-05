@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using Cartax.Domain.Common.Model;
-using Cartax.Domain.Common.Base;
+
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {

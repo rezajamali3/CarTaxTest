@@ -1,4 +1,5 @@
 ﻿
+
 using Cartax.Domain.Common.Model;
 using Cartax.Domain.Domain.Citys.Entitys;
 using System;
@@ -13,6 +14,7 @@ namespace Cartax.Domain.Domain.Tax.Aggregate
     {
         public TaxWeekDayArea(List<TaxWeekDay>? taxWeekDays) : base(taxWeekDays)
         {
+
         }
     }
 }
