@@ -10,7 +10,7 @@ namespace Cartax.Domain.Common.Model
 {
     public class Entity : IEquatable<Entity>, IEntity<int?>
     {
-        [Key]
+ 
         public int? Id { get; set; }
 
         public Entity(int? Id)

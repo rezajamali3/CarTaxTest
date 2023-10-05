@@ -13,23 +13,24 @@ namespace Cartax.Domain.Domain.Citys.Entitys
     {
         public DateTime? Day { get; private set; }
         public bool? IsActive { get; private set; }
-        public int? IdArea { get; private set; }
+        
+        public City City { get; private set; }
 
         private TaxPublicholiday(int? id) : base(id)
         {
         }
 
-        private TaxPublicholiday(int? id, DateTime day, int? idArea) : base(id)
+        private TaxPublicholiday(int? id, DateTime day, City city) : base(id)
         {
             Id = id;
             Day = day;
             IsActive = true;
-            IdArea = idArea;
+            City = city;
         }
 
-        public static TaxPublicholiday Create(int? id,DateTime day, int? idArea)
+        public static TaxPublicholiday Create(int? id,DateTime day, City city)
         {
-            return new TaxPublicholiday(id, day,  idArea);
+            return new TaxPublicholiday(id, day, city);
         }
 
         public void Deactivate()
@@ -42,7 +43,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
             IsActive = true;
         }
 
-        public Area Area { get;  }
+    
 
     }
 }

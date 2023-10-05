@@ -24,8 +24,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                x.Property<int?>(p => p.IdArea)
-                   .HasColumnType("int");
+               
 
                 SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 

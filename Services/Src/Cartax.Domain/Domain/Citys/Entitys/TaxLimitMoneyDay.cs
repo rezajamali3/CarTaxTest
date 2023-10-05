@@ -15,10 +15,9 @@ namespace Cartax.Domain.Domain.Citys.Entitys
     {
         private bool? _isActive;
 
-       
         public decimal? Tax { get; private set; }
 
-        public int? IdArea { get; private set; }
+        public City City { get; private set; }
 
         public bool? IsActive => _isActive;
 
@@ -27,19 +26,19 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         }
 
-        private TaxLimitMoneyDay(int? id, decimal? tax, int? idArea) : base(id)
+        private TaxLimitMoneyDay(int? id, decimal? tax, City city) : base(id)
         {
             Id = id;
             Tax = tax;
 
-            IdArea = idArea;
+            City =city ;
 
         }
 
-        public static TaxLimitMoneyDay Create(int id, decimal Tax, int? idArea)
+        public static TaxLimitMoneyDay Create(int id, decimal Tax, City city)
         {
 
-            return new TaxLimitMoneyDay(id, Tax, idArea);
+            return new TaxLimitMoneyDay(id, Tax, city);
 
         }
 
@@ -54,6 +53,6 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         }
 
 
-        public Area Area { get; }
+        
     }
 }

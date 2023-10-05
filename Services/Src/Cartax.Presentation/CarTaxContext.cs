@@ -74,8 +74,10 @@ namespace Cartax.Presentation
 
         public bool AreMigrationsPending()
         {
+
             var pendingMigrations = Database.GetPendingMigrations();
             return pendingMigrations.Any();
+
         }
 
         public bool HasMigrationsApplied()

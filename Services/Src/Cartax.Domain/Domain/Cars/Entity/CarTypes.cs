@@ -25,27 +25,28 @@ namespace Cartax.Domain.Entites.CarTypes
 
         }
 
-        private CarType(int? id, string carName,bool isActive, bool isTaxActive, int idcity) : base(id)
+        private CarType(int? id, string carName,bool isActive, bool isTaxActive, City city) : base(id)
         {
           
             CarName = carName;
             IsActive = isActive;
             IsTaxActive = isTaxActive;
-            Idcity = idcity;
+            City = city;
+
         }
 
       
         public string CarName { get; private set; }
 
-        public int Idcity { get; private set; }
+        public City City { get; private set; }
 
         public bool? IsActive { get; private set; }
 
         public bool? IsTaxActive { get; private set; }
 
-        public static CarType Create(int? id, int carType, int idcity, string carName, bool isActive,bool isTaxActive)
+        public static CarType Create(int? id, City city, string carName, bool isActive,bool isTaxActive)
         {
-            var car = new CarType(id, carName, isActive, isTaxActive,  idcity);
+            var car = new CarType(id, carName, isActive, isTaxActive, city);
             return car;
         }
 
@@ -71,7 +72,7 @@ namespace Cartax.Domain.Entites.CarTypes
         }
 
 
-        public City City { get;  set; }
+       
         public ICollection<Car> Cars { get; }
     }
 }

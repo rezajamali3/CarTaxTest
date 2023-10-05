@@ -21,10 +21,19 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
                 x.Property<string>(p => p.AreaCode)
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("nvarchar(12)");
 
                 x.Property<string>(p => p.AreaName)
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("nvarchar(60)");
+
+                x.HasMany(s => s.TaxCars)
+                 .WithOne(g => g.Area)
+                 .HasForeignKey("AreaId").OnDelete(DeleteBehavior.NoAction);
+
+
+                x.HasMany(s => s.TaxTimes)
+                .WithOne(g => g.Area)
+                .HasForeignKey("TaxTimesId").OnDelete(DeleteBehavior.NoAction);
 
                 x.HasKey(p => p.Id);
 

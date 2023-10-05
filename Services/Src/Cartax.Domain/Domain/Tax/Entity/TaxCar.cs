@@ -19,33 +19,26 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
         [Column(TypeName = "decimal(18, 2)")]
         public decimal? Tax { get; private set; }
 
-        public int? Idarea { get; private set; }
-        public int? Idcar { get; private set; }
+        public Area Area { get; private set; }
+        public Car Car { get; private set; }
 
         private TaxCar(int? id) : base(id)
         {}
 
-        private TaxCar(int? id, DateTime createDate, int area, int car, decimal? tax) : base(id)
+        private TaxCar(int? id, DateTime createDate, Area area, Car car, decimal? tax) : base(id)
         {
             CreateDate = createDate;
-            Idcar = car;
-            Idarea = area;
+            this.Car = car;
+            this.Area = area;
             Tax = tax;
         }
 
 
-        public static TaxCar Create(int? id, DateTime createDate, string areaName, int idcar, int area,decimal? tax)
+        public static TaxCar Create(int? id, DateTime createDate, string areaName, Car car, Area area, decimal? tax)
         {
-            var taxCar = new TaxCar(id, createDate, area, idcar,tax);
+            var taxCar = new TaxCar(id, createDate, area, car, tax);
             return taxCar;
         }
-
-
-
-        public Area Area { get;  }
-
-        public Car Car { get; }
-     
 
 
     }

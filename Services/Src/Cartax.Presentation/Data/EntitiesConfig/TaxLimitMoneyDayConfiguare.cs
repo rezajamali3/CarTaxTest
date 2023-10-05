@@ -24,8 +24,7 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxLimitMoneyDay[]
             {
 
-                TaxLimitMoneyDay.Create(1,60,1)
-                 
+                //TaxLimitMoneyDay.Create(1,60,1)
 
             };
         }

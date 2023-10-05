@@ -21,16 +21,52 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
             modelBuilder.Entity<City>( x =>
             {
                 x.Property<int?>(p => p.Id)
-                    .ValueGeneratedOnAdd()
+                    .ValueGeneratedNever()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
+                SqlServerPropertyBuilderExtensions
+                .UseIdentityColumn(x.Property<int?>(p => p.Id));
 
                 x.Property<string>(p => p.CityCode)
                     .HasColumnType("nvarchar(max)");
 
                 x.Property<string>(p => p.CityName)
                     .HasColumnType("nvarchar(max)");
+
+                x.HasMany(c => c.Areas)
+                 .WithOne(a => a.City)
+                 .HasForeignKey("CityId");
+
+             
+
+
+                x.HasMany(c => c.TaxPublicholiday)
+              .WithOne(a => a.City)
+              .HasForeignKey("CityId");
+
+
+            x.HasMany(c => c.TaxTaxLongTerm)
+             .WithOne(a => a.City)
+             .HasForeignKey("CityId");
+
+             x.HasMany(c => c.TaxWeekDay)
+              .WithOne(a => a.City)
+              .HasForeignKey("CityId");
+
+
+             x.HasOne(c => c.TaxMoneyDay)
+              .WithOne(a => a.City)
+              .HasForeignKey<TaxLimitMoneyDay>(a=>a.Id)
+              .IsRequired(false);
+
+
+             x.HasOne(c => c.TaxLimitTime)
+              .WithOne(a => a.City)
+              .HasForeignKey<TaxLimitTime>(a => a.Id)
+              .IsRequired(false);
+
+
+
 
                 x.HasKey(p => p.Id);
 
@@ -39,18 +75,6 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
               
             });
 
-
-
-            modelBuilder.Entity<City>()
-           .HasMany(c => c.Areas)
-           .WithOne(a => a.City)
-           .HasForeignKey(a => a.idCity);
-
-
-            modelBuilder.Entity<City>()
-         .HasMany(c => c.CarTypes)
-         .WithOne(a => a.City)
-         .HasForeignKey(a => a.Idcity);
 
             return modelBuilder;
         }

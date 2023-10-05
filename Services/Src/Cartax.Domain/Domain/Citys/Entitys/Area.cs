@@ -8,57 +8,47 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
     public class Area : Entity
     {
-        public string? AreaName { get; set; }
-        public string? AreaCode { get; set; }
+        public string? AreaName { get;private set; }
+        public string? AreaCode { get; private set; }
 
-        public int? idCity;
+        public City City { get; private set; }
 
         private Area(int? id):base(id)
         {
            
         }
 
-        private Area(int id, string areaName, string areaCode, int? idcity) : base(id)
+        private Area(int id, string areaName, string areaCode, City city) : base(id)
         {
             this.AreaName = areaName;
             this.AreaCode = areaCode;
-            this.idCity = idCity;
+            this.City = city;
         }
 
 
-        public static Area Create(int id, string areaName, string areaCode, int? idcity)
+        public static Area Create(int id, string areaName, string areaCode, City city)
         {
-           
-            return new Area(id, areaName, areaCode, idcity);
-        }
-
-
-        public static Area Create(int id)
-        {
-            return new Area(id, String.Empty, String.Empty,null);
+            return new Area(id, areaName, areaCode, city);
         }
 
 
 
-        public City City { get;  }
 
-        public TaxLimitDay TaxLimitDay { get;  }
+       
 
-        public ICollection<TaxCar> TaxCars { get; }
 
-    
 
-        public TaxLimitMoneyDay TaxMoneyDay { get; }
+        private List<TaxCar> _TaxCars = new();
+        public IReadOnlyCollection<TaxCar> TaxCars => _TaxCars.ToList();
 
-        public TaxLimitTime TaxLimitTime { get; }
 
-        public TaxPublicholiday TaxPublicholiday { get; }
 
-        public TaxTaxLongTerm TaxTaxLongTerm { get; }
+        private List<TaxTime> _TaxTime = new();
+        public IReadOnlyCollection<TaxTime> TaxTimes => _TaxTime.ToList();
 
-        public TaxTime TaxTime { get; }
+      
 
-        public ICollection<TaxWeekDay> TaxWeekDay { get; }
+
 
 
     }

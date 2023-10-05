@@ -14,7 +14,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder CarTypeFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<CarType>( x =>
+            modelBuilder.Entity<CarType>(x =>
             {
                 x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
@@ -26,32 +26,28 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
 
-                x.Property<int>(p => p.Idcity)
-                    .HasColumnType("int");
-
                 x.Property<bool?>(p => p.IsActive)
-                    .HasColumnType("bit");
+                 .HasColumnType("bit");
 
                 x.Property<bool?>(p => p.IsTaxActive)
-                    .HasColumnType("bit");
+                 .HasColumnType("bit");
 
-               x.HasKey(p => p.Id);
+
+                //x.HasMany(c => c.Cars)
+                // .WithOne(a => a.CarType)
+                // .HasForeignKey("CarTypeId");
+
+             
+
+                x.HasKey(p => p.Id);
 
                 x.ToTable("CarType");
 
-              
+
             });
 
 
-            modelBuilder.Entity<CarType>()
-           .HasMany(c => c.Cars)
-           .WithOne(a => a.CarType)
-           .HasForeignKey(a => a.IdCarType);
 
-            modelBuilder.Entity<CarType>()
-          .HasOne(c => c.City)
-          .WithMany(a => a.CarTypes)
-          .HasForeignKey(a => a.Idcity);
 
             return modelBuilder;
         }

@@ -30,8 +30,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 x.Property<DateTime?>(p => p.DayStart)
                     .HasColumnType("datetime2");
 
-                x.Property<int?>(p => p.IdArea)
-                    .HasColumnType("int");
+            
 
                 x.HasKey(p => p.Id);
 

@@ -12,11 +12,10 @@ namespace Cartax.Domain.Domain.Citys.Entitys
     public class TaxLimitDay : Entity
     {
 
-       
-
         public TimeSpan? Time { get; private set; }
 
-        public int? IdArea { get; private set; }
+        public City City { get; private set; }
+
         public bool? IsActive { get; private set; }
 
         private TaxLimitDay(int? id) : base(id)
@@ -24,13 +23,13 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         }
 
-        public static TaxLimitDay Create(int? id,  TimeSpan? time,int? idArea)
+        public static TaxLimitDay Create(int? id,  TimeSpan? time, City? city)
         {
             return new TaxLimitDay(id)
             {
                 Time = time,
                 IsActive = true ,
-                IdArea = idArea
+                City = city
             };
         }
 
@@ -43,12 +42,6 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         {
             IsActive = true;
         }
-
-        public Area Area { get; }
-
-     
-
-
 
     }
 }

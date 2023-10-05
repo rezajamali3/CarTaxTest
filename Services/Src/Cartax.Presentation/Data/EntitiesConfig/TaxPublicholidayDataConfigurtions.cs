@@ -23,7 +23,7 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxPublicholiday[]
             {
 
-                TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
+                //TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
 
             };
         }

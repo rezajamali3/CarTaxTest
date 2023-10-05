@@ -13,8 +13,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
     {
      
         public bool? IsActive { get; private set; }
-
-        public int? IdArea { get; private set; }
+        public City? City { get; private set; }
         public DateTime? DayStart { get; private set; }
         public DateTime? DayEnd { get; private set; }
     
@@ -23,11 +22,11 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         {
         }
 
-        public static TaxTaxLongTerm Create(int? id ,int? idArea, DateTime? dayStart, DateTime? dayEnd)
+        public static TaxTaxLongTerm Create(int? id , City? city, DateTime? dayStart, DateTime? dayEnd)
         {
             return new TaxTaxLongTerm(id)
             {
-                IdArea = idArea,
+                City = city,
                 DayStart = dayStart,
                 DayEnd = dayEnd,
                 IsActive = true
@@ -43,8 +42,6 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         {
             IsActive = true;
         }
-
-        public Area Area { get;  }
 
     }
 }

@@ -18,7 +18,6 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
             modelBuilder.Entity<TaxLimitTime>( x =>
             {
                 x.Property<int?>(p => p.Id)
-                     
                     .ValueGeneratedNever()
                     .HasColumnType("int");
 
@@ -26,9 +25,6 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 
                 x.Property<TimeSpan?>(p => p.Time)
                     .HasColumnType("time");
-
-                x.Property<int?>(p => p.IdArea)
-                .HasColumnType("int");
 
                 x.HasKey(p => p.Id);
 

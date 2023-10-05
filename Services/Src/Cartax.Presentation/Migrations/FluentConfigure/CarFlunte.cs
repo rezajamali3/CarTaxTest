@@ -16,7 +16,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder CarFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Car>( x =>
+            modelBuilder.Entity<Car>(x =>
             {
                 x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
@@ -25,34 +25,34 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>("Id"));
 
                 x.Property<string>(p => p.CarName)
-                    .IsRequired()
-                    .HasColumnType("nvarchar(50)");
+                 .IsRequired()
+                 .HasColumnType("nvarchar(50)");
 
-                x.Property<int?>(p => p.IdCarType)
-                .IsRequired()
-                    .HasColumnType("int");
+
+               x .HasOne(a => a.CarType)
+                 .WithMany(b => b.Cars)
+                 .HasForeignKey("CarTypeId");
+
+
+              
+                 x.HasMany(a => a.TaxCars)
+                 .WithOne(b => b.Car)
+                 .HasForeignKey("CarId");
+
+
 
                 x.HasKey(p => p.Id);
 
                 x.ToTable("Car");
 
-             
 
-              
+
+
 
             });
 
 
-            modelBuilder.Entity<Car>()
-         .HasOne(a => a.CarType)
-         .WithMany(b=>b.Cars)
-         .HasForeignKey(a => a.IdCarType);
-
-
-            modelBuilder.Entity<Car>()
-      .HasMany(a => a.TaxCars)
-      .WithOne(b => b.Car)
-      .HasForeignKey(a => a.Idcar);
+         
 
             return modelBuilder;
         }

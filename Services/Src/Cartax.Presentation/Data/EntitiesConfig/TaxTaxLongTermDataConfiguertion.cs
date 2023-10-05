@@ -24,7 +24,7 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxTaxLongTerm[]
             {
 
-                TaxTaxLongTerm.Create(1,1,new DateTime(2013,07,01),new DateTime(2013,07,30))
+                //TaxTaxLongTerm.Create(1,1,new DateTime(2013,07,01),new DateTime(2013,07,30))
                
             };
         }

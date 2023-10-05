@@ -26,11 +26,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 x.Property<DateTime?>(p => p.CreateDate)
                     .HasColumnType("datetime2");
 
-                x.Property<int?>(p => p.Idarea)
-                    .HasColumnType("int");
-
-                x.Property<int?>(p => p.Idcar)
-                    .HasColumnType("int");
+              
 
                 x.Property<decimal?>(p => p.Tax)
                     .HasColumnType("decimal(18, 2)");

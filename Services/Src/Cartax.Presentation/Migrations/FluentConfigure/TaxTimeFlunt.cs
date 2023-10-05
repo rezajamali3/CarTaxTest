@@ -27,8 +27,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
                 x.Property<TimeSpan?>(p => p.EndDate)
                     .HasColumnType("time");
 
-                x.Property<int?>(p => p.Idarea)
-                    .HasColumnType("int");
+               
 
                 x.Property<TimeSpan?>(p => p.StartDate)
                     .HasColumnType("time");

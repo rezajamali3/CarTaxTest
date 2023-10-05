@@ -14,12 +14,14 @@ namespace Cartax.Presentation.Data.EntitiesConfig
 
         private void setData()
         {
+            var city = City.Create(1, "تهران", "آزاد");
+         
             Data = new Area[]
             {
-                Area.Create(1,"Gothenburِ","1",1),
-                  Area.Create(2,"GothenburgA","2",1),
-                    Area.Create(3,"GothenburgB","3",1),
-                      Area.Create(4,"GothenburgC","4",1),
+                //Area.Create(1,"جنوب","1",city),
+                //Area.Create(2,"غرب" ,"2",city),
+                //Area.Create(3,"شرق" ,"3",city),
+                //Area.Create(4,"شمال","4",city),
             };
         }
     }

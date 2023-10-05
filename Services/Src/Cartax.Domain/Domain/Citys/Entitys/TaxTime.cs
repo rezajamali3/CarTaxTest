@@ -15,10 +15,10 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         public TimeSpan? StartDate { get; private set; }
         public TimeSpan? EndDate { get; private set; }
 
-        [Column(TypeName = "decimal(18, 2)")]
+      
         public decimal? Tax { get; private set; }
 
-        public int? Idarea { get; private set; }
+        public Area Area { get; private set; }
 
         private TaxTime(int? id) : base(id)
         {
@@ -26,21 +26,21 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         }
 
 
-        private TaxTime(int? id, TimeSpan startDate, TimeSpan endDate, int idarea, decimal tax) : base(id)
+        private TaxTime(int? id, TimeSpan startDate, TimeSpan endDate, Area area, decimal tax) : base(id)
         {
             StartDate = startDate;
             EndDate = endDate;
-            Idarea = idarea;
+            Area = area;
             Tax = tax;
         }
 
-        public static TaxTime Create(int? id, TimeSpan startDate, TimeSpan endDate, int idarea, decimal tax)
+        public static TaxTime Create(int? id, TimeSpan startDate, TimeSpan endDate, Area area, decimal tax)
         {
 
             if (startDate > endDate)
                 throw new ArgumentException("تاریخ شروع باید قبل از تاریخ پایان باشد.");
 
-            return new TaxTime(id, startDate, endDate, idarea, tax);
+            return new TaxTime(id, startDate, endDate, area, tax);
         }
 
         public void ChangeStartDate(TimeSpan newStartDate)
@@ -66,7 +66,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
             Tax = tax;
         }
 
-        public Area Area { get;  }
+       
     }
 
 }

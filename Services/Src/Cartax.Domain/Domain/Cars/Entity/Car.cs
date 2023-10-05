@@ -19,28 +19,27 @@ namespace Cartax.Domain.Entites.Cars
           
         }
 
-        private Car(int? id, int idcarType, string carName) : base(id)
+        private Car(int? id, CarType carType, string carName) : base(id)
         {
 
-            IdCarType = idcarType;
+            CarType = carType;
             CarName = carName;
         }
 
 
 
-        public int? IdCarType { get; private set ; }
-      
+        public CarType CarType { get; private set; }
+
         public string CarName { get; private set; }
 
 
-
-        public static Car Create(int? id, int IdCarType, string carName)
+        public static Car Create(int? id, CarType carTyp, string carName)
         {
-            var car =  new Car(id, IdCarType, carName);
+            var car =  new Car(id, carTyp, carName);
             return car;
         }
 
-        public CarType CarType { get; }
+      
         public ICollection<TaxCar> TaxCars { get; private set; }
 
     }

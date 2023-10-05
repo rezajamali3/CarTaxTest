@@ -10,6 +10,7 @@ using Cartax.Applications.Persistence.Repositories;
 using Cartax.Applications.Common.Primitives;
 using MediatR;
 using Cartax.Domain.Domain.Citys.Entitys;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cartax.Applications.Services.TaxCarServices.Command
 {
@@ -77,7 +78,7 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
 
 
 
-            var ListTaxCarToday = await GetTaxCarEndTodayAll(request.idCar, request.idArea,request.CreateTime);
+            var ListTaxCarToday =  await GetTaxCarEndTodayAll(request.idCar, request.idArea,request.CreateTime);
 
             var TaxCarEndToday = await GetTaxCarEndToday(request.idCar, request.idArea);
 
@@ -144,21 +145,21 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
                 domainResult.SetData(false, Error.NullValue);
             }
 
-            TaxCar tax = TaxCar.Create(
-                default,
-                taxCarCommand.CreateTime,
-                "",
-                taxCarCommand.idArea,
-                taxCarCommand.idCar ,
-                (decimal)domainResult.Data
-            );
+            //TaxCar tax = TaxCar.Create(
+            //    default,
+            //    taxCarCommand.CreateTime,
+            //    "",
+            //    taxCarCommand.idArea,
+            //    taxCarCommand.idCar ,
+            //    (decimal)domainResult.Data
+            //);
 
-             var result=   await _TaxCarRepository.AddAsync(tax);
-            if (result != 0)
-            {
-                domainResult.SetData(true, Error.None);
-                return new CommandResponse(domainResult.IsSuccess, $" {domainResult.Data} درج مالیات ");
-            }
+            // var result=   await _TaxCarRepository.AddAsync(tax);
+            //if (result != 0)
+            //{
+            //    domainResult.SetData(true, Error.None);
+            //    return new CommandResponse(domainResult.IsSuccess, $" {domainResult.Data} درج مالیات ");
+            //}
 
             return new CommandResponse(false,"خطا در ذخیره سازی مالیت منطق شهری");
         }
@@ -169,7 +170,7 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
             string formattedTime = dateTime.ToString("HH:mm:ss");
             TimeSpan currentTimeSpan = TimeSpan.Parse(formattedTime);
             var Publicholiday = await _TaxTimeRepository.GetAsync(a =>
-            a.Idarea == idArea &&
+            EF.Property<int>(a,"AreaId")  == idArea &&
             a.EndDate >= currentTimeSpan &&
             a.StartDate <= currentTimeSpan
             );
@@ -182,7 +183,7 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
 
 
             var Publicholiday = await _TaxLongTermRepository.GetAsync(a => 
-            a.IdArea == idArea && 
+            EF.Property<int>(a,"CityId" ) == idArea && 
             a.DayEnd >= datecreate.Date && 
             a.DayStart <= datecreate.Date 
             );
@@ -228,15 +229,15 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
             return minutes;
         }
 
-        private async Task<List<TaxWeekDay>?> GetTaxWeekDay(int idArea)
+        private async Task<List<TaxWeekDay>?> GetTaxWeekDay(int CityId)
         {
-            var taxWeekDay = await _TaxWeekDayRepository.ListAsync(a => a.IdArea == idArea);
+            var taxWeekDay = await _TaxWeekDayRepository.ListAsync(a => EF.Property<int>(a, "CityId") == CityId);
             return taxWeekDay;
         }
 
-        private async Task<decimal>      GetTaxLimitMoneyToday(int? idArea)
+        private async Task<decimal>      GetTaxLimitMoneyToday(int? idCity)
         {
-            TaxLimitMoneyDay taxLimitmoneyDay = await _TaxLimitMoneyDayRepository.GetAsync(a => a.IdArea == idArea);
+            TaxLimitMoneyDay taxLimitmoneyDay = await _TaxLimitMoneyDayRepository.GetAsync(a => EF.Property<int>(a, "CityId") == idCity);
             return (decimal)taxLimitmoneyDay.Tax;
         }
 
@@ -249,16 +250,18 @@ namespace Cartax.Applications.Services.TaxCarServices.Command
         }
 
         private async Task<List<TaxCar>> GetTaxCarEndTodayAll(
-            int? idCar,
-            int? idarea,
+            int CarId,
+            int CityId,
             DateTime Datecreate
             )
         {
-            var taxCarTodayAll = await _TaxCarRepository.ListAsync(
-               a => a.Idcar == idCar &&
-               a.Idarea == idarea &&
+
+            var taxCarTodayAll = await _TaxCarRepository
+                .ListAsync(
+               a => EF.Property<int>(a, "CarId")  == CarId &&
+              EF.Property<int>(a, "CityId") == CityId &&
                a.CreateDate.Value.Date == Datecreate.Date);
-     
+
             return taxCarTodayAll;
         }
 

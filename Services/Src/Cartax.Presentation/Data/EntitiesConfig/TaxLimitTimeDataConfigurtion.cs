@@ -21,10 +21,12 @@ namespace Cartax.Presentation.Data.EntitiesConfig
 
         private void setData()
         {
+            var city = City.Create(1, "تهران", "آزاد");
+            var area = Area.Create(1, "جنوب", "...", city);
             Data = new TaxLimitTime[]
             {
 
-                TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),1),
+                //TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),area),
                  
 
             };

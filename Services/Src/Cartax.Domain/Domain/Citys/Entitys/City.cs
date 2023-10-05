@@ -45,8 +45,31 @@ namespace Cartax.Domain.Domain.Citys.Entitys
             return new City(city.Id,city.CityName,city.CityCode);
         }
 
+        //private List<CarType> _carTypes = new();
+        //public IReadOnlyCollection<CarType> CarTypes => _carTypes.ToList();
 
-        public virtual ICollection<CarType> CarTypes { get; }
-        public virtual ICollection<Area> Areas { get;  }
+
+        private List<Area> areas = new();
+        public IReadOnlyCollection<Area> Areas => areas.ToList();
+
+
+        //------------------------------------------
+
+        public TaxLimitMoneyDay TaxMoneyDay { get; private set; }
+
+        public TaxLimitTime TaxLimitTime { get; private set; }
+
+        //------------------------------------------
+
+        private List<TaxPublicholiday> _TaxPublicholidays = new();
+        public IReadOnlyCollection<TaxPublicholiday> TaxPublicholiday => _TaxPublicholidays.ToList();
+
+        private List<TaxTaxLongTerm> _TaxTaxLongTerm = new();
+        public IReadOnlyCollection<TaxTaxLongTerm> TaxTaxLongTerm => _TaxTaxLongTerm.ToList();
+
+        private List<TaxWeekDay> _TaxWeekDay = new();
+        public IReadOnlyCollection<TaxWeekDay> TaxWeekDay => _TaxWeekDay.ToList();
+
+
     }
 }
