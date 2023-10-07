@@ -1,6 +1,5 @@
-﻿
-using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
+﻿using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Tax.TaxLongTerms;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -24,7 +23,7 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxTaxLongTerm[]
             {
 
-                //TaxTaxLongTerm.Create(1,1,new DateTime(2013,07,01),new DateTime(2013,07,30))
+                TaxTaxLongTerm.Create(1,1,new DateTime(2013,07,01),new DateTime(2013,07,30))
                
             };
         }

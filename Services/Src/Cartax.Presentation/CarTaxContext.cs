@@ -1,10 +1,15 @@
-﻿using Cartax.Applications.Common.Intercpter;
-using Cartax.Domain.Domain.Citys.Entitys;
+﻿
+using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Citys;
 using Cartax.Domain.Entites.Tax.TaxCars;
+using Cartax.Domain.Entites.Tax.TaxLimitDays;
+using Cartax.Domain.Entites.Tax.TaxLimitTimes;
+using Cartax.Domain.Entites.Tax.TaxLongTerms;
+using Cartax.Domain.Entites.Tax.TaxPublicholidays;
+using Cartax.Domain.Entites.Tax.TaxTimes;
+using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Data.EntitiesConfig;
-using Cartax.Presentation.Migrations.FluentConfigure;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,35 +21,15 @@ namespace Cartax.Presentation
 {
     public class CarTaxContext : DbContext
     {
-        private readonly IMediator _mediator;
-        private readonly PublishDomainEventIntercpter _interceptor;
 
-        public CarTaxContext(DbContextOptions<CarTaxContext> options, IMediator mediator) : base(options)
+        public CarTaxContext(DbContextOptions<CarTaxContext> options) : base(options)
         {
-            _mediator = mediator;
-            _interceptor = new PublishDomainEventIntercpter(mediator);
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            #region You are the table 
-            modelBuilder
-            .CarTypeFluntConfigure()
-            .CarFluntConfigure()
-            .CityFluntConfigure()
-            .AreaFluntConfigure()
-            .TaxCarFluntConfigure()
-            .TaxLimitMoneyDaysFluntConfigure()
-            .TaxLimitTimeFluntConfigure()
-            .TaxPublicholidayFluntConfigure()
-            .TaxTaxLongTermFluntConfigure()
-            .TaxTimeFluntConfigure()
-            .TaxWeekDayFluntConfigure();
-
-            #endregion You are the table
-
-            #region Defult Data
             #region City
             modelBuilder.ApplyConfiguration(new CityDataConfiguertions());
             modelBuilder.ApplyConfiguration(new AreaDataConfiguertions());
@@ -63,21 +48,15 @@ namespace Cartax.Presentation
             modelBuilder.ApplyConfiguration(new TaxTaxLongTermDataConfiguertion());
             modelBuilder.ApplyConfiguration(new TaxTimeDataConfiguertions());
             modelBuilder.ApplyConfiguration(new TaxWeekDayDataConfigurtions());
-            modelBuilder.ApplyConfiguration(new TaxLimitDayDateConfigurtions());
-
             #endregion tax
-            #endregion Defult Data
-
 
             base.OnModelCreating(modelBuilder);
         }
 
         public bool AreMigrationsPending()
         {
-
             var pendingMigrations = Database.GetPendingMigrations();
             return pendingMigrations.Any();
-
         }
 
         public bool HasMigrationsApplied()

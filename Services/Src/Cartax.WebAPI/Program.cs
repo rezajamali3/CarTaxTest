@@ -1,33 +1,40 @@
 using Cartax.Presentation.Configurtions;
 using Cartax.Applications.Configure;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
-using Cartax.WebAPI.Configotions;
-using MediatR;
-using Cartax.Domain.Common.Primitives;
-using Cartax.Applications.Common.Intercpter;
-using Cartax.Applications.Features.TaxCar.Event;
-using Cartax.Domain.Domain.Tax.Event;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
 
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
+
 
 builder.Services
        .PersistenceServesiesConfigure(builder.Configuration)
        .BaseAllRepositoryDatabaserConfigure()
        .AutoMapperApplicationsServeces()
-       .MediatRConfigureApplicationsServeces()
-       .SwaggerGenConfig()
-       .EventHandlrConfigureServeces();
+       .MediatRConfigureApplicationsServeces();
+                 
 
 var app = builder.Build();
 
-   
-app.UseSwagger()
-   .UseSwaggerUI();
+
+
+
+
+// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+//}
+
 
 
 app.UseAuthorization();

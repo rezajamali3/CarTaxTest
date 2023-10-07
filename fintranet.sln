@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cartax.Test", "Cartax.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cartax.WebAPI", "Services\Src\Cartax.WebAPI\Cartax.WebAPI.csproj", "{3B4EEF7E-4686-4881-B97A-9768F3E56C4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cartax.Test", "Services\Src\Cartax.Test\Cartax.Test\Cartax.Test.csproj", "{36464308-AD28-4119-AD37-ED3EED130383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartax.Test", "Services\Src\Cartax.Test\Cartax.Test\Cartax.Test.csproj", "{36464308-AD28-4119-AD37-ED3EED130383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

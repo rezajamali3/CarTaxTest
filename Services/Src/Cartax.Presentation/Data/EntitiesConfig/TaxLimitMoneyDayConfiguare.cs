@@ -1,6 +1,5 @@
-﻿
-using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
+﻿using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Tax.TaxLimitMoneyDays;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -24,7 +23,8 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxLimitMoneyDay[]
             {
 
-                //TaxLimitMoneyDay.Create(1,60,1)
+                TaxLimitMoneyDay.Create(1,60,1)
+                 
 
             };
         }

@@ -1,5 +1,5 @@
-﻿using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
+﻿using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Tax.TaxPublicholidays;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,8 @@ namespace Cartax.Presentation.Data.EntitiesConfig
             Data = new TaxPublicholiday[]
             {
 
-                //TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
+                TaxPublicholiday.Create(1,DateTime.Now.AddDays(2)),
+                
 
             };
         }

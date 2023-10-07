@@ -1,5 +1,4 @@
 ﻿using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {
-    public class TaxCarDataConfigurtion : BaseDataConfiguertions<TaxCar>
+    public class TaxCarDataConfigurtion : BaseDataConfiguertions<Car>
     {
 
         public TaxCarDataConfigurtion()
@@ -20,10 +19,16 @@ namespace Cartax.Presentation.Data.EntitiesConfig
 
         private void setData()
         {
-            Data = new TaxCar[]
+            Data = new Car[]
             {
 
-               
+                Car.Create(1,1,"Normal"),
+                  Car.Create(2,2,"Emergency"),
+                    Car.Create(3,3,"Busses"),
+                      Car.Create(4,4,"Diplomat"),
+                        Car.Create(5,5,"Motorcycles"),
+                         Car.Create(6,6,"Military"),
+                          Car.Create(7,7,"Foreign"),
 
             };
         }

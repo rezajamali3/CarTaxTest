@@ -1,4 +1,4 @@
-﻿using Cartax.Applications.Common.Base;
+﻿using Cartax.Applications.Base;
 using Cartax.Applications.Persistence.Repositories;
 using Cartax.Presentation.Base;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +24,7 @@ namespace Cartax.Presentation.Configurtions
                 }
             );
 
-          
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 
           
 

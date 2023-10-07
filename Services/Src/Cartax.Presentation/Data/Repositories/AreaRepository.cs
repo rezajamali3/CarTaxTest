@@ -1,6 +1,6 @@
-﻿using Cartax.Applications.Common.Base;
-using Cartax.Applications.Persistence.Repositories;
-using Cartax.Domain.Domain.Citys.Entitys;
+﻿using Cartax.Applications.Base;
+using Cartax.Applications.Interfaces;
+using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Tax.TaxTimes;
 using Cartax.Presentation.Base;
 using Microsoft.EntityFrameworkCore;

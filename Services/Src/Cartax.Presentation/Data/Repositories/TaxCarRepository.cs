@@ -1,4 +1,6 @@
-﻿using Cartax.Applications.Common.Base;
+﻿using Cartax.Applications.Base;
+using Cartax.Applications.Interfaces;
+using Cartax.Domain.Entites.Areas;
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;
@@ -21,7 +23,7 @@ namespace Cartax.Applications.Persistence.Repositories
 
         public async Task<TaxCar> GetTaxCarEndToday(int? idCar, int? idArea)
         {
-            return await _dbContext.TaxCar.Where(a => EF.Property<int?>(a, "CarId")  == idCar && EF.Property<int?>(a, "AreaId")  == idArea && a.CreateDate.Value.Date == DateTime.Today)
+            return await _dbContext.TaxCar.Where(a => a.Idcar == idCar && a.Idarea == idArea && a.CreateDate.Value.Date == DateTime.Today)
                  .OrderByDescending(a => a.CreateDate)
                 .LastOrDefaultAsync();
         }

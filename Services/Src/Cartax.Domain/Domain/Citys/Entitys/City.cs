@@ -14,8 +14,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
     {
         private City(int? Id) : base(Id)
         {
-            this.CityName = string.Empty;
-            this.CityCode = string.Empty;
+          
         }
 
         private City(int? Id, string cityName, string cityCode) : base(Id)
@@ -32,40 +31,35 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         public static City Create(int? id,string cityName, string cityCode)
         {
+
+
+
+
             return new City(id, cityName, cityCode);
         }
 
-        public static City Create(int? id)
-        {
-            return new City(id);
-        }
-
-        public static City Create(City city)
-        {
-            return new City(city.Id,city.CityName,city.CityCode);
-        }
-
-        //private List<CarType> _carTypes = new();
-        //public IReadOnlyCollection<CarType> CarTypes => _carTypes.ToList();
+     
 
 
         private List<Area> areas = new();
         public IReadOnlyCollection<Area> Areas => areas.ToList();
 
 
-        //------------------------------------------
+      
 
         public TaxLimitMoneyDay TaxMoneyDay { get; private set; }
 
         public TaxLimitTime TaxLimitTime { get; private set; }
 
-        //------------------------------------------
+
 
         private List<TaxPublicholiday> _TaxPublicholidays = new();
         public IReadOnlyCollection<TaxPublicholiday> TaxPublicholiday => _TaxPublicholidays.ToList();
 
+
         private List<TaxTaxLongTerm> _TaxTaxLongTerm = new();
         public IReadOnlyCollection<TaxTaxLongTerm> TaxTaxLongTerm => _TaxTaxLongTerm.ToList();
+
 
         private List<TaxWeekDay> _TaxWeekDay = new();
         public IReadOnlyCollection<TaxWeekDay> TaxWeekDay => _TaxWeekDay.ToList();

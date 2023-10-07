@@ -1,6 +1,5 @@
-﻿
-using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
+﻿using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Tax.TaxLimitTimes;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -21,12 +20,10 @@ namespace Cartax.Presentation.Data.EntitiesConfig
 
         private void setData()
         {
-            var city = City.Create(1, "تهران", "آزاد");
-            var area = Area.Create(1, "جنوب", "...", city);
             Data = new TaxLimitTime[]
             {
 
-                //TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),area),
+                TaxLimitTime.Create(1,TimeSpan.FromMinutes(60)),
                  
 
             };
