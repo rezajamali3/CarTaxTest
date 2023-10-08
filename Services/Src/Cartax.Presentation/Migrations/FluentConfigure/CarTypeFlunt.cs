@@ -1,4 +1,4 @@
-﻿using Cartax.Domain.Entites.CarTypes;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
@@ -11,49 +11,49 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 {
     public static class CarTypeFlunt
     {
-        public static ModelBuilder CarTypeFluntConfigure(this ModelBuilder modelBuilder)
-        {
+        //public static ModelBuilder CarTypeFluntConfigure(this ModelBuilder modelBuilder)
+        //{
 
-            modelBuilder.Entity(typeof(CarType), b =>
-            {
-                b.Property<int?>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
+        //    modelBuilder.Entity(typeof(CarType), b =>
+        //    {
+        //        b.Property<int?>("Id")
+        //            .ValueGeneratedOnAdd()
+        //            .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+        //        SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
-                b.Property<string>("CarName")
-                    .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+        //        b.Property<string>("CarName")
+        //            .IsRequired()
+        //            .HasColumnType("nvarchar(max)");
 
-                b.Property<int>("Idcity")
-                    .HasColumnType("int");
+        //        b.Property<int>("Idcity")
+        //            .HasColumnType("int");
 
-                b.Property<bool?>("IsActive")
-                    .HasColumnType("bit");
+        //        b.Property<bool?>("IsActive")
+        //            .HasColumnType("bit");
 
-                b.Property<bool?>("IsTaxActive")
-                    .HasColumnType("bit");
+        //        b.Property<bool?>("IsTaxActive")
+        //            .HasColumnType("bit");
 
-                b.HasKey("Id");
+        //        b.HasKey("Id");
 
-                b.ToTable("CarType");
+        //        b.ToTable("CarType");
 
               
-            });
+        //    });
 
 
-            modelBuilder.Entity<CarType>()
-           .HasMany(c => c.Cars)
-           .WithOne(a => a.CarType)
-           .HasForeignKey(a => a.IdCarType);
+        //    modelBuilder.Entity<CarType>()
+        //   .HasMany(c => c.Cars)
+        //   .WithOne(a => a.CarType)
+        //   .HasForeignKey(a => a.IdCarType);
 
-            modelBuilder.Entity<CarType>()
-          .HasOne(c => c.City)
-          .WithMany(a => a.CarTypes)
-          .HasForeignKey(a => a.Idcity);
+        //    modelBuilder.Entity<CarType>()
+        //  .HasOne(c => c.City)
+        //  .WithMany(a => a.CarTypes)
+        //  .HasForeignKey(a => a.Idcity);
 
-            return modelBuilder;
-        }
+        //    return modelBuilder;
+        //}
     }
 }

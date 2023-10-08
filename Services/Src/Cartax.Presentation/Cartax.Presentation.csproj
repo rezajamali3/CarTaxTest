@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cartax.Applications\Cartax.Applications.csproj" />
+    <ProjectReference Include="..\Cartax.Domain\Cartax.Domain.csproj" />
   </ItemGroup>
 
 </Project>

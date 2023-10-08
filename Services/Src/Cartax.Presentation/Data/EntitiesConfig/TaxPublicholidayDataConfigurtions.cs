@@ -1,5 +1,4 @@
 ﻿using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -9,25 +8,26 @@ using System.Threading.Tasks;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {
-    public class TaxPublicholidayDataConfigurtions : BaseDataConfiguertions<TaxPublicholiday>
-    {
+    //public class TaxPublicholidayDataConfigurtions :
+    //    BaseDataConfiguertions<TaxPublicholiday>
+    //{
 
-        public TaxPublicholidayDataConfigurtions()
-        {
+    //    public TaxPublicholidayDataConfigurtions()
+    //    {
 
-            setData();
-        }
+    //        setData();
+    //    }
 
-        private void setData()
-        {
-            Data = new TaxPublicholiday[]
-            {
+    //    private void setData()
+    //    {
+    //        Data = new TaxPublicholiday[]
+    //        {
 
-                TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
+    //            TaxPublicholiday.Create(1,DateTime.Now.AddDays(2).Date,1),
 
-            };
-        }
-    }
+    //        };
+    //    }
+    //}
 }
 
 

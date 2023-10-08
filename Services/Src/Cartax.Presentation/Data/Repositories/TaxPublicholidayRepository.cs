@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public class TaxPublicholidayRepository : RepositoryBase<TaxPublicholiday>, ITaxPublicholidayRepository
-    {
-        public TaxPublicholidayRepository(CarTaxContext dbContext) : base(dbContext)
-        {
+    //public class TaxPublicholidayRepository : RepositoryBase<TaxPublicholiday>, ITaxPublicholidayRepository
+    //{
+    //    public TaxPublicholidayRepository(CarTaxContext dbContext) : base(dbContext)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }

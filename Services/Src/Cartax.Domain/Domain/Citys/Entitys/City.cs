@@ -1,15 +1,11 @@
 ﻿
-using Cartax.Domain.Common.Model;
-using Cartax.Domain.Entites.CarTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
+using Library_Domain.Model;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class City : Entity
+    public class City : Entity<int?>
     {
         private City(int? Id) : base(Id)
         {
@@ -45,7 +41,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         }
 
 
-        public virtual ICollection<CarType> CarTypes { get; }
+        //public virtual ICollection<CarType> CarTypes { get; }
         public virtual ICollection<Area> Areas { get;  }
     }
 }

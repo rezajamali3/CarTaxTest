@@ -1,14 +1,11 @@
 ﻿
-using Cartax.Domain.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Library_Domain.Model;
+
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxLimitDay : Entity
+    public class TaxLimitDay : Entity<int?>
     {
 
        

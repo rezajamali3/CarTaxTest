@@ -1,5 +1,6 @@
 ﻿
-using Cartax.Domain.Common.Model;
+
+using Library_Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface IAsyncRepository<T> where T : Entity
+    public interface IAsyncRepository<T> where T : Entity<T?>
     {
         Task<int> AddAsync(T entity);
 

@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Library_Domain\Library_Domain.csproj" />
     <ProjectReference Include="..\Cartax.Domain\Cartax.Domain.csproj" />
   </ItemGroup>
 

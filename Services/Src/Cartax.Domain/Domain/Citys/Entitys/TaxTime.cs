@@ -1,15 +1,12 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Library_Domain.Model;
 using System.ComponentModel.DataAnnotations.Schema;
-using Cartax.Domain.Common.Model;
+
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxTime : Entity
+    public class TaxTime : Entity<int?>
     {
         public TimeSpan? StartDate { get; private set; }
         public TimeSpan? EndDate { get; private set; }

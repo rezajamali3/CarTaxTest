@@ -1,6 +1,6 @@
-﻿using Cartax.Domain.Common.Model;
+﻿
 using Cartax.Domain.Domain.Tax.Aggregate;
-
+using Library_Domain.Model;
 
 namespace Cartax.Domain.Entites.Tax.TaxWeekDays
 {
@@ -8,35 +8,35 @@ namespace Cartax.Domain.Entites.Tax.TaxWeekDays
     {
 
        
-        private TaxWeekDayArea? WeekTypes { get; set; }
+        //private TaxWeekDayArea? WeekTypes { get; set; }
         private DateTime DateCreate { get; set; }
 
-        private TaxWeekDaysincludingtax(TaxWeekDayArea? weekTypes, DateTime dateCreate)
-        {
-            WeekTypes = weekTypes;
-            DateCreate = dateCreate;
-        }
+        //private TaxWeekDaysincludingtax(TaxWeekDayArea? weekTypes, DateTime dateCreate)
+        //{
+        //    WeekTypes = weekTypes;
+        //    DateCreate = dateCreate;
+        //}
 
 
-        public static TaxWeekDaysincludingtax Create(TaxWeekDayArea? weekTypes,DateTime dateCreate)
-        {
-            return new TaxWeekDaysincludingtax(weekTypes, dateCreate);
-        }
+        //public static TaxWeekDaysincludingtax Create(TaxWeekDayArea? weekTypes,DateTime dateCreate)
+        //{
+        //    return new TaxWeekDaysincludingtax(weekTypes, dateCreate);
+        //}
 
 
-        public bool Daysincludingtax()
-        {
+        //public bool Daysincludingtax()
+        //{
 
-            int day = GetWeekDay();
-            foreach (var weekType in WeekTypes.GetAll())
-            {
-                if(day== weekType.DatyTyps)
-                    return false;
-            }
+        //    int day = GetWeekDay();
+        //    foreach (var weekType in WeekTypes.GetAll())
+        //    {
+        //        if(day== weekType.DatyTyps)
+        //            return false;
+        //    }
 
-            return true;
+        //    return true;
               
-        }
+        //}
 
 
         private int GetWeekDay()

@@ -1,17 +1,11 @@
 ﻿
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NPOI.SS.Formula.Functions;
-using Cartax.Domain.Common.Model;
+using Library_Domain.Model;
 
 namespace Cartax.Presentation.Base
 {
-    public class BaseDataConfiguertions<T> : IEntityTypeConfiguration<T> where T : Entity
+    public class BaseDataConfiguertions<T> : IEntityTypeConfiguration<T> where T : class
     {
 
         protected  IEnumerable<T> Data;

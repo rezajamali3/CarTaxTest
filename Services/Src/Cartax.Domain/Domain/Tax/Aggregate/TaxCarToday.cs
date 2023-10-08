@@ -1,19 +1,14 @@
 ﻿
-using Cartax.Domain.Common.Model;
-using Cartax.Domain.Common.Primitives;
 using Cartax.Domain.Entites.Tax.TaxCars;
+using Library_Domain.Interface;
+using Library_Domain.Model;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cartax.Domain.Domain.Tax.Aggregate
 {
-    public class TaxCarToday : Aggregate<TaxCar>, IAggregate
-    {
-        public TaxCarToday(List<TaxCar> listcartext) : base(listcartext)
-        { }
-    }
+    //public class TaxCarToday : Aggregate<TaxCar>, IAggregate
+    //{
+    //    public TaxCarToday(List<TaxCar> listcartext) : base(listcartext)
+    //    { }
+    //}
 }

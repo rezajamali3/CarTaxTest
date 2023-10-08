@@ -1,6 +1,4 @@
 ﻿
-using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.CarTypes;
 
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Domain.Entites.Tax.TaxWeekDays;
@@ -25,18 +23,18 @@ namespace Cartax.Presentation.Configurtions
         {
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-            services.AddScoped<IAreaRipository, AreaRepository>();
-            services.AddScoped<ICarRepository, CarRepository>();
-            services.AddScoped<ICarTypesRepository, CarTaypsRepository>();
-            services.AddScoped<ICityRepository, CityRepository>();
-            services.AddScoped<ITaxCarRepository, TaxCarRepository > ();
-            services.AddScoped<ITaxLimitDayRepository , TaxLimitDayRepository > ();
-            services.AddScoped<ITaxLimitTimeRepository, TaxLimitTimeRepository > ();
-            services.AddScoped<ITaxPublicholidayRepository, TaxPublicholidayRepository>();
-            services.AddScoped<ITaxTaxLongTermRepository, TaxTaxLongTermRepository>();
-            services.AddScoped<ITaxTimeRepository, TaxTimeRepository > ();
-            services.AddScoped<ITaxWeekDayRepository, TaxWeekDayRepository > ();
-            services.AddScoped<ITaxLimitMoneyDayRepository, TaxLimitMoneyDayRepository>();
+            //services.AddScoped<IAreaRipository, AreaRepository>();
+            //services.AddScoped<ICarRepository, CarRepository>();
+            //services.AddScoped<ICarTypesRepository, CarTaypsRepository>();
+            //services.AddScoped<ICityRepository, CityRepository>();
+            //services.AddScoped<ITaxCarRepository, TaxCarRepository > ();
+            //services.AddScoped<ITaxLimitDayRepository , TaxLimitDayRepository > ();
+            //services.AddScoped<ITaxLimitTimeRepository, TaxLimitTimeRepository > ();
+            //services.AddScoped<ITaxPublicholidayRepository, TaxPublicholidayRepository>();
+            //services.AddScoped<ITaxTaxLongTermRepository, TaxTaxLongTermRepository>();
+            //services.AddScoped<ITaxTimeRepository, TaxTimeRepository > ();
+            //services.AddScoped<ITaxWeekDayRepository, TaxWeekDayRepository > ();
+            //services.AddScoped<ITaxLimitMoneyDayRepository, TaxLimitMoneyDayRepository>();
 
             return services;
         }

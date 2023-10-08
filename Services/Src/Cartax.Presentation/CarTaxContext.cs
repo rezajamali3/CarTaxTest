@@ -1,6 +1,6 @@
-﻿using Cartax.Applications.Common.Intercpter;
+﻿
+using Cartax.Applications.Common.Intercpter;
 using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
 using Cartax.Domain.Entites.Tax.TaxCars;
 using Cartax.Presentation.Data.EntitiesConfig;
 using Cartax.Presentation.Migrations.FluentConfigure;
@@ -30,11 +30,11 @@ namespace Cartax.Presentation
 
             #region You are the table 
             modelBuilder
-            .CarTypeFluntConfigure()
-            .CarFluntConfigure()
-            .CityFluntConfigure()
+            //.CarTypeFluntConfigure()
+            //.CarFluntConfigure()
+            //.CityFluntConfigure()
             .AreaFluntConfigure()
-            .TaxCarFluntConfigure()
+            //.TaxCarFluntConfigure()
             .TaxLimitMoneyDaysFluntConfigure()
             .TaxLimitTimeFluntConfigure()
             .TaxPublicholidayFluntConfigure()
@@ -45,27 +45,34 @@ namespace Cartax.Presentation
             #endregion You are the table
 
             #region Defult Data
+
             #region City
-            modelBuilder.ApplyConfiguration(new CityDataConfiguertions());
-            modelBuilder.ApplyConfiguration(new AreaDataConfiguertions());
+
+            //modelBuilder.ApplyConfiguration(new CityDataConfiguertions());
+            //modelBuilder.ApplyConfiguration(new AreaDataConfiguertions());
+
             #endregion City
 
             #region Car
-            modelBuilder.ApplyConfiguration(new CarDataConfiguertions());
-            modelBuilder.ApplyConfiguration(new CarTypeDataConfiguertions());
+            //modelBuilder.ApplyConfiguration(new CarDataConfiguertions());
+            //modelBuilder.ApplyConfiguration(new CarTypeDataConfiguertions());
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CarTaxContext).Assembly);
             #endregion Car
 
             #region Tax
-            modelBuilder.ApplyConfiguration(new TaxCarDataConfigurtion());
-            modelBuilder.ApplyConfiguration(new TaxLimitTimeDataConfigurtion());
-            modelBuilder.ApplyConfiguration(new TaxPublicholidayDataConfigurtions());
-            modelBuilder.ApplyConfiguration(new TaxTaxLongTermDataConfiguertion());
-            modelBuilder.ApplyConfiguration(new TaxTimeDataConfiguertions());
-            modelBuilder.ApplyConfiguration(new TaxWeekDayDataConfigurtions());
-            modelBuilder.ApplyConfiguration(new TaxLimitDayDateConfigurtions());
+
+
+            //modelBuilder.ApplyConfiguration(new TaxCarDataConfigurtion());
+            //modelBuilder.ApplyConfiguration(new TaxLimitTimeDataConfigurtion());
+            //modelBuilder.ApplyConfiguration(new TaxPublicholidayDataConfigurtions());
+            //modelBuilder.ApplyConfiguration(new TaxTaxLongTermDataConfiguertion());
+            //modelBuilder.ApplyConfiguration(new TaxTimeDataConfiguertions());
+            //modelBuilder.ApplyConfiguration(new TaxWeekDayDataConfigurtions());
+            //modelBuilder.ApplyConfiguration(new TaxLimitDayDateConfigurtions());
 
             #endregion tax
+
+
             #endregion Defult Data
 
 
@@ -86,7 +93,7 @@ namespace Cartax.Presentation
 
 
         public DbSet<Area> Area                          { get; set; }
-        public DbSet<Car> Car                            { get; set; }
+        //public DbSet<Car> Car                            { get; set; }
         public DbSet<City> City                          { get; set; }
         public DbSet<TaxCar>        TaxCar               { get; set; }
         public DbSet<TaxWeekDay>      TaxWeekDay         { get; set; }

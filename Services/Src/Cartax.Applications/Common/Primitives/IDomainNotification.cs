@@ -1,4 +1,5 @@
-﻿using Cartax.Domain.Common.Primitives;
+﻿
+using Library_Domain.Interface;
 using MediatR;
 using System;
 using System.Collections.Generic;

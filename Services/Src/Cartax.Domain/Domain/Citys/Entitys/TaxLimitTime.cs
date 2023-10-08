@@ -1,14 +1,10 @@
 ﻿
-using Cartax.Domain.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Library_Domain.Model;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxLimitTime : Entity
+    public class TaxLimitTime : Entity<int?>
     {
 
 
@@ -28,7 +24,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         {
             return new TaxLimitTime(null)
             {
-                Id = id,
+              
                 Time = time,
                 IsActive = true,
                 IdArea = idArea

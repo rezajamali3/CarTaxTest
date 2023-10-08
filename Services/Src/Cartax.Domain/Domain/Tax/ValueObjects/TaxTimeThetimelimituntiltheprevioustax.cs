@@ -1,5 +1,6 @@
-﻿using Cartax.Domain.Common.Model;
+﻿
 using Cartax.Domain.Entites.Tax.TaxCars;
+using Library_Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,25 +5,25 @@ using Cartax.Presentation.Base;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {
-    public class TaxLimitDayDateConfigurtions : BaseDataConfiguertions<TaxLimitDay>
-    {
+    //public class TaxLimitDayDateConfigurtions : BaseDataConfiguertions<TaxLimitDay>
+    //{
 
-        public TaxLimitDayDateConfigurtions()
-        {
+    //    public TaxLimitDayDateConfigurtions()
+    //    {
 
-            setData();
-        }
+    //        setData();
+    //    }
 
-        private void setData()
-        {
-            Data = new TaxLimitDay[]
-            {
+    //    private void setData()
+    //    {
+    //        Data = new TaxLimitDay[]
+    //        {
 
-                TaxLimitDay.Create(1,new TimeSpan(0,59,0),1),
+    //            TaxLimitDay.Create(1,new TimeSpan(0,59,0),1),
                 
 
-            };
-        }
-    }
+    //        };
+    //    }
+    //}
 }
 

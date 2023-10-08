@@ -10,10 +10,9 @@ using Cartax.Applications.DTO.TaxPublicholidays;
 using Cartax.Applications.DTO.TaxTimes;
 using Cartax.Applications.DTO.TaxWeekDay;
 using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.CarTypes;
+//using Cartax.Domain.Entites.Cars;
+//using Cartax.Domain.Entites.CarTypes;
 using Cartax.Domain.Entites.Tax.TaxCars;
-
 
 namespace Cartax.Applications.Common.Base
 {
@@ -58,21 +57,21 @@ namespace Cartax.Applications.Common.Base
 
         public void CarProfile()
         {
-            CreateMap<Car, CarDTO>().ReverseMap();
+            //CreateMap<Car, CarDTO>().ReverseMap();
 
-            CreateMap<Car, CarCreateDTO>().ReverseMap();
-            CreateMap<Car, CarDeleteDTO>().ReverseMap();
-            CreateMap<Car, CarUpdateDTO>().ReverseMap();
+            //CreateMap<Car, CarCreateDTO>().ReverseMap();
+            //CreateMap<Car, CarDeleteDTO>().ReverseMap();
+            //CreateMap<Car, CarUpdateDTO>().ReverseMap();
         }
 
 
         public void CarTypesProfile()
         {
-            CreateMap<CarType, CarTypesDTO>().ReverseMap();
+            //CreateMap<CarType, CarTypesDTO>().ReverseMap();
 
-            CreateMap<CarType, CarTypesCreateDTO>().ReverseMap();
-            CreateMap<CarType, CarTypesDeleteDTO>().ReverseMap();
-            CreateMap<CarType, CarTypesUpdateDTO>().ReverseMap();
+            //CreateMap<CarType, CarTypesCreateDTO>().ReverseMap();
+            //CreateMap<CarType, CarTypesDeleteDTO>().ReverseMap();
+            //CreateMap<CarType, CarTypesUpdateDTO>().ReverseMap();
         }
 
         public void TaxCarProfile()

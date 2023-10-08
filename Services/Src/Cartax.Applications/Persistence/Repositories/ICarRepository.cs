@@ -1,9 +1,9 @@
-﻿using Cartax.Domain.Entites.Cars;
+﻿//using Cartax.Domain.Entites.Cars;
 
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface ICarRepository : IAsyncRepository<Car>
-    {
-    }
+    //public interface ICarRepository : IAsyncRepository<Car>
+    //{
+    //}
 }

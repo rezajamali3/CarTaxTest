@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Castle.DynamicProxy;
 using IInterceptor = Castle.DynamicProxy.IInterceptor;
-using Cartax.Domain.Common.Primitives;
+
 
 
 

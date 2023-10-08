@@ -1,15 +1,12 @@
 ﻿
-using Cartax.Domain.Common.Model;
+
 using Cartax.Domain.Domain.Citys.Entitys;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library_Domain.Model;
+
 
 namespace Cartax.Domain.Domain.Tax.Aggregate
 {
-    public class TaxTaxLongTermArea : Aggregate<TaxTaxLongTerm>
-    {
-    }
+    //public class TaxTaxLongTermArea : Aggregate<TaxTaxLongTerm>
+    //{
+    //}
 }

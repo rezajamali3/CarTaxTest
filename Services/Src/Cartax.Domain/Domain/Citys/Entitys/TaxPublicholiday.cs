@@ -1,5 +1,6 @@
 ﻿
-using Cartax.Domain.Common.Model;
+
+using Library_Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,25 +10,25 @@ using System.Threading.Tasks;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxPublicholiday : Entity
+    public class TaxPublicholiday : Entity<int?>
     {
         public DateTime? Day { get; private set; }
         public bool? IsActive { get; private set; }
         public int? IdArea { get; private set; }
 
-        private TaxPublicholiday(int? id) : base(id)
+        private TaxPublicholiday(int id) : base(id)
         {
         }
 
-        private TaxPublicholiday(int? id, DateTime day, int? idArea) : base(id)
+        private TaxPublicholiday(int id, DateTime day, int? idArea) : base(id)
         {
-            Id = id;
+          
             Day = day;
             IsActive = true;
             IdArea = idArea;
         }
 
-        public static TaxPublicholiday Create(int? id,DateTime day, int? idArea)
+        public static TaxPublicholiday Create(int id,DateTime day, int? idArea)
         {
             return new TaxPublicholiday(id, day,  idArea);
         }

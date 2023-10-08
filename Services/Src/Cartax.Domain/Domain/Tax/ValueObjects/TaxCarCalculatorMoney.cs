@@ -1,82 +1,79 @@
 ﻿
-using Cartax.Domain.Common.Model;
+
 using Cartax.Domain.Domain.Tax.Aggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library_Domain.Model;
+
 
 namespace Cartax.Domain.Entites.Tax.TaxCars
 {
     public class TaxCarCalculatorMoney : ValueObject
     {
 
-        public TaxCarToday TaxCarToday { get; private set; }
-        public decimal? LimaitTaxToday { get; private set; }
-        public decimal? TaxNow { get; private set; }
+        //public TaxCarToday TaxCarToday { get; private set; }
+        //public decimal? LimaitTaxToday { get; private set; }
+        //public decimal? TaxNow { get; private set; }
 
 
-        public TaxCarCalculatorMoney(TaxCarToday taxCarToday, decimal limaitTaxToday, decimal? taxNow)
-        {
-            TaxCarToday = taxCarToday;
-            LimaitTaxToday = limaitTaxToday;
-            TaxNow = taxNow;
-        }
+        //public TaxCarCalculatorMoney(TaxCarToday taxCarToday, decimal limaitTaxToday, decimal? taxNow)
+        //{
+        //    TaxCarToday = taxCarToday;
+        //    LimaitTaxToday = limaitTaxToday;
+        //    TaxNow = taxNow;
+        //}
 
-        public static TaxCarCalculatorMoney Create(TaxCarToday taxCarToday, decimal limaitTaxToday, decimal? taxNow)
-        {
-            return new TaxCarCalculatorMoney(taxCarToday, limaitTaxToday, taxNow);
-        }
-
-
-        public decimal? CalculatorMoney()
-        {
-
-            decimal? SumTax = 0;
-
-            if (LimaitTaxToday == 0)
-                return TaxNow;
-
-            if(TaxCarToday.GetAll() is not null)
-                SumTax = SumTaxTody();
-
-            return Calculator(SumTax);
-
-        }
-
-        private decimal? Calculator(decimal? SumTax)
-        {
-            if ((SumTax + TaxNow) <= LimaitTaxToday)
-                return ( TaxNow);
+        //public static TaxCarCalculatorMoney Create(TaxCarToday taxCarToday, decimal limaitTaxToday, decimal? taxNow)
+        //{
+        //    return new TaxCarCalculatorMoney(taxCarToday, limaitTaxToday, taxNow);
+        //}
 
 
-            decimal? overMoney = (SumTax + TaxNow) - LimaitTaxToday;
+        //public decimal? CalculatorMoney()
+        //{
 
-            return (TaxNow- overMoney); 
-        }
+        //    decimal? SumTax = 0;
 
-        private bool OverFlowTax(decimal? SumTax)
-        {
-            decimal OverFlow = (decimal)(LimaitTaxToday - SumTax);
+        //    if (LimaitTaxToday == 0)
+        //        return TaxNow;
 
-            return OverFlow >= 0;
-        }
+        //    if(TaxCarToday.GetAll() is not null)
+        //        SumTax = SumTaxTody();
 
-        private decimal? SumTaxTody()
-        {
+        //    return Calculator(SumTax);
 
-            decimal? sumtax = 0;
+        //}
 
-            foreach (var item in TaxCarToday.GetAll())
-            {
-                sumtax += item.Tax;
-            }
+        //private decimal? Calculator(decimal? SumTax)
+        //{
+        //    if ((SumTax + TaxNow) <= LimaitTaxToday)
+        //        return ( TaxNow);
 
 
-            return sumtax;
+        //    decimal? overMoney = (SumTax + TaxNow) - LimaitTaxToday;
 
-        }
+        //    return (TaxNow- overMoney); 
+        //}
+
+        //private bool OverFlowTax(decimal? SumTax)
+        //{
+        //    decimal OverFlow = (decimal)(LimaitTaxToday - SumTax);
+
+        //    return OverFlow >= 0;
+        //}
+
+        //private decimal? SumTaxTody()
+        //{
+
+        //    decimal? sumtax = 0;
+
+        //    foreach (var item in TaxCarToday.GetAll())
+        //    {
+        //        sumtax += item.Tax;
+        //    }
+
+
+        //    return sumtax;
+
+        //}
 
         public override IEnumerable<object> GetAtomicValues()
         {

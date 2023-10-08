@@ -1,16 +1,9 @@
 ﻿
-using Cartax.Domain.Common.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library_Domain.Model;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxLimitMoneyDay : Entity
+    public class TaxLimitMoneyDay : Entity<int>
     {
         private bool? _isActive;
 
@@ -21,14 +14,14 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         public bool? IsActive => _isActive;
 
-        private TaxLimitMoneyDay(int? id) : base(id)
+        private TaxLimitMoneyDay(int id) : base(id)
         {
 
         }
 
-        private TaxLimitMoneyDay(int? id, decimal? tax, int? idArea) : base(id)
+        private TaxLimitMoneyDay(int id, decimal? tax, int? idArea) : base(id)
         {
-            Id = id;
+           
             Tax = tax;
 
             IdArea = idArea;

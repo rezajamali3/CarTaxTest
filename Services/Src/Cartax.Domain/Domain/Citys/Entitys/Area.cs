@@ -1,12 +1,12 @@
 ﻿using System;
-using Cartax.Domain.Common.Model;
-using Cartax.Domain.Entites.Tax.TaxCars;
 
+using Cartax.Domain.Entites.Tax.TaxCars;
+using Library_Domain.Model;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
 
-    public class Area : Entity
+    public class Area : Entity<int?>
     {
         public string? AreaName { get; set; }
         public string? AreaCode { get; set; }

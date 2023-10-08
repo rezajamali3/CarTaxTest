@@ -1,5 +1,4 @@
-﻿using Cartax.Domain.Entites.Cars;
-using Cartax.Domain.Entites.CarTypes;
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -9,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface ICarTypesRepository : IAsyncRepository<CarType>
-    {
+    //public interface ICarTypesRepository : IAsyncRepository<CarType>
+    //{
 
-    }
+    //}
 }

@@ -1,5 +1,4 @@
 ﻿using Cartax.Applications.Common.Base;
-using Cartax.Domain.Common.Primitives;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Common.Primitives
 {
-    public interface IDomainNotificationHandler<IDomainEvent> : INotificationHandler<IDomainEvent>
-    where IDomainEvent : IDomainNotification
-    { 
-    }
+    //public interface IDomainNotificationHandler<IDomainEvent> : INotificationHandler<IDomainEvent>
+    //where IDomainEvent : IDomainNotification
+    //{ 
+    //}
 }

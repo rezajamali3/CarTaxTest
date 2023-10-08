@@ -15,62 +15,62 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 {
     public static class CityFlunt
     {
-        public static ModelBuilder CityFluntConfigure(this ModelBuilder modelBuilder)
-        {
+        //public static ModelBuilder CityFluntConfigure(this ModelBuilder modelBuilder)
+        //{
 
-            modelBuilder.Entity(typeof(City), b =>
-            {
-                b.Property<int?>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
+        //    modelBuilder.Entity(typeof(City), b =>
+        //    {
+        //        b.Property<int?>("Id")
+        //            .ValueGeneratedOnAdd()
+        //            .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+        //        SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
-                b.Property<string>("CityCode")
-                    .HasColumnType("nvarchar(max)");
+        //        b.Property<string>("CityCode")
+        //            .HasColumnType("nvarchar(max)");
 
-                b.Property<string>("CityName")
-                    .HasColumnType("nvarchar(max)");
+        //        b.Property<string>("CityName")
+        //            .HasColumnType("nvarchar(max)");
 
-                b.HasKey("Id");
+        //        b.HasKey("Id");
 
-                b.ToTable("City");
+        //        b.ToTable("City");
 
-                b.HasData(
-                    new
-                    {
-                        Id = 1,
-                        CityCode = "FitNet10",
-                        CityName = "Gothenburg"
-                    },
-                    new
-                    {
-                        Id = 2,
-                        CityCode = "FitNet45",
-                        CityName = "Eroica"
-                    },
-                    new
-                    {
-                        Id = 3,
-                        CityCode = "FitNet48",
-                        CityName = "Avesta"
-                    });
-            });
-
-
-
-            modelBuilder.Entity<City>()
-           .HasMany(c => c.Areas)
-           .WithOne(a => a.City)
-           .HasForeignKey(a => a.idCity);
+        //        b.HasData(
+        //            new
+        //            {
+        //                Id = 1,
+        //                CityCode = "FitNet10",
+        //                CityName = "Gothenburg"
+        //            },
+        //            new
+        //            {
+        //                Id = 2,
+        //                CityCode = "FitNet45",
+        //                CityName = "Eroica"
+        //            },
+        //            new
+        //            {
+        //                Id = 3,
+        //                CityCode = "FitNet48",
+        //                CityName = "Avesta"
+        //            });
+        //    });
 
 
-            modelBuilder.Entity<City>()
-         .HasMany(c => c.CarTypes)
-         .WithOne(a => a.City)
-         .HasForeignKey(a => a.Idcity);
 
-            return modelBuilder;
-        }
+        //    modelBuilder.Entity<City>()
+        //   .HasMany(c => c.Areas)
+        //   .WithOne(a => a.City)
+        //   .HasForeignKey(a => a.idCity);
+
+
+        //    modelBuilder.Entity<City>()
+        // .HasMany(c => c.CarTypes)
+        // .WithOne(a => a.City)
+        // .HasForeignKey(a => a.Idcity);
+
+        //    return modelBuilder;
+        //}
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface ITaxLimitTimeRepository : IAsyncRepository<TaxLimitTime>
-    {
-    }
+    //public interface ITaxLimitTimeRepository : IAsyncRepository<TaxLimitTime>
+    //{
+    //}
 }

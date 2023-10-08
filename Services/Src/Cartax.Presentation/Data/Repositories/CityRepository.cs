@@ -10,11 +10,9 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public class CityRepository : RepositoryBase<City>, ICityRepository
-    {
-        public CityRepository(CarTaxContext dbContext) : base(dbContext)
-        {
-
-        }
-    }
+    //public class CityRepository : RepositoryBase<City>, ICityRepository
+    //{
+    //    public CityRepository(CarTaxContext dbContext) : base(dbContext)
+    //    { }
+    //}
 }

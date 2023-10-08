@@ -8,7 +8,7 @@ namespace Cartax.Domain.Common.Enume
 {
     public enum ErrorTypes
     {
-        None = 0,
+        None      = 0,
         NullValue = 1,
         Create = 2,
         Delete = 3,

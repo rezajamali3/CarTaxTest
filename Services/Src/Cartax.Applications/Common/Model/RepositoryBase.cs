@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 using Cartax.Applications.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Cartax.Domain.Common.Model;
+using Library_Domain.Model;
 
 namespace Cartax.Applications.Common.Base
 {
-    public class RepositoryBase<T> : IAsyncRepository<T> where T : Entity
+    public class RepositoryBase<T> : IAsyncRepository<T> where T : Entity<T>
     {
         private readonly DbSet<T> _dbSet;
         private readonly DbContext dbContext;
@@ -27,8 +27,8 @@ namespace Cartax.Applications.Common.Base
 
             int result = await dbContext.SaveChangesAsync();
             if (result != 0)
-                return (int)entity.Id;
-            return (int)entity.Id;
+                return entity.Id.GetHashCode();
+            return entity.Id.GetHashCode();
 
         }
 
@@ -43,7 +43,7 @@ namespace Cartax.Applications.Common.Base
 
         public Task<T> GetidAsync(int id)
         {
-            return _dbSet.Where(a => a.Id == id).FirstOrDefaultAsync();
+            return _dbSet.Where(a => a.Id.GetHashCode() == id).FirstOrDefaultAsync();
         }
 
         public async Task<T?> GetAsync(Expression<Func<T, bool>> expression)

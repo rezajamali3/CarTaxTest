@@ -27,7 +27,7 @@ namespace Cartax.Presentation.Configurtions
                         bool areMigrationsPending = appContext.AreMigrationsPending();
                         bool hasMigrationsApplied = appContext.HasMigrationsApplied();
 
-                        if (areMigrationsPending)
+                        if (!areMigrationsPending)
                         {
                             appContext.Database.Migrate();
                             Console.WriteLine("There are pending migrations.");

@@ -1,5 +1,5 @@
 ﻿
-using Cartax.Domain.Common.Model;
+using Library_Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
-    public class TaxWeekDay : Entity
+    public class TaxWeekDay : Entity<int?>
     {
         public TaxWeekDay(int? id) : base(id)
         {
@@ -17,7 +17,7 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         public TaxWeekDay(int? id, int datyTyps, int taxDays, bool isActive, int? idArea) : base(id)
         {
-            Id = id;
+        
             DatyTyps = datyTyps;
             TaxDays = taxDays;
             IsActive = isActive;

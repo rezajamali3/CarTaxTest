@@ -12,11 +12,11 @@ using Cartax.Domain.Domain.Citys.Entitys;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public class TaxWeekDayRepository : RepositoryBase<TaxWeekDay>, ITaxWeekDayRepository
-    {
-        public TaxWeekDayRepository(CarTaxContext dbContext) : base(dbContext)
-        {
+    //public class TaxWeekDayRepository : RepositoryBase<TaxWeekDay>, ITaxWeekDayRepository
+    //{
+    //    public TaxWeekDayRepository(CarTaxContext dbContext) : base(dbContext)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }

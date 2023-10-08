@@ -1,6 +1,5 @@
 ﻿
 using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;
@@ -10,26 +9,26 @@ using System.Threading.Tasks;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {
-    public class TaxLimitTimeDataConfigurtion : BaseDataConfiguertions<TaxLimitTime>
-    {
+    //public class TaxLimitTimeDataConfigurtion : BaseDataConfiguertions<TaxLimitTime>
+    //{
 
-        public TaxLimitTimeDataConfigurtion()
-        {
+    //    public TaxLimitTimeDataConfigurtion()
+    //    {
 
-            setData();
-        }
+    //        setData();
+    //    }
 
-        private void setData()
-        {
-            Data = new TaxLimitTime[]
-            {
+    //    private void setData()
+    //    {
+    //        Data = new TaxLimitTime[]
+    //        {
 
-                TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),1),
+    //            TaxLimitTime.Create(1,TimeSpan.FromMinutes(60),1),
                  
 
-            };
-        }
-    }
+    //        };
+    //    }
+    //}
 }
 
 

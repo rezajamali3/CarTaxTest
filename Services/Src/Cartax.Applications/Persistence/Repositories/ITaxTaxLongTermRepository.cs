@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface ITaxTaxLongTermRepository : IAsyncRepository<TaxTaxLongTerm>
-    {
+    //public interface ITaxTaxLongTermRepository : IAsyncRepository<TaxTaxLongTerm>
+    //{
 
-    }
+    //}
 }

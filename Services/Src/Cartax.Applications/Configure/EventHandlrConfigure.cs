@@ -1,12 +1,8 @@
 ﻿using Cartax.Applications.Common.Base;
 using Cartax.Applications.Common.Intercpter;
-using Cartax.Domain.Common.Primitives;
+using Library_Domain.Interface;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Cartax.Applications.Configure
 {

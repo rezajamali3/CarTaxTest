@@ -1,6 +1,5 @@
 ﻿using Cartax.Applications.Common.Base;
 using Cartax.Domain.Domain.Citys.Entitys;
-using Cartax.Domain.Entites.Cars;
 using Cartax.Presentation;
 using Cartax.Presentation.Base;
 using System;
@@ -11,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public class TaxLimitMoneyDayRepository : RepositoryBase<TaxLimitMoneyDay>, ITaxLimitMoneyDayRepository
-    {
-        public TaxLimitMoneyDayRepository(CarTaxContext dbContext) : base(dbContext)
-        {
+    //public class TaxLimitMoneyDayRepository : RepositoryBase<TaxLimitMoneyDay>, ITaxLimitMoneyDayRepository
+    //{
+    //    public TaxLimitMoneyDayRepository(CarTaxContext dbContext) : base(dbContext)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }

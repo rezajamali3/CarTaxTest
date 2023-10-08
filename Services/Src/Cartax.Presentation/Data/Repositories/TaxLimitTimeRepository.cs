@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    internal class TaxLimitTimeRepository : RepositoryBase<TaxLimitTime>, ITaxLimitTimeRepository
-    {
-        public TaxLimitTimeRepository(CarTaxContext dbContext) : base(dbContext)
-        {
+    //public class TaxLimitTimeRepository : RepositoryBase<TaxLimitTime>, ITaxLimitTimeRepository
+    //{
+    //    public TaxLimitTimeRepository(CarTaxContext dbContext) : base(dbContext)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 }

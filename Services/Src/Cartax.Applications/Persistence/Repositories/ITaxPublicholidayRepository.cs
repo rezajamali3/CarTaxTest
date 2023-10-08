@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    public interface ITaxPublicholidayRepository : IAsyncRepository<TaxPublicholiday>
-    {
+    //public interface ITaxPublicholidayRepository : IAsyncRepository<TaxPublicholiday>
+    //{
 
-    }
+    //}
 }

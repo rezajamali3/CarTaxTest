@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Cartax.Domain\Cartax.Domain.csproj" />
-    <ProjectReference Include="..\..\Cartax.WebAPI\Cartax.WebAPI.csproj" />
   </ItemGroup>
 
 </Project>
