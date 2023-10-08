@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿
 using Cartax.Domain.Domain.Citys.Entitys;
+=======
+﻿using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Tax.TaxLongTerms;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 using Cartax.Presentation.Base;
 using System;
 using System.Collections.Generic;

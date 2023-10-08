@@ -18,28 +18,37 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
       
         public decimal? Tax { get; private set; }
 
-        public int? Idarea { get; private set; }
-        public int? Idcar { get; private set; }
+        public Area Area { get; private set; }
+        public Car Car { get; private set; }
 
         private TaxCar(int id) : base(id)
         {}
 
+<<<<<<< HEAD
         private TaxCar(int id, DateTime createDate, int area, int car, decimal? tax) : base(id)
+=======
+        private TaxCar(int? id, DateTime createDate, Area area, Car car, decimal? tax) : base(id)
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
         {
             CreateDate = createDate;
-            Idcar = car;
-            Idarea = area;
+            this.Car = car;
+            this.Area = area;
             Tax = tax;
         }
 
 
+<<<<<<< HEAD
         public static TaxCar Create(int id, DateTime createDate, string areaName, int idcar, int area,decimal? tax)
+=======
+        public static TaxCar Create(int? id, DateTime createDate, string areaName, Car car, Area area, decimal? tax)
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
         {
-            var taxCar = new TaxCar(id, createDate, area, idcar,tax);
+            var taxCar = new TaxCar(id, createDate, area, car, tax);
             return taxCar;
         }
 
 
+<<<<<<< HEAD
 
         public Area Area { get;  }
 
@@ -47,5 +56,7 @@ namespace Cartax.Domain.Entites.Tax.TaxCars
      
 
 
+=======
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
     }
 }

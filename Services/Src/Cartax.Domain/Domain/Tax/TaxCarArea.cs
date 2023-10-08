@@ -1,5 +1,6 @@
 ﻿
 
+
 using Cartax.Domain.Common.Errors;
 
 using Cartax.Domain.Domain.Citys.Entitys;

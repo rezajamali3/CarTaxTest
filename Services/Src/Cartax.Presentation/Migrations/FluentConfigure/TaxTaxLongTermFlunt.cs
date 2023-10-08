@@ -16,35 +16,30 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder TaxTaxLongTermFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxTaxLongTerm), b =>
+            modelBuilder.Entity<TaxTaxLongTerm>(x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<DateTime?>("DayEnd")
+                x.Property<DateTime?>(p => p.DayEnd)
                     .HasColumnType("datetime2");
 
-                b.Property<DateTime?>("DayStart")
+                x.Property<DateTime?>(p => p.DayStart)
                     .HasColumnType("datetime2");
 
-                b.Property<int?>("IdArea")
-                    .HasColumnType("int");
+            
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxTaxLongTerm");
+                x.ToTable("TaxTaxLongTerm");
 
                
             });
 
-            modelBuilder.Entity<TaxTaxLongTerm>()
-        .HasOne(a => a.Area)
-        .WithOne(b => b.TaxTaxLongTerm)
-        .HasForeignKey<TaxTaxLongTerm>(c => c.IdArea)
-          .OnDelete(DeleteBehavior.SetNull);
+           
 
 
             return modelBuilder;

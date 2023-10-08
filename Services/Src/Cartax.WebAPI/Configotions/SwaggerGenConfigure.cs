@@ -12,6 +12,8 @@ namespace Cartax.WebAPI.Configotions
     {
         public static IServiceCollection SwaggerGenConfig(this IServiceCollection services)
         {
+
+
             services.AddSwaggerGen(options =>
             {
                 options.SchemaFilter<TimeSpanSchemaFilter>();

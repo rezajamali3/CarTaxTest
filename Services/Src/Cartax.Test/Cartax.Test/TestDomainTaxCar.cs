@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 //using Cartax.Domain.Common.Enume;
 //using Cartax.Domain.Domain.Citys.Entitys;
 //using Cartax.Domain.Entites.CarTypes;
@@ -31,6 +32,13 @@
 
 //        private const bool isActive_Yes = true;
 //        private const bool isActive_No = false;
+=======
+using Cartax.Domain.Entites.CarTypes;
+using Cartax.Domain.Entites.Tax.TaxCars;
+using Cartax.Domain.Entites.Tax.TaxTimes;
+using Cartax.Domain.Entites.Tax.TaxWeekDays;
+using Cartax.Domain.Sharid.Enume;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 
 //        private const int NoError = 0;
@@ -314,6 +322,7 @@
 //        {
 //            // Arrange
 
+<<<<<<< HEAD
 //            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
             
 //            List<TaxCar> listTaxCar = new()
@@ -733,4 +742,423 @@
 //    }
 
 //}
+=======
+            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidenterAndExit = 60;
+            bool Holaday = true;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidenterAndExit,
+                Holaday ,
+                HoladayNext ,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal( result.error.idCode , (int) ErrorDomainTypes.HolidaysToday);
+            Assert.False( result.IsSuccess );
+        }
+
+
+        [Fact]
+        public async Task text_Domain_TaxCar_HolidaysTomorrow()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidenterAndExit = 60;
+            bool Holaday = false;
+            bool HoladayNext = true;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidenterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(result.error.idCode, (int)ErrorDomainTypes.HolidaysTomorrow);
+            Assert.False(result.IsSuccess);
+        }
+
+
+
+        [Fact]
+        public async Task text_Domain_TaxCar_TaxCarlastTodayNull()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidenterAndExit = 60;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidenterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotEqual(result.error.idCode, (int)ErrorDomainTypes.TaxCarlastTodayNull);
+            Assert.True(result.IsSuccess);
+        }
+
+
+        [Fact]
+        public async Task text_Domain_TaxCar_TaxCarlastTaxNotLimait()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidEnterAndExit = 0;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidEnterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotEqual(result.error.idCode, (int)ErrorDomainTypes.TaxCarlastTaxNotLimait);
+            Assert.True(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task text_Domain_TaxCar_TaxCarlastTodayNotContanTax()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry, idCarTyps, idCity, "Noramal", isActive_Yes, isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidEnterAndExit = 0;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidEnterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotEqual(result.error.idCode, (int)ErrorDomainTypes.TaxCarlastTodayNotContanTax);
+            Assert.True(result.IsSuccess);
+        }
+
+        [Fact]
+        public async Task text_Domain_TaxCar_CarTypesTaxTimeNull()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry,
+                idCarTyps,
+                idCity,
+                "Noramal",
+                isActive_Yes,
+                isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 50;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidEnterAndExit = 0;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidEnterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                null,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(result.error.idCode, (int)ErrorDomainTypes.CarTypesTaxTimeNull);
+            Assert.False(result.IsSuccess);
+
+
+        }
+
+        [Fact]
+        public async Task text_Domain_TaxCar_LimaitTaxTodayZero()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry,
+                idCarTyps,
+                idCity,
+                "Noramal",
+                isActive_Yes,
+                isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 0;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidEnterAndExit = 10;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidEnterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(result.error.idCode, (int)ErrorDomainTypes.LimaitTaxTodayZero);
+            Assert.True(result.IsSuccess);
+
+
+        }
+
+
+        [Fact]
+        public async Task text_Domain_TaxCar_Todaystaxceiling()
+        {
+            // Arrange
+
+            var cartype = CarType.Create(idPublicEntry,
+                idCarTyps,
+                idCity,
+                "Noramal",
+                isActive_Yes,
+                isTax_Yes);
+            List<TaxCar> listTaxCar = new()
+            {
+              TaxCar.Create(idPublicEntry  ,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax1),
+              TaxCar.Create(idPublicEntry_2,new DateTime(2013,2,1,10,15,30)," Rj Soft ",idCar,idArea,Tax2)
+            };
+            decimal taxCarTody = 3;
+
+            List<TaxWeekDay> taxWeekDays = new()
+            {
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[3],Tax2,isActive_Yes,idArea),
+                 TaxWeekDay.Create(idPublicEntry_2,WeekDay[4],Tax2,isActive_Yes,idArea)
+            };
+
+            int taxidEnterAndExit = 10;
+            bool Holaday = false;
+            bool HoladayNext = false;
+            bool taxtaxLongTime = false;
+
+            TaxTime taxTime = TaxTime.Create(idPublicEntry, new TimeSpan(10, 11, 12), new TimeSpan(10, 11, 12), idArea, Tax1);
+
+            var taxCarResult = TaxCarArea
+                .Create(
+                cartype,
+                listTaxCar,
+                taxCarTody,
+                taxWeekDays,
+                taxidEnterAndExit,
+                Holaday,
+                HoladayNext,
+                taxtaxLongTime,
+                taxTime,
+                dateCreate
+                );
+
+            // Act
+            var result = taxCarResult.TaxCarAreaContract();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(result.error.idCode, (int)ErrorDomainTypes.Todaystaxceiling);
+            Assert.False(result.IsSuccess);
+
+
+        }
+
+    }
+
+}
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
