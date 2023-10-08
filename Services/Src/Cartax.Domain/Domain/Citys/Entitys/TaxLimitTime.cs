@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿
 
 using Library_Domain.Model;
+=======
+﻿using Cartax.Domain.Common.Model;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
@@ -9,26 +13,28 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
 
         public TimeSpan? Time { get; private set; }
-
-        public int? IdArea { get; private set; }
+        public City City { get; private set; }
         public bool? IsActive { get; private set; }
 
-
-
-
+        
         private TaxLimitTime(int? id) : base(id)
         {
         }
 
-        public static TaxLimitTime Create(int? id, TimeSpan? time, int? idArea)
+        public static TaxLimitTime Create(int? id, TimeSpan? time, City city)
         {
-            return new TaxLimitTime(null)
+
+            return new TaxLimitTime(id)
             {
+<<<<<<< HEAD
               
+=======
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
                 Time = time,
                 IsActive = true,
-                IdArea = idArea
+                City = city
             };
+
         }
 
         public void Deactivate()
@@ -41,6 +47,6 @@ namespace Cartax.Domain.Domain.Citys.Entitys
             IsActive = true;
         }
 
-        public Area Area { get; }
+      
     }
 }

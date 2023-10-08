@@ -25,6 +25,7 @@ namespace Cartax.Presentation.Migrations
             modelBuilder.Entity("Cartax.Domain.Entites.Areas.Area", b =>
                 {
                     b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
@@ -35,14 +36,9 @@ namespace Cartax.Presentation.Migrations
                     b.Property<string>("AreaName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("idCity")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("idCity");
-
-                    b.ToTable("Area", (string)null);
+                    b.ToTable("Area");
 
                     b.HasData(
                         new
@@ -94,9 +90,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Idcity");
-
-                    b.ToTable("CarType", (string)null);
+                    b.ToTable("CarType");
 
                     b.HasData(
                         new
@@ -167,17 +161,14 @@ namespace Cartax.Presentation.Migrations
 
                     b.Property<string>("CarName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("IdCarType")
-                        .IsRequired()
+                    b.Property<int>("IdCarType")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCarType");
-
-                    b.ToTable("Car", (string)null);
+                    b.ToTable("Car");
 
                     b.HasData(
                         new
@@ -240,7 +231,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("City", (string)null);
+                    b.ToTable("City");
 
                     b.HasData(
                         new
@@ -285,11 +276,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Idarea");
-
-                    b.HasIndex("Idcar");
-
-                    b.ToTable("TaxCar", (string)null);
+                    b.ToTable("TaxCar");
                 });
 
             modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLimitDays.TaxLimitDay", b =>
@@ -300,32 +287,18 @@ namespace Cartax.Presentation.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
-                    b.Property<int?>("IdArea")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
-
                     b.Property<TimeSpan?>("Time")
                         .HasColumnType("time");
 
                     b.HasKey("Id");
 
                     b.ToTable("TaxLimitDay");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IdArea = 1,
-                            IsActive = true,
-                            Time = new TimeSpan(0, 0, 59, 0, 0)
-                        });
                 });
 
             modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLimitMoneyDays.TaxLimitMoneyDay", b =>
                 {
                     b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
@@ -338,11 +311,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdArea")
-                        .IsUnique()
-                        .HasFilter("[IdArea] IS NOT NULL");
-
-                    b.ToTable("TaxLimitMoneyDay", (string)null);
+                    b.ToTable("TaxLimitMoneyDay");
 
                     b.HasData(
                         new
@@ -356,33 +325,22 @@ namespace Cartax.Presentation.Migrations
             modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLimitTimes.TaxLimitTime", b =>
                 {
                     b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
-
-                    b.Property<int?>("IdArea")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
 
                     b.Property<TimeSpan?>("Time")
                         .HasColumnType("time");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdArea")
-                        .IsUnique()
-                        .HasFilter("[IdArea] IS NOT NULL");
-
-                    b.ToTable("TaxLimitTime", (string)null);
+                    b.ToTable("TaxLimitTime");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            IdArea = 1,
-                            IsActive = true,
                             Time = new TimeSpan(0, 1, 0, 0, 0)
                         });
                 });
@@ -404,16 +362,9 @@ namespace Cartax.Presentation.Migrations
                     b.Property<int?>("IdArea")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("IdArea")
-                        .IsUnique()
-                        .HasFilter("[IdArea] IS NOT NULL");
-
-                    b.ToTable("TaxTaxLongTerm", (string)null);
+                    b.ToTable("TaxTaxLongTerm");
 
                     b.HasData(
                         new
@@ -421,8 +372,7 @@ namespace Cartax.Presentation.Migrations
                             Id = 1,
                             DayEnd = new DateTime(2013, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DayStart = new DateTime(2013, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IdArea = 1,
-                            IsActive = true
+                            IdArea = 1
                         });
                 });
 
@@ -437,22 +387,18 @@ namespace Cartax.Presentation.Migrations
                     b.Property<DateTime?>("Day")
                         .HasColumnType("Date");
 
-                    b.Property<int?>("IdArea")
-                        .HasColumnType("int");
-
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("TaxPublicholiday", (string)null);
+                    b.ToTable("TaxPublicholiday");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Day = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Local),
-                            IdArea = 1,
+                            Day = new DateTime(2023, 9, 14, 9, 2, 20, 78, DateTimeKind.Local).AddTicks(9287),
                             IsActive = true
                         });
                 });
@@ -479,7 +425,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TaxTime", (string)null);
+                    b.ToTable("TaxTime");
 
                     b.HasData(
                         new
@@ -583,7 +529,7 @@ namespace Cartax.Presentation.Migrations
                     b.Property<int>("DatyTyps")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdArea")
+                    b.Property<int>("IdArea")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
@@ -594,9 +540,7 @@ namespace Cartax.Presentation.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdArea");
-
-                    b.ToTable("TaxWeekDay", (string)null);
+                    b.ToTable("TaxWeekDay");
 
                     b.HasData(
                         new
@@ -615,125 +559,6 @@ namespace Cartax.Presentation.Migrations
                             IsActive = true,
                             TaxDays = 10
                         });
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Areas.Area", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Citys.City", "City")
-                        .WithMany("Areas")
-                        .HasForeignKey("idCity");
-
-                    b.Navigation("City");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.CarTypes.CarType", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Citys.City", "City")
-                        .WithMany("CarTypes")
-                        .HasForeignKey("Idcity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Cars.Car", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.CarTypes.CarType", "CarType")
-                        .WithMany("Cars")
-                        .HasForeignKey("IdCarType")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CarType");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxCars.TaxCar", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Areas.Area", "Area")
-                        .WithMany("TaxCars")
-                        .HasForeignKey("Idarea");
-
-                    b.HasOne("Cartax.Domain.Entites.Cars.Car", "Car")
-                        .WithMany("TaxCars")
-                        .HasForeignKey("Idcar");
-
-                    b.Navigation("Area");
-
-                    b.Navigation("Car");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLimitMoneyDays.TaxLimitMoneyDay", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Areas.Area", "Area")
-                        .WithOne("TaxMoneyDay")
-                        .HasForeignKey("Cartax.Domain.Entites.Tax.TaxLimitMoneyDays.TaxLimitMoneyDay", "IdArea")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLimitTimes.TaxLimitTime", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Areas.Area", "Area")
-                        .WithOne("TaxLimitTime")
-                        .HasForeignKey("Cartax.Domain.Entites.Tax.TaxLimitTimes.TaxLimitTime", "IdArea")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxLongTerms.TaxTaxLongTerm", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Areas.Area", "Area")
-                        .WithOne("TaxTaxLongTerm")
-                        .HasForeignKey("Cartax.Domain.Entites.Tax.TaxLongTerms.TaxTaxLongTerm", "IdArea")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Tax.TaxWeekDays.TaxWeekDay", b =>
-                {
-                    b.HasOne("Cartax.Domain.Entites.Areas.Area", "Area")
-                        .WithMany("TaxWeekDay")
-                        .HasForeignKey("IdArea")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Areas.Area", b =>
-                {
-                    b.Navigation("TaxCars");
-
-                    b.Navigation("TaxLimitTime")
-                        .IsRequired();
-
-                    b.Navigation("TaxMoneyDay")
-                        .IsRequired();
-
-                    b.Navigation("TaxTaxLongTerm")
-                        .IsRequired();
-
-                    b.Navigation("TaxWeekDay");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.CarTypes.CarType", b =>
-                {
-                    b.Navigation("Cars");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Cars.Car", b =>
-                {
-                    b.Navigation("TaxCars");
-                });
-
-            modelBuilder.Entity("Cartax.Domain.Entites.Citys.City", b =>
-                {
-                    b.Navigation("Areas");
-
-                    b.Navigation("CarTypes");
                 });
 #pragma warning restore 612, 618
         }

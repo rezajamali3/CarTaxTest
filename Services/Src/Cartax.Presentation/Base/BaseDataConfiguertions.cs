@@ -1,7 +1,18 @@
-﻿
+﻿using Cartax.Domain.Entites.Areas;
+using Cartax.Domain.Entites.Citys;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
 using Library_Domain.Model;
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NPOI.SS.Formula.Functions;
+using Cartax.Domain.Base;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 namespace Cartax.Presentation.Base
 {

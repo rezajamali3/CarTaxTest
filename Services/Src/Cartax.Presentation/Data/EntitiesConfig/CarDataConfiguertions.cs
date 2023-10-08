@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 
 
@@ -5,6 +6,10 @@
 
 
 
+=======
+﻿using Cartax.Domain.Entites.Areas;
+using Cartax.Domain.Entites.Cars;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 using Cartax.Presentation.Base;
 
 namespace Cartax.Presentation.Data.EntitiesConfig

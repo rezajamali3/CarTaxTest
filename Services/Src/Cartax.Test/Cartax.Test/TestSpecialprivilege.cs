@@ -1,6 +1,24 @@
+<<<<<<< HEAD
 ﻿using Cartax.Domain.Domain.Citys.Entitys;
+=======
+﻿using AutoMapper;
+using Cartax.Applications.Base;
+using Cartax.Applications.Services.TaxCarServices.Command;
+using Cartax.Domain.Entites.CarTypes;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 using Cartax.Domain.Entites.Tax.TaxCars;
-
+using Cartax.Domain.Entites.Tax.TaxTimes;
+using Cartax.Domain.Entites.Tax.TaxWeekDays;
+using Cartax.Domain.Sharid.Enume;
+using Cartax.WebAPI.Controllers;
+using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Controller;
+using Moq;
+using System;
+using System.Threading.Tasks;
 
 namespace Cartax.Test
 {
@@ -12,20 +30,20 @@ namespace Cartax.Test
         private const int idPublicEntry = 1;
         private const int idPublicEntry_2 = 1;
 
-        private const int idCity    = 1;
-        private const int idCar     = 1;
+        private const int idCity = 1;
+        private const int idCar = 1;
         private const int idCarTyps = 1;
-        private const int idArea    = 1;
+        private const int idArea = 1;
 
         private const int Tax1 = 10;
         private const int Tax2 = 20;
         private const int Tax3 = 30;
 
         private const bool isTax_Yes = true;
-        private const bool isTax_No  = false;
+        private const bool isTax_No = false;
 
         private const bool isActive_Yes = true;
-        private const bool isActive_No  = false;
+        private const bool isActive_No = false;
 
 
         private const int NoError = 0;

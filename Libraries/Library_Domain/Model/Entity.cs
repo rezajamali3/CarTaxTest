@@ -7,8 +7,13 @@ namespace Library_Domain.Model
 {
     public abstract class Entity<TId> : IEquatable<Entity<TId>>, IEntity<TId>
     {
+<<<<<<< HEAD:Libraries/Library_Domain/Model/Entity.cs
         public TId Id { get;  }
        
+=======
+ 
+        public int? Id { get; set; }
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb:Services/Src/Cartax.Domain/Common/Model/Entity.cs
 
         public Entity(TId Id)
         {

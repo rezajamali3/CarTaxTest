@@ -1,10 +1,20 @@
 ﻿
+<<<<<<< HEAD
 using Cartax.Applications.Common.Intercpter;
 using Cartax.Domain.Domain.Citys.Entitys;
+=======
+using Cartax.Domain.Entites.Areas;
+using Cartax.Domain.Entites.Cars;
+using Cartax.Domain.Entites.Citys;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 using Cartax.Domain.Entites.Tax.TaxCars;
+using Cartax.Domain.Entites.Tax.TaxLimitDays;
+using Cartax.Domain.Entites.Tax.TaxLimitTimes;
+using Cartax.Domain.Entites.Tax.TaxLongTerms;
+using Cartax.Domain.Entites.Tax.TaxPublicholidays;
+using Cartax.Domain.Entites.Tax.TaxTimes;
+using Cartax.Domain.Entites.Tax.TaxWeekDays;
 using Cartax.Presentation.Data.EntitiesConfig;
-using Cartax.Presentation.Migrations.FluentConfigure;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,18 +26,16 @@ namespace Cartax.Presentation
 {
     public class CarTaxContext : DbContext
     {
-        private readonly IMediator _mediator;
-        private readonly PublishDomainEventIntercpter _interceptor;
 
-        public CarTaxContext(DbContextOptions<CarTaxContext> options, IMediator mediator) : base(options)
+        public CarTaxContext(DbContextOptions<CarTaxContext> options) : base(options)
         {
-            _mediator = mediator;
-            _interceptor = new PublishDomainEventIntercpter(mediator);
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+<<<<<<< HEAD
             #region You are the table 
             modelBuilder
             //.CarTypeFluntConfigure()
@@ -46,6 +54,8 @@ namespace Cartax.Presentation
 
             #region Defult Data
 
+=======
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
             #region City
 
             //modelBuilder.ApplyConfiguration(new CityDataConfiguertions());
@@ -60,6 +70,7 @@ namespace Cartax.Presentation
             #endregion Car
 
             #region Tax
+<<<<<<< HEAD
 
 
             //modelBuilder.ApplyConfiguration(new TaxCarDataConfigurtion());
@@ -75,6 +86,15 @@ namespace Cartax.Presentation
 
             #endregion Defult Data
 
+=======
+            modelBuilder.ApplyConfiguration(new TaxCarDataConfigurtion());
+            modelBuilder.ApplyConfiguration(new TaxLimitTimeDataConfigurtion());
+            modelBuilder.ApplyConfiguration(new TaxPublicholidayDataConfigurtions());
+            modelBuilder.ApplyConfiguration(new TaxTaxLongTermDataConfiguertion());
+            modelBuilder.ApplyConfiguration(new TaxTimeDataConfiguertions());
+            modelBuilder.ApplyConfiguration(new TaxWeekDayDataConfigurtions());
+            #endregion tax
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
             base.OnModelCreating(modelBuilder);
         }

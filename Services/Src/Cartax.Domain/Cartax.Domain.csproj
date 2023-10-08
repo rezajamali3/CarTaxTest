@@ -9,11 +9,16 @@
   
 
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\..\..\Libraries\Library_Domain\Library_Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common\Primitives\" />
+=======
+    <Folder Include="Sharid\Constants\" />
+    <Folder Include="ValueObjects\" />
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
   </ItemGroup>
 
 </Project>

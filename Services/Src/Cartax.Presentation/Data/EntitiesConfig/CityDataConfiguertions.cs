@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cartax.Domain.Domain.Citys.Entitys;
+using Cartax.Domain.Entites.Citys;
 
 namespace Cartax.Presentation.Data.EntitiesConfig
 {

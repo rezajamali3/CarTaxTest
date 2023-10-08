@@ -15,33 +15,25 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder TaxLimitTimeFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxLimitTime), b =>
+            modelBuilder.Entity<TaxLimitTime>( x =>
             {
-                b.Property<int?>("Id")
-                     
+                x.Property<int?>(p => p.Id)
                     .ValueGeneratedNever()
                     .HasColumnType("int");
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<TimeSpan?>("Time")
+                x.Property<TimeSpan?>(p => p.Time)
                     .HasColumnType("time");
 
-                b.Property<int?>("IdArea")
-                .HasColumnType("int");
+                x.HasKey(p => p.Id);
 
-                b.HasKey("Id");
-
-                b.ToTable("TaxLimitTime");
+                x.ToTable("TaxLimitTime");
 
              
             });
 
-            modelBuilder.Entity<TaxLimitTime>()
-             .HasOne(a => a.Area)
-             .WithOne(b => b.TaxLimitTime)
-             .HasForeignKey<TaxLimitTime>(c => c.IdArea)
-               .OnDelete(DeleteBehavior.SetNull);
+         
 
             return modelBuilder;
         }

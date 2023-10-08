@@ -18,40 +18,31 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         public static ModelBuilder TaxWeekDayFluntConfigure(this ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity(typeof(TaxWeekDay), b =>
+            modelBuilder.Entity<TaxWeekDay>(x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p=>p.Id)
                     .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
-
-                b.Property<int?>("IdArea")
-                   .HasColumnType("int");
-
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
-
-                b.Property<int>("DatyTyps")
                     .HasColumnType("int");
 
                
 
-                b.Property<bool>("IsActive")
-                    .HasColumnType("bit");
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<int>("TaxDays")
+                x.Property<int>(p => p.DatyTyps)
                     .HasColumnType("int");
 
-                b.HasKey("Id");
+                x.Property<bool>(p => p.IsActive)
+                    .HasColumnType("bit");
 
-                b.ToTable("TaxWeekDay");
+                x.Property<int>(p => p.TaxDays)
+                    .HasColumnType("int");
+
+                x.HasKey(p => p.Id);
+
+                x.ToTable("TaxWeekDay");
 
              
             });
-
-            modelBuilder.Entity<TaxWeekDay>()
-        .HasOne(a => a.Area)
-        .WithMany(b => b.TaxWeekDay)
-        .HasForeignKey(c => c.IdArea)
-          .OnDelete(DeleteBehavior.SetNull);
 
 
             return modelBuilder;

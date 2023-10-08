@@ -16,33 +16,27 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         {
 
 
-            modelBuilder.Entity(typeof(TaxLimitDay), b =>
+            modelBuilder.Entity<TaxLimitDay>( x =>
             {
-                b.Property<int?>("Id")
+                x.Property<int?>(p => p.Id)
                    .ValueGeneratedNever()
                     .HasColumnType("int");
 
-                b.Property<int>("IdArea")
-                  .HasColumnType("int");
+              
                  
 
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
 
-                b.Property<TimeSpan?>("Time")
+                x.Property<TimeSpan?>(p => p.Time)
                     .HasColumnType("time");
 
-                b.HasKey("Id");
+                x.HasKey(p => p.Id);
 
-                b.ToTable("TaxLimitDay");
+                x.ToTable("TaxLimitDay");
             });
 
 
-            modelBuilder.Entity<TaxLimitDay>()
-                .HasOne(a => a.Area)
-                .WithOne(b => b.TaxLimitDay)
-                .HasForeignKey<TaxLimitDay>(c => c.IdArea);
-                
-
+         
 
             return modelBuilder;
         }

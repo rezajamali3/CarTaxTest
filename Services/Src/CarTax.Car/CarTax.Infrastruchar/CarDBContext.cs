@@ -20,6 +20,7 @@ namespace CarTax.Car.Infrastruchar
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder
             .CarTypeFluntConfigure()
             .CarFluntConfigure();

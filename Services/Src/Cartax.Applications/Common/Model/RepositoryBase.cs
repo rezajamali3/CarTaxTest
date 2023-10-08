@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Library_Domain.Model;
 
+
 namespace Cartax.Applications.Common.Base
 {
     public class RepositoryBase<T> : IAsyncRepository<T> where T : Entity<T>

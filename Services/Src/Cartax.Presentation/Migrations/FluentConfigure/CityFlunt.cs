@@ -18,6 +18,7 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         //public static ModelBuilder CityFluntConfigure(this ModelBuilder modelBuilder)
         //{
 
+<<<<<<< HEAD
         //    modelBuilder.Entity(typeof(City), b =>
         //    {
         //        b.Property<int?>("Id")
@@ -72,5 +73,67 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
 
         //    return modelBuilder;
         //}
+=======
+            modelBuilder.Entity<City>( x =>
+            {
+                x.Property<int?>(p => p.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnType("int");
+
+                SqlServerPropertyBuilderExtensions
+                .UseIdentityColumn(x.Property<int?>(p => p.Id));
+
+                x.Property<string>(p => p.CityCode)
+                    .HasColumnType("nvarchar(max)");
+
+                x.Property<string>(p => p.CityName)
+                    .HasColumnType("nvarchar(max)");
+
+                x.HasMany(c => c.Areas)
+                 .WithOne(a => a.City)
+                 .HasForeignKey("CityId");
+
+             
+
+
+                x.HasMany(c => c.TaxPublicholiday)
+              .WithOne(a => a.City)
+              .HasForeignKey("CityId");
+
+
+            x.HasMany(c => c.TaxTaxLongTerm)
+             .WithOne(a => a.City)
+             .HasForeignKey("CityId");
+
+             x.HasMany(c => c.TaxWeekDay)
+              .WithOne(a => a.City)
+              .HasForeignKey("CityId");
+
+
+             x.HasOne(c => c.TaxMoneyDay)
+              .WithOne(a => a.City)
+              .HasForeignKey<TaxLimitMoneyDay>(a=>a.Id)
+              .IsRequired(false);
+
+
+             x.HasOne(c => c.TaxLimitTime)
+              .WithOne(a => a.City)
+              .HasForeignKey<TaxLimitTime>(a => a.Id)
+              .IsRequired(false);
+
+
+
+
+                x.HasKey(p => p.Id);
+
+                x.ToTable("City");
+
+              
+            });
+
+
+            return modelBuilder;
+        }
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
     }
 }

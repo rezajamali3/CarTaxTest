@@ -5,11 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cartax.Presentation.Migrations.FluentConfigure
 {
-    public static class TaxCarFlunt
+    public static class TaxCarFlunt 
     {
         //public static ModelBuilder TaxCarFluntConfigure(this ModelBuilder modelBuilder)
         //{
 
+<<<<<<< HEAD
         //    modelBuilder.Entity(typeof(TaxCar), b =>
         //    {
         //        b.Property<int?>("Id")
@@ -44,6 +45,30 @@ namespace Cartax.Presentation.Migrations.FluentConfigure
         //  .HasOne(c => c.Car)
         //  .WithMany(a => a.TaxCars)
         //  .HasForeignKey(a => a.Idcar);
+=======
+            modelBuilder.Entity<TaxCar>( x =>
+            {
+                x.Property<int?>(p => p.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
+
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(x.Property<int?>(p => p.Id));
+
+                x.Property<DateTime?>(p => p.CreateDate)
+                    .HasColumnType("datetime2");
+
+              
+
+                x.Property<decimal?>(p => p.Tax)
+                    .HasColumnType("decimal(18, 2)");
+
+                x.HasKey(p => p.Id);
+
+                x.ToTable("TaxCar");
+            });
+
+           
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 
         //    return modelBuilder;

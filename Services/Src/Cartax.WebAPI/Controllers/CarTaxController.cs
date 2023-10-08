@@ -1,7 +1,15 @@
 ﻿using AutoMapper;
+<<<<<<< HEAD
 using Cartax.Applications.Common.Base;
 using Cartax.Applications.Services.TaxCarServices.Command;
 
+=======
+using Cartax.Applications.Base;
+using Cartax.Applications.DTO.Car;
+using Cartax.Applications.Services.TaxCarServices;
+using Cartax.Applications.Services.TaxCarServices.Command;
+using Cartax.Domain.Errors;
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 using MediatR;
 
@@ -17,9 +25,22 @@ namespace Cartax.WebAPI.Controllers
     {
 
         private readonly IMediator _mediator;
+<<<<<<< HEAD
 
         public CarTaxController(IMediator mediator)
        => _mediator = mediator;
+=======
+        private readonly IMapper _mapper;
+
+        
+
+        public CarTaxController(IMediator mediator, IMapper mapper)
+        {
+            _mediator = mediator;
+            _mapper = mapper;
+
+        }
+>>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 
         [HttpPost]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cartax.Applications.Common.Base;
+using Cartax.Applications.Base;
 
 namespace Cartax.Applications.DTO.TaxTimes
 {
