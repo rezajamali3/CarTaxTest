@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="8.4.0" />
+    <PackageReference Include="Serilog" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CarTax.Car.Message\CarTax.Car.Message.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
+    <ProjectReference Include="..\CarTax.Infrastruchar\CarTax.Car.Infrastruchar.csproj" />
+  </ItemGroup>
+
+</Project>

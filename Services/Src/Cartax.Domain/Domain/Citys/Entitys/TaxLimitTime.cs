@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 ﻿
 
 using Library_Domain.Model;
-=======
+
 ﻿using Cartax.Domain.Common.Model;
->>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
+
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {

@@ -5,20 +5,43 @@ using Library_Domain.Interface;
 
 namespace Library_Domain.Model
 {
-    public abstract class Entity<TId> : IEquatable<Entity<TId>>, IEntity<TId>
+    public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : ValueObject<TId>
     {
-<<<<<<< HEAD:Libraries/Library_Domain/Model/Entity.cs
+
+
         public TId Id { get;  }
-       
-=======
- 
-        public int? Id { get; set; }
->>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb:Services/Src/Cartax.Domain/Common/Model/Entity.cs
 
         public Entity(TId Id)
         {
             this.Id = Id;
+            _events = new List<object>();
         }
+
+
+        #region Events
+
+        protected Entity() => _events = new List<object>();
+
+        private readonly List<object> _events;
+
+        protected void Apply(object @event)
+        {
+            When(@event);
+            EnsureValidState();
+            _events.Add(@event);
+        }
+
+        protected abstract void When(object @event);
+
+        public IEnumerable<object> GetChanges() => _events.AsEnumerable();
+
+        public void ClearChanges() => _events.Clear();
+
+        protected abstract void EnsureValidState();
+
+        #endregion Events
+
+        #region Immutable
 
         public static bool operator ==(Entity<TId> first, Entity<TId> second)
         {
@@ -29,8 +52,6 @@ namespace Library_Domain.Model
         {
             return !(first == Secoend);
         }
-
-
 
         public override bool Equals(object? obj)
         {
@@ -73,6 +94,8 @@ namespace Library_Domain.Model
             return Id.GetHashCode() * 48;
         }
 
-       
+
+        #endregion Immutable
+
     }
 }

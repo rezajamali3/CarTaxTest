@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cartax.Test", "Cartax.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cartax.WebAPI", "Services\Src\Cartax.WebAPI\Cartax.WebAPI.csproj", "{3B4EEF7E-4686-4881-B97A-9768F3E56C4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartax.Test", "Services\Src\Cartax.Test\Cartax.Test\Cartax.Test.csproj", "{36464308-AD28-4119-AD37-ED3EED130383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cartax.Test", "Services\Src\Cartax.Test\Cartax.Test\Cartax.Test.csproj", "{36464308-AD28-4119-AD37-ED3EED130383}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{12251ED1-7FB8-47F2-BC00-27547CE55E5B}"
 EndProject
@@ -45,13 +45,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTax.Car.Message", "CarTa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libraries_Helper", "Libraries\Libraries_Helper\Libraries_Helper.csproj", "{036B318B-E677-4DF3-9609-7554A763F223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.Car", "Services\Src\CarTax.Car\CarTax.Car\CarTax.Car.csproj", "{9819D56B-5451-45BF-B6A4-AED8ECFB9C36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTax.Car", "Services\Src\CarTax.Car\CarTax.Car\CarTax.Car.csproj", "{9819D56B-5451-45BF-B6A4-AED8ECFB9C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.Car.Infrastruchar", "Services\Src\CarTax.Car\CarTax.Infrastruchar\CarTax.Car.Infrastruchar.csproj", "{F5A5CA13-E1B8-4B2C-A25E-02410EF38328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTax.Car.Infrastruchar", "Services\Src\CarTax.Car\CarTax.Infrastruchar\CarTax.Car.Infrastruchar.csproj", "{F5A5CA13-E1B8-4B2C-A25E-02410EF38328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library_EF", "Libraries\Library_EF\Library_EF.csproj", "{7BB54D9A-8882-4395-B51D-1D519791C8F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library_EF", "Libraries\Library_EF\Library_EF.csproj", "{7BB54D9A-8882-4395-B51D-1D519791C8F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.Car.Test", "Services\Src\CarTax.Car\CarTax.Car.Test\CarTax.Car.Test.csproj", "{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTax.Car.Test", "Services\Src\CarTax.Car\CarTax.Car.Test\CarTax.Car.Test.csproj", "{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTax.Car.Application", "Services\Src\CarTax.Car\CarTax.Car.Application\CarTax.Car.Application.csproj", "{0524572E-AB70-486D-9A1C-29E1F3D3660D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library_API", "Libraries\Library_API\Library_API.csproj", "{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType.Domain", "Services\Src\CarTax.Car\CarTax.CarType.Domain\CarTax.CarType.Domain.csproj", "{729D0AB6-264A-4DC3-A67F-05AD1B50478E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType.Infrastruchar", "Services\Src\CarTax.Car\CarTax.CarType.Infrastruchar\CarTax.CarType.Infrastruchar.csproj", "{5C7515F6-272D-422D-8A24-44A7E172CDB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType.Message", "Services\Src\CarTax.Car\CarTax.CarType.Message\CarTax.CarType.Message.csproj", "{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType.Application", "Services\Src\CarTax.Car\CarTax.CarType.Application\CarTax.CarType.Application.csproj", "{73172361-7562-4E24-AC4B-3B03D57A062A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType.Test", "Services\Src\CarTax.Car\CarTax.CarType.Test\CarTax.CarType.Test.csproj", "{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTax.CarType", "Services\Src\CarTax.Car\CarTax.CarType\CarTax.CarType.csproj", "{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +131,38 @@ Global
 		{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0524572E-AB70-486D-9A1C-29E1F3D3660D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0524572E-AB70-486D-9A1C-29E1F3D3660D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0524572E-AB70-486D-9A1C-29E1F3D3660D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0524572E-AB70-486D-9A1C-29E1F3D3660D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729D0AB6-264A-4DC3-A67F-05AD1B50478E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729D0AB6-264A-4DC3-A67F-05AD1B50478E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729D0AB6-264A-4DC3-A67F-05AD1B50478E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729D0AB6-264A-4DC3-A67F-05AD1B50478E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7515F6-272D-422D-8A24-44A7E172CDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7515F6-272D-422D-8A24-44A7E172CDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7515F6-272D-422D-8A24-44A7E172CDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7515F6-272D-422D-8A24-44A7E172CDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73172361-7562-4E24-AC4B-3B03D57A062A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73172361-7562-4E24-AC4B-3B03D57A062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73172361-7562-4E24-AC4B-3B03D57A062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73172361-7562-4E24-AC4B-3B03D57A062A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +191,14 @@ Global
 		{F5A5CA13-E1B8-4B2C-A25E-02410EF38328} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
 		{7BB54D9A-8882-4395-B51D-1D519791C8F4} = {12251ED1-7FB8-47F2-BC00-27547CE55E5B}
 		{B08AA3F3-24F5-4EE6-9449-92BAFC7A7F21} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{0524572E-AB70-486D-9A1C-29E1F3D3660D} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{1F12ACF8-FF39-4E96-ADC8-9F4BE29DCA3F} = {12251ED1-7FB8-47F2-BC00-27547CE55E5B}
+		{729D0AB6-264A-4DC3-A67F-05AD1B50478E} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{5C7515F6-272D-422D-8A24-44A7E172CDB0} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{9FB0869A-D0F3-41FA-A9F9-E4FF31BA8C6A} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{73172361-7562-4E24-AC4B-3B03D57A062A} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{21F9F356-EDE8-48D9-932B-10E6C2FD5FFC} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
+		{3849176C-0F1C-4772-BFD1-8F1BE03DD4AD} = {35CC1BEE-5209-4AE0-BE95-821243B17B74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DAEE9A1-D852-4237-B916-25B8D1A37627}

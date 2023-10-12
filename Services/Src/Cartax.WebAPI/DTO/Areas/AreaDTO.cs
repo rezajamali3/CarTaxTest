@@ -1,4 +1,5 @@
-﻿using Cartax.Applications.Base;
+﻿
+using Cartax.Applications.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -2,10 +2,9 @@
 
 namespace Library_Domain.Interface
 {
-    public interface IUnitOfWork
-    {
-        Task<int> SaveChangesAsync();
+    //public interface IUnitOfWork
+    //{
+    //    Task<int> Commit();
 
-
-    }
+    //}
 }

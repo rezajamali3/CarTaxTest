@@ -18,9 +18,9 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
                     .Handle<Exception>()
                     .WaitAndRetry(new[]
                     {
-                TimeSpan.FromSeconds(5),
-                TimeSpan.FromSeconds(10),
-                TimeSpan.FromSeconds(15)
+                     TimeSpan.FromSeconds(5),
+                     TimeSpan.FromSeconds(10),
+                     TimeSpan.FromSeconds(15)
                     });
 
                 retryPolicy.Execute(() =>
@@ -28,7 +28,7 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
                     bool areMigrationsPending = appContext.AreMigrationsPending();
                     bool hasMigrationsApplied = appContext.HasMigrationsApplied();
 
-                    if (!areMigrationsPending)
+                    if (areMigrationsPending)
                     {
                         appContext.Database.Migrate();
                         Console.WriteLine("There are pending migrations.");

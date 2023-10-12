@@ -11,8 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CarTax.Car.Message\CarTax.Car.Message.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Libraries_Helper\Libraries_Helper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_Domain\Library_Domain.csproj" />
+    <ProjectReference Include="..\CarTax.CarType.Domain\CarTax.CarType.Domain.csproj" />
   </ItemGroup>
 
 </Project>

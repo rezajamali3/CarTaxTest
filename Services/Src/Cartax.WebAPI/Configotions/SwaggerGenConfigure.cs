@@ -1,6 +1,5 @@
 ﻿
-using Cartax.Applications.Persistence.Repositories;
-using Cartax.Presentation;
+
 using Cartax.WebAPI.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Any;

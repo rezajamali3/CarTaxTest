@@ -4,7 +4,7 @@ using Library_Domain.Interface;
 
 namespace Library_Domain.Model
 {
-    public class Aggregate<T> : IAggregate<T> where T : Entity<T>
+    public class Aggregate<T> : IAggregate<T> where T : ValueObject<T>
     {
         private List<T>? values;
 
@@ -39,10 +39,10 @@ namespace Library_Domain.Model
             return values;
         }
 
-        public T GetById(int id)
-        {
-            return values.FirstOrDefault(t => t.Id.GetHashCode() == id);
-        }
+        //public T GetById(int id)
+        //{
+        //    return values.FirstOrDefault(t => t.Id.GetHashCode() == id);
+        //}
 
 
         public override bool Equals(object? obj)

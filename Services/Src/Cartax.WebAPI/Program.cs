@@ -1,11 +1,6 @@
 
-using Cartax.Presentation.Configurtions;
-using Cartax.Applications.Configure;
-<<<<<<< HEAD
-using Cartax.WebAPI.Configotions;
-=======
 
->>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
+using Cartax.WebAPI.Configotions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +15,11 @@ builder.Services.AddSwaggerGen();
 
 
 
-builder.Services
-       .PersistenceServesiesConfigure(builder.Configuration)
-       .BaseAllRepositoryDatabaserConfigure()
-       .AutoMapperApplicationsServeces()
-       .MediatRConfigureApplicationsServeces();
+//builder.Services
+//       //.PersistenceServesiesConfigure(builder.Configuration)
+//       //.BaseAllRepositoryDatabaserConfigure()
+//       .AutoMapperApplicationsServeces()
+//       .MediatRConfigureApplicationsServeces();
                  
 
 var app = builder.Build();
@@ -43,7 +38,7 @@ var app = builder.Build();
 
 
 app.UseAuthorization();
-app.Services.MigrateDatabase();
+//app.Services.MigrateDatabase();
 app.MapControllers();
 
 app.Run();

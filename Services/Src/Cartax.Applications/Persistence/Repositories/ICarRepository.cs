@@ -3,7 +3,7 @@
 
 namespace Cartax.Applications.Persistence.Repositories
 {
-    //public interface ICarRepository : IAsyncRepository<Car>
-    //{
-    //}
+    public interface ICarRepository : IAsyncRepository<Car>
+    {
+    }
 }

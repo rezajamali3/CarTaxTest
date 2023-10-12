@@ -1,17 +1,13 @@
 ﻿
 
-<<<<<<< HEAD
 
-using Library_Domain.Model;
-=======
-using Cartax.Domain.Common.Model;
 using Cartax.Domain.Entites.CarTypes;
+using Library_Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
->>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
 
 namespace Cartax.Domain.Domain.Citys.Entitys
 {
@@ -70,10 +66,8 @@ namespace Cartax.Domain.Domain.Citys.Entitys
         public IReadOnlyCollection<TaxWeekDay> TaxWeekDay => _TaxWeekDay.ToList();
 
 
-<<<<<<< HEAD
-        //public virtual ICollection<CarType> CarTypes { get; }
-        public virtual ICollection<Area> Areas { get;  }
-=======
->>>>>>> 6e0109040902ca67597d3488cf835a7f8636c8fb
+
+        //public virtual ICollection<Area> Areas { get;  }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 
-using Cartax.Domain.Common.Model;
+using Cartax.Domain.Base;
+
 using Cartax.Domain.Domain.Citys.Entitys;
 using Cartax.Domain.Entites.Cars;
 

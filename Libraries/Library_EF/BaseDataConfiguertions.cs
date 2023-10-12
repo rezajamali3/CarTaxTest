@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Cartax.Presentation.Base
+namespace Library_EF
 {
     public class BaseDataConfiguertions<T> : IEntityTypeConfiguration<T> where T : class
     {
@@ -37,8 +37,9 @@ namespace Cartax.Presentation.Base
 
         private bool DataExists(EntityTypeBuilder<T> builder)
         {
-            // بررسی وجود داده در جدول
+       
             return builder.Metadata.GetSeedData().Any();
+
         }
 
        

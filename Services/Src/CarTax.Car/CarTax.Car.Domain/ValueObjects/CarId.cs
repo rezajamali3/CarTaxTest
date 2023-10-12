@@ -8,20 +8,24 @@ using System.Threading.Tasks;
 
 namespace CarTax.Car.Domain.ValueObjects
 {
-    public class CarId : ValueObject
+    public class CarId : ValueObject<CarId>
     {
         public int Value { get; }
 
-        private CarId(int id)
+        private CarId()
         {
 
+        }
+
+        private CarId(int id)
+        {
             Value = id;
         }
 
 
         public static CarId Create(int id)
         {
-
+           
 
             if (id == 0)
             {

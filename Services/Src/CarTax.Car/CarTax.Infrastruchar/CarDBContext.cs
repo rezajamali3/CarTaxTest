@@ -1,5 +1,4 @@
-﻿using CarTax.Car.Domain.Entitys;
-using CarTax.Car.Domain.Root;
+﻿using CarTax.Car.Domain;
 using CarTax.Car.Infrastruchar.Configurtions.Maping;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,18 +12,35 @@ namespace CarTax.Car.Infrastruchar
     public class CarDBContext : DbContext
     {
 
-        private CarDBContext(DbContextOptions<CarDBContext> options) : base(options)
-        { 
+        public CarDBContext()
+        {
 
         }
+
+        public CarDBContext(DbContextOptions<CarDBContext> options) : base(options)
+        {
+
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+          
+            if (!optionsBuilder.IsConfigured)
+            {
+              //  optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Chinook");
+            }
+
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder
-            .CarTypeFluntConfigure()
-            .CarFluntConfigure();
+            modelBuilder.ApplyConfiguration(new CarFlunt());
+            base.OnModelCreating(modelBuilder);
+
         }
+
 
         public bool AreMigrationsPending()
         {
@@ -38,10 +54,8 @@ namespace CarTax.Car.Infrastruchar
             return appliedMigrations.Any();
         }
 
-        public DbSet<CarType> CarTypes { get; set; }
+    
         public DbSet<Cars> Cars { get; set; }
-
-
 
     }
 }
