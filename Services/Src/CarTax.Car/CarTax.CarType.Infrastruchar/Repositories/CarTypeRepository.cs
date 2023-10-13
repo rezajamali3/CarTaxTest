@@ -10,7 +10,7 @@ using CarTax.CarType.Domain.ValueObjects;
 
 namespace CarTax.CarType.Infrastruchar.Repositories
 {
-    public class CarTaypsRepository : RepositoryBase<CarTypes>, ICarTypeRepository
+    public class CarTaypsRepository : RepositoryBase<CarTypes>
     {
 
         public CarTaypsRepository(CarTypeDBContext dbContext) : base(dbContext)

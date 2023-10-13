@@ -25,8 +25,9 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Maping
             builder.HasKey(p => p.Id).HasName("CarId");
 
             builder.Property(p => p.Id)
-                .ValueGeneratedNever()
-                .HasConversion(
+                 .ValueGeneratedNever()
+                 .HasColumnType("integer")
+                 .HasConversion(
                  CarId => CarId.Value,
                  Value => CarId.Create(Value));
 

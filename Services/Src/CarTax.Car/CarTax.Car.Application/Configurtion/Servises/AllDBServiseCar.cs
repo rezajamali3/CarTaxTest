@@ -11,13 +11,13 @@ namespace CarTax.Car.Application.Configurtion.Servises
 {
     public static class AllDBServiseCar
     {
-        public static IServiceCollection AllDBServiseCarTypeConfig(
+        public static IServiceCollection AllDBServiseCarConfig(
        this IServiceCollection services,
             IConfiguration     configuration )
         {
 
             services.DBContextServesiesConfigure(configuration)
-                    .CarTypeApplicationServiceConfig()
+                    .CarApplicationServiceConfig()
                     .CarRepositoryServiceConfig()
                     .UnitOfWorkServiceConfig();
 

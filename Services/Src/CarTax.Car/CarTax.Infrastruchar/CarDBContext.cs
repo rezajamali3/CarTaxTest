@@ -12,15 +12,9 @@ namespace CarTax.Car.Infrastruchar
     public class CarDBContext : DbContext
     {
 
-        public CarDBContext()
-        {
+        public CarDBContext(){}
 
-        }
-
-        public CarDBContext(DbContextOptions<CarDBContext> options) : base(options)
-        {
-
-        }
+        public CarDBContext(DbContextOptions<CarDBContext> options) : base(options){}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,10 +29,8 @@ namespace CarTax.Car.Infrastruchar
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.ApplyConfiguration(new CarFlunt());
             base.OnModelCreating(modelBuilder);
-
         }
 
 

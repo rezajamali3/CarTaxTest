@@ -1,11 +1,6 @@
 ﻿
-using Microsoft.Extensions.DependencyInjection;
-using Polly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CarTax.Car.Infrastruchar.Configurtions.Service;
+
 
 namespace CarTax.Car.Application.Configurtion.Servises
 {
@@ -17,6 +12,7 @@ namespace CarTax.Car.Application.Configurtion.Servises
             webApp.MigrateDatabase();
 
             return webApp;
+
         }
     }
 }

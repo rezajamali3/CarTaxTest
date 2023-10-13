@@ -25,29 +25,26 @@ namespace CarTax.Car.Controllers
 
 
 
-       
-        //[HttpPut]
-        //public Task<IActionResult> Put(Commands.V1.carCreate request)
-        //    => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+        [Route("ChanchDetailsCar")]
+        [HttpPut]
+        public Task<IActionResult> Put(Commands.V1.ChanchDetailsCar request)
+            => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-        //[Route("text")]
-        //[HttpPut]
-        //public Task<IActionResult> Put(Commands.V1.UpdateText request)
-        //    => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+        [Route("CarActive")]
+        [HttpPut]
+        public Task<IActionResult> Put(Commands.V1.CarActive request)
+            => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-        //[Route("price")]
-        //[HttpPut]
-        //public Task<IActionResult> Put(Commands.V1.UpdatePrice request)
-        //    => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+        [Route("CarDeActive")]
+        [HttpPut]
+        public Task<IActionResult> Put(Commands.V1.CarDeActive request)
+            => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-        //[Route("requestpublish")]
-        //[HttpPut]
-        //public Task<IActionResult> Put(Commands.V1.RequestToPublish request)
-        //    => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+        [Route("CarDelete")]
+        [HttpDelete]
+        public Task<IActionResult> Delete(Commands.V1.CarDelete request)
+            => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-        //[Route("publish")]
-        //[HttpPut]
-        //public Task<IActionResult> Put(Commands.V1.Publish request)
-        //    => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+      
     }
 }

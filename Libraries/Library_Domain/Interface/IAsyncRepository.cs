@@ -9,24 +9,16 @@ using System.Threading.Tasks;
 
 namespace Library_Domain.Interface
 {
-    public interface IAsyncRepository<T> 
+    public interface IAsyncRepository<T> where T : class
     {
 
-        //  Task AddAsync(T entity);
-            
-        //  Task<T> Load(T entity);
 
-     
+         Task AddAsync(T entity);
 
-        //Task<bool> UpdateAsync(T entity);
-
-        //Task<bool> DeleteAsync(T entity);
+         Task DeleteAsync(T entity);
 
 
 
-        //Task<T> GetAsync(Expression<Func<T, bool>> expression);
-
-        //Task<List<T>> ListAsync(Expression<Func<T, bool>> expression);
 
     }
 }

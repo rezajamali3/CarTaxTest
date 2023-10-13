@@ -8,10 +8,7 @@ namespace CarTax.CarType.Domain
 
     public class CarTypes : Entity<CarTypeId>
     {
-        public enum CarTypesState
-        {
-            Create ,ChanchName, Active, DeActive , Tax , NoTax , Delete 
-        }
+       
 
         public CarTypes(CarTypeId id)
             : base(id) { }
@@ -47,15 +44,15 @@ namespace CarTax.CarType.Domain
 
         public void TaxCarTypeCarName(string carName) => Apply(new Events.V1.ChancheCarTypeName { carName = carName });
 
-        public void TaxCarTypeActive() => Apply(new Events.V1.TaxCarTypeActive { });
+        public void TaxCarTypeActive()      => Apply(new Events.V1.TaxCarTypeActive { });
 
-        public void TaxCarTypeDeActive() => Apply(new Events.V1.TaxCarTypeDeActive {  });
+        public void TaxCarTypeDeActive()    => Apply(new Events.V1.TaxCarTypeDeActive {  });
 
-        public void TaxCarTypeTaxActive() => Apply(new Events.V1.TaxCarTypeTaxActive {  });
+        public void TaxCarTypeTaxActive()   => Apply(new Events.V1.TaxCarTypeTaxActive {  });
 
         public void TaxCarTypeDeTaxActive() => Apply(new Events.V1.TaxCarTypeTaxDeActive {  });
 
-        public void TaxCarTypeDelete() => Apply(new Events.V1.TaxCarTypeDelete { });
+        public void TaxCarTypeDelete()      => Apply(new Events.V1.TaxCarTypeDelete { });
 
         #endregion Behavior
 
@@ -137,7 +134,10 @@ namespace CarTax.CarType.Domain
 
 
 
-
+        public enum CarTypesState
+        {
+            Create, ChanchName, Active, DeActive, Tax, NoTax, Delete
+        }
 
     }
 }

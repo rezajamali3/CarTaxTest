@@ -1,53 +1,58 @@
 ﻿
 
-
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using CarTax.Car.Domain;
 using CarTax.Car.Domain.Repository;
 using CarTax.Car.Domain.ValueObjects;
-using CarTax.Car.Infrastruchar;
-using Library_Domain.Interface;
-using Library_Domain.Model;
-using Microsoft.EntityFrameworkCore;
-using NPOI.SS.Formula.Functions;
+using Polly;
+
 
 namespace CarTax.Car.Infrastruchar.Repositories
 {
-    public class RepositoryBase<T> : ICarRepository
+    public class RepositoryBase<T> : ICarRepository where T : class
     {
 
         private readonly CarDBContext _dbContext;
-
+        private DbSet<T> _dbSet { get; }
 
         public RepositoryBase(CarDBContext dbContext)
-        { _dbContext = dbContext; }
-
+        {
+            _dbSet = dbContext.Set<T>();
+            _dbContext = dbContext;
+        }
 
         public async Task AddAsync(Cars entity)
-        { await _dbContext.Cars.AddAsync(entity); }
-
+        => await _dbContext.Cars.AddAsync(entity); 
 
         public async Task<bool> Exists(CarId id)
-        {return await _dbContext.Cars.FindAsync(id.Value) != null; }
+        =>await _dbSet.FindAsync(id) != null;
 
 
-        public async Task<Cars> Load(CarId id)
-        {return await _dbContext.Cars.FindAsync(id.Value); }
-
-
-        public void Dispose() { _dbContext.Dispose(); }
 
        
 
-        public Task<bool> Exists(Cars id)
+        public Task<List<T>> ListAsync(Expression<Func<T, bool>> expression)
+        => _dbSet.Where(expression).ToListAsync();
+
+
+       
+
+
+     
+
+        public async Task DeleteAsync(Cars entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Cars.Remove(entity);
+         
         }
 
-        public Task<Cars> Load(Cars id)
+        public async Task<Cars> Load(CarId entity)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Cars.FindAsync(entity);
         }
+
+        public void Dispose() => _dbContext.Dispose();
     }
 }
 

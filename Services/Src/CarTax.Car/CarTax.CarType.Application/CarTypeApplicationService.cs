@@ -12,7 +12,7 @@ namespace CarTax.CarType.Application
     public class CarTypeApplicationService : IApplicationService
     {
         private  ICarTypeRepository _repository;
-        private  IUnitOfWork _unitOfWork;
+        private  IUnitOfWork        _unitOfWork;
       
         public CarTypeApplicationService(
             ICarTypeRepository repository, 
@@ -41,7 +41,7 @@ namespace CarTax.CarType.Application
                 V1.TaxCarTypeDeActive cmd =>
                     HandleUpdate(cmd.id, c => c.TaxCarTypeDeActive()),
                 V1.TaxCarTypeDelete cmd =>
-                    HandleUpdate(cmd.id, c => c.TaxCarTypeDelete()),
+                    HandleDelete(cmd.id, c => c.TaxCarTypeDelete()),
                 _ => Task.CompletedTask
             };
 
@@ -55,27 +55,14 @@ namespace CarTax.CarType.Application
 
 
 
-            //var cartype=   cartype.Create(
-            //       CarTypeId.Create(2),
-            //        NameTypeCar.Create(Name.Create(cmd.carName)),
-            //       true,
-            //       true);
+            var cartype = CarTypes.Create(
+                     CarTypeId.Create(cmd.id),
+                    TypeCarName.Create(Name.Create(cmd.carName)),
+                   true,
+                   true);
 
-            //var plack = Plack.Create("48", $"12{"?"}12");
-
-            //var car = Cars.Create(
-            //    CarId.Create( cmd.Id),
-            //    cartype,
-
-            //    CarName.Create(Name.Create( cmd.carName)),
-            //    plack,
-            //    true);
-
-
-
-
-            //await _repository.AddAsync(car);
-            //await _unitOfWork.Commit();
+            await _repository.AddAsync(cartype);
+            await _unitOfWork.Commit();
 
         }
 
@@ -84,17 +71,36 @@ namespace CarTax.CarType.Application
             Action<CarTypes> operation
         )
         {
-            //var classifiedAd = await _repository
-            //    .Load(classifiedAdId.ToString());
+            var carType = await _repository.Load(CarTypeId.Create( carTypeId));
 
-            //if (classifiedAd == null)
-            //    throw new InvalidOperationException(
-            //        $"Entity with id {classifiedAdId} cannot be found"
-            //    );
+            if (carType == null)
+                throw new InvalidOperationException(
+                    $"Entity with id {carTypeId} cannot be found"
+                );
 
-            //operation(classifiedAd);
+            operation(carType);
 
-            //await _unitOfWork.Commit();
+
+            await _unitOfWork.Commit();
+        }
+
+
+        private async Task HandleDelete(byte? carTypeId,
+            Action<CarTypes> operation)
+        {
+
+            var carType = await _repository.Load(CarTypeId.Create(carTypeId));
+
+            if (carType == null)
+                throw new InvalidOperationException(
+                    $"Entity with id {carTypeId} cannot be found"
+                );
+
+            operation(carType);
+
+            await _repository.DeleteAsync(carType);
+            await _unitOfWork.Commit();
+
         }
     }
 }

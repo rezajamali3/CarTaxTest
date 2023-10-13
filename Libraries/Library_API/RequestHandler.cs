@@ -22,11 +22,15 @@ namespace CarTax.Car.Application
             }
             catch (Exception e)
             {
-                log.Error(e," Error handling the Command ");
+
+              
+                log.Error(e," Error Handling The Command ");
                 return new BadRequestObjectResult(new
                 {
                     error = e.Message, stackTrace = e.StackTrace
                 });
+
+
             }
         }
         

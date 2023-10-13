@@ -15,7 +15,6 @@ namespace CarTax.CarType.Domain.ValueObjects
 
         private CarTypeId(byte? id)  => Value = id; 
 
-
         public static CarTypeId Create(byte? id)
         {
 

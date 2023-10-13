@@ -1,20 +1,28 @@
 
 
-using Library_Domain.Interface;
+
 using CarTax.Car.Infrastruchar.Configurtions.Service;
+using CarTax.Car.Application.Configurtion.Servises;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication
+    .CreateBuilder(args);
 
-// Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder
+    .Services
+    .AddControllers();
+
+builder
+    .Services
+    .AddEndpointsApiExplorer();
+
+builder
+    .Services
+    .AddSwaggerGen();
 
 builder.Services
     .DBContextServesiesConfigure(builder.Configuration)
-    .AllRepositoryDatabaserConfigure();
+    .AllDBServiseCarConfig(builder.Configuration);
 
 var app = builder.Build();
 
@@ -28,5 +36,7 @@ var app = builder.Build();
 app.UseAuthorization();
 
 app.MapControllers();
-app.Services.MigrateDatabase();
+app.Services
+    .MigrateDatabase();
+
 app.Run();

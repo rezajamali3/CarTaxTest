@@ -1,4 +1,6 @@
-﻿using CarTax.Car.Infrastruchar;
+﻿
+
+using CarTax.Car.Infrastruchar;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
@@ -12,6 +14,7 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
         {
             using (var scope = webApp.CreateScope())
             {
+
                 var appContext = scope.ServiceProvider.GetRequiredService<CarDBContext>();
 
                 var retryPolicy = Policy
@@ -25,13 +28,13 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
 
                 retryPolicy.Execute(() =>
                 {
+                  
                     bool areMigrationsPending = appContext.AreMigrationsPending();
                     bool hasMigrationsApplied = appContext.HasMigrationsApplied();
 
-                    if (areMigrationsPending)
+                    if (!areMigrationsPending)
                     {
                         appContext.Database.Migrate();
-                        Console.WriteLine("There are pending migrations.");
                     }
                     else if (hasMigrationsApplied)
                     {
@@ -42,11 +45,16 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
                     {
                         Console.WriteLine("No migrations found.");
                     }
+
                 });
+
             }
 
             return webApp;
+
         }
 
     }
 }
+
+

@@ -20,8 +20,7 @@ namespace CarTax.CarType.Message
                 public bool isActive { get; set; }
                 public bool isTaxActive { get; set; }
 
-                public override string ToString()
-                    => $"{nameof(NewTaxCarType)}";
+                public override string ToString()  => $"{nameof(NewTaxCarType)}";
             }
 
             public record ChancheCarTypeName
@@ -30,8 +29,7 @@ namespace CarTax.CarType.Message
                 public string carName { get; set; }
 
 
-                public override string ToString()
-                    => $"{nameof(ChancheCarTypeName)}";
+                public override string ToString()  => $"{nameof(ChancheCarTypeName)}";
             }
 
             public record TaxCarTypeDelete
@@ -40,8 +38,7 @@ namespace CarTax.CarType.Message
                 public byte id { get; set; }
 
 
-                public override string ToString()
-                    => $"{nameof(TaxCarTypeDelete)}";
+                public override string ToString()   => $"{nameof(TaxCarTypeDelete)}";
 
             }
 
@@ -50,37 +47,28 @@ namespace CarTax.CarType.Message
             {
                 public byte id { get; set; }
 
-
-
-                public override string ToString()
-                    => $"{nameof(TaxCarTypeActive)}";
+                public override string ToString()   => $"{nameof(TaxCarTypeActive)}";
             }
 
             public record TaxCarTypeDeActive
             {
                 public byte id { get; set; }
 
-
-
-                public override string ToString()
-                    => $"{nameof(TaxCarTypeDeActive)}";
+                public override string ToString()  => $"{nameof(TaxCarTypeDeActive)}";
             }
 
             public record TaxCarTypeTaxActive
             {
                 public byte id { get; set; }
 
-
-                public override string ToString()
-                    => $"{nameof(TaxCarTypeTaxActive)}";
+                public override string ToString()  => $"{nameof(TaxCarTypeTaxActive)}";
             }
 
             public record TaxCarTypeTaxDeActive
             {
                 public byte id { get; set; }
 
-                public override string ToString()
-                    => $"{nameof(TaxCarTypeTaxDeActive)}";
+                public override string ToString()  => $"{nameof(TaxCarTypeTaxDeActive)}";
             }
 
 

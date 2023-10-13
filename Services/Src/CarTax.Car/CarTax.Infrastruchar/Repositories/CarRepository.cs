@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace CarTax.Car.Infrastruchar.Repositories
 {
-    public class CarRepository : RepositoryBase<Cars>, ICarRepository
+    public class CarRepository : RepositoryBase<Cars>
     {
 
         public CarRepository(CarDBContext dbContext) : base(dbContext)

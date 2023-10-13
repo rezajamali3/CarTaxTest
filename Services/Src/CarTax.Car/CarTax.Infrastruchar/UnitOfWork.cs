@@ -2,11 +2,12 @@ using System.Threading.Tasks;
 using CarTax.Car.Application;
 using CarTax.Car.Infrastruchar;
 
-
-namespace CarTax.Car.Infrastruchar.Repositories
+namespace CarTax.Car.Infrastruchar
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork 
+        : IUnitOfWork
     {
+       
 
         private readonly CarDBContext _dbContext;
 
@@ -16,6 +17,7 @@ namespace CarTax.Car.Infrastruchar.Repositories
 
 
         public async Task<int> Commit() => await _dbContext.SaveChangesAsync();
+
 
     }
 }

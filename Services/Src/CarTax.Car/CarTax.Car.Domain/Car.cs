@@ -5,6 +5,7 @@ using CarTax.Car.Message;
 using NPOI.OpenXmlFormats.Dml.Diagram;
 using CarTax.CarType.Domain.ValueObjects;
 using static CarTax.CarType.Domain.CarTypes;
+using CarTax.CarType.Domain;
 
 namespace CarTax.Car.Domain
 {
@@ -82,21 +83,19 @@ namespace CarTax.Car.Domain
 
 
                 case Events.V1.NewCar e:
-
-
+                    CarTypeId = e.CarTypeId;
+                    Plack = Plack.Create(e.CodePlack, e.NumberPlack);
+                    IsActive = e.IsActive;
+                    CarName = CarName.Create(ValueObjects.Name.Create( e.CarName));
                     State = CarState.Create;
-
                     break;
 
                 case Events.V1.ChanchDetailsCar e:
-
                     CarName = CarName.Create(ValueObjects.Name.Create(e.CarName));
                     CarTypeId = e.CarTypeId;
                     Plack = Plack.Create(e.CodePlack, e.NumberPlack);
                     IsActive = e.IsActive;
-
                     State = CarState.Chanch;
-
                     break;
 
                 case Events.V1.CarActive e:

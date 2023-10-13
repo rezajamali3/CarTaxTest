@@ -40,6 +40,8 @@ namespace CarTax.Car.Domain.ValueObjects
             return cart.Value;
         }
 
+   
+
         public override IEnumerable<object> GetAtomicValues()
         {
             return new[] { Create(Value) };
