@@ -16,9 +16,13 @@ namespace CarTax.Car.Application.Configurtion.Servises
         {
 
             services.AddScoped(c =>
-               new CarApplicationService(
+               new CarApplicationService
+               (
+
                    c.GetService<ICarRepository>(),
-                   c.GetService<IUnitOfWork>()));
+                   c.GetService<IUnitOfWork>())
+
+               );
 
             return services;
 

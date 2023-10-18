@@ -16,19 +16,22 @@ namespace CarTax.CarType.Controllers
         public TaxCarTypeCommandsApi(CarTypeApplicationService applicationService)
         => _applicationService = applicationService;
 
+
         [Route("NewTaxCarType")]
         [HttpPost]
         public Task<IActionResult> Post([FromBody] Commands.V1.NewTaxCarType request)
         => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
+
 
         [Route("ChancheCarTypeName")]
         [HttpPut]
         public Task<IActionResult> Put([FromBody] Commands.V1.ChancheCarTypeName request)
         => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
+
         [Route("TaxCarTypeActive")]
         [HttpPut]
-        public Task<IActionResult> Put([FromBody] Commands.V1.TaxCarTypeActive request)
+        public Task<IActionResult> Put([FromServices] Commands.V1.TaxCarTypeActive request)
         => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
         [Route("TaxCarTypeDeActive")]

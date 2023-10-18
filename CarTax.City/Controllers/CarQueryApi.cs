@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarTax.Car.Application
 {
-    [ApiController, Route("/Cars")]
+    [ApiController, Route("/ad")]
     public class CarQueryApi : ControllerBase
     {
 

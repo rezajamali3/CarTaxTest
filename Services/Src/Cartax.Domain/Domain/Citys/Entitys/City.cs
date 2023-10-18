@@ -69,5 +69,6 @@ namespace Cartax.Domain.Domain.Citys.Entitys
 
         //public virtual ICollection<Area> Areas { get;  }
 
+
     }
 }

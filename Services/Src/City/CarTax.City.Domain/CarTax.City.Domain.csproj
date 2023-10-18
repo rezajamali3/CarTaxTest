@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Libraries_Helper\Libraries_Helper.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Domain\Library_Domain.csproj" />
+    <ProjectReference Include="..\CarTax.City.Message\CarTax.City.Message.csproj" />
+  </ItemGroup>
+
+</Project>

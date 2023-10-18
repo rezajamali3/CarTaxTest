@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\Libraries_Helper\Libraries_Helper.csproj" />
+    <ProjectReference Include="..\Libraries\Library_API\Library_API.csproj" />
+  </ItemGroup>
+
+</Project>

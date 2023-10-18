@@ -15,7 +15,7 @@ namespace CarTax.Car.Application
     public class CarApplicationService : IApplicationService
     {
         private  ICarRepository _repository;
-        private  IUnitOfWork _unitOfWork;
+        private  IUnitOfWork    _unitOfWork;
       
         public CarApplicationService(
             ICarRepository repository, 
@@ -29,7 +29,7 @@ namespace CarTax.Car.Application
         }
 
         public Task Handle(object command) =>  command switch
-            {
+        {
                 V1.NewCar cmd =>
                     HandleCreate(cmd),
                 V1.ChanchDetailsCar cmd =>
@@ -41,7 +41,7 @@ namespace CarTax.Car.Application
                 V1.CarDelete cmd =>
                     HandleDelete( cmd.Id, c => c.CarDelete() ),
                 _ => Task.CompletedTask
-            };
+       };
 
         private async Task HandleCreate(V1.NewCar cmd)
         {
