@@ -18,14 +18,10 @@ namespace CarTax.City.Controllers
             CityApplicationService applicationService)
             => _applicationService = applicationService;
 
-
-
         [Route("NewCar")]
         [HttpPost]
         public Task<IActionResult> Post(Commands.V1.NewCity request)
             => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
-
-
 
         [Route("ChanchDetailsCity")]
         [HttpPut]
@@ -47,6 +43,5 @@ namespace CarTax.City.Controllers
         public Task<IActionResult> Delete(Commands.V1.CityDelete request)
             => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-      
     }
 }

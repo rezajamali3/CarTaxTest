@@ -22,8 +22,6 @@ namespace CarTax.Car.Controllers
         public Task<IActionResult> Post(Commands.V1.NewCar request)
             => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-
-
         [Route("ChanchDetailsCar")]
         [HttpPut]
         public Task<IActionResult> Put(Commands.V1.ChanchDetailsCar request)

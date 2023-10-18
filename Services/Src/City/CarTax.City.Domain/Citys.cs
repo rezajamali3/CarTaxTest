@@ -11,16 +11,10 @@ namespace CarTax.City.Domain
     {
 
 
-        public Citys()
-        {
-            
-        }
 
+        public Citys() { }
 
-        private Citys(CityId? Id) : base(Id)
-        {
-
-        }
+        private Citys(CityId? Id) : base(Id) { }
 
         private Citys(CityId Id, CityName cityName, CityCode cityCode, bool isActive) : base(Id)
         {
@@ -29,8 +23,9 @@ namespace CarTax.City.Domain
             IsActive = isActive;
         }
 
+        #region Property
 
-        public  CityName CityName { get; private set; }
+        public CityName CityName { get; private set; }
 
         public  CityCode   CityCode   { get; private set; }
 
@@ -38,8 +33,10 @@ namespace CarTax.City.Domain
 
         public  CityState State { get; private set; }
 
-        
-        
+        #endregion Property
+
+        #region Behavior
+
         public static Citys Create( CityName cityName, CityCode cityCode,bool isActive)
         {
             var city = new Citys()
@@ -58,12 +55,11 @@ namespace CarTax.City.Domain
         public void ChancheCity( string cityName,string cityCode, bool isActive)
         => Apply(new Events.V1.ChanchDetailsCity
         {
-          
             CityName=cityName,
             CityCode=cityCode,
             IsActive=isActive
-        });
-
+        }
+        );
 
         public void CityActive()
         => Apply(new Events.V1.CityActive ());
@@ -74,8 +70,9 @@ namespace CarTax.City.Domain
         public void CityDelete()
         => Apply(new Events.V1.CityDelete());
 
+        #endregion Behavior
 
-
+        #region Chack State
         protected override void When(object @event)
         {
             switch (@event)
@@ -130,29 +127,11 @@ namespace CarTax.City.Domain
                 );
         }
 
-
-        //private List<Area> areas = new();
-        //public IReadOnlyCollection<Area> Areas => areas.ToList();
-
-        //public TaxLimitMoneyDay TaxMoneyDay { get; private set; }
-        //public TaxLimitTime TaxLimitTime { get; private set; }
-
-        //private List<TaxPublicholiday> _TaxPublicholidays = new();
-        //public IReadOnlyCollection<TaxPublicholiday> TaxPublicholiday => _TaxPublicholidays.ToList();
-
-        //private List<TaxTaxLongTerm> _TaxTaxLongTerm = new();
-        //public IReadOnlyCollection<TaxTaxLongTerm> TaxTaxLongTerm => _TaxTaxLongTerm.ToList();
-
-        //private List<TaxWeekDay> _TaxWeekDay = new();
-        //public IReadOnlyCollection<TaxWeekDay> TaxWeekDay => _TaxWeekDay.ToList();
-
-        //public virtual ICollection<Area> Areas { get;  }
-
-
         public enum CityState
         {
             Create, Chanch, Active, DeActive, Delete
         }
 
+        #endregion  Chack State
     }
 }

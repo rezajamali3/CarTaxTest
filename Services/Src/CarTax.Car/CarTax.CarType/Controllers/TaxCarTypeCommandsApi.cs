@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarTax.CarType.Controllers
 {
-    [Route("taxcartype")]
+    [Route("/taxcartype")]
     [ApiController]
     public class TaxCarTypeCommandsApi : ControllerBase
     {
