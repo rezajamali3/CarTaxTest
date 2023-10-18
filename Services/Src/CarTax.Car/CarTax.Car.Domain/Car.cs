@@ -9,7 +9,7 @@ using CarTax.CarType.Domain;
 
 namespace CarTax.Car.Domain
 {
-    public class Cars : Entity<CarId>
+    public class Cars : AggregateRoot<CarId>
     {
 
         public enum CarState
@@ -37,6 +37,7 @@ namespace CarTax.Car.Domain
 
         public static Cars Create(CarId? id, byte carTypeId, CarName carName, Plack plack, bool isActive)
         {
+
             var car = new Cars( id );
 
             car.Apply(new Events.V1.NewCar

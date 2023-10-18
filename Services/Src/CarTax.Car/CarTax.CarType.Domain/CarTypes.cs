@@ -6,7 +6,7 @@ using Library_Domain.Model;
 namespace CarTax.CarType.Domain
 {
 
-    public class CarTypes : Entity<CarTypeId>
+    public class CarTypes : AggregateRoot<CarTypeId>
     {
        
 

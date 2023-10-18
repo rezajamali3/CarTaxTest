@@ -8,9 +8,16 @@ namespace Library_Domain.Model
     {
         private List<T>? values;
 
+
+
         protected Aggregate()
         {
 
+        }
+
+        protected Aggregate(T id)
+        {
+           
         }
 
         public Aggregate(List<T>? tax)

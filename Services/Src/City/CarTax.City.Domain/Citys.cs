@@ -7,12 +7,16 @@ using Library_Domain.Model;
 
 namespace CarTax.City.Domain
 {
-    public class Citys : Entity<CityId>
+    public class Citys : AggregateRoot<CityId>
     {
+
+
         public Citys()
         {
             
         }
+
+
         private Citys(CityId? Id) : base(Id)
         {
 
@@ -32,7 +36,7 @@ namespace CarTax.City.Domain
 
         public  bool      IsActive   { get; private set; }
 
-        public CityState State { get; private set; }
+        public  CityState State { get; private set; }
 
         
         
