@@ -56,8 +56,12 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Maping
             builder.Property(p => p.IsActive)
                 .HasColumnType("bit");
 
+            builder.Ignore(o => o.State);
+
             builder.Property(c => c.CarTypeId)
                    .HasColumnType("tinyint");
+
+
 
             builder.ToTable("Cars");
 

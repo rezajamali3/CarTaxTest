@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Libraries\Libraries_Helper\Libraries_Helper.csproj" />
     <ProjectReference Include="..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\Services\Src\Area\CarTax.Area.Message\CarTax.Area.Message.csproj" />
   </ItemGroup>
 
 </Project>

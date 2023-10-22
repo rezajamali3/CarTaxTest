@@ -1,6 +1,6 @@
 ﻿
 
-namespace CarTax.Car.Application
+namespace Library_EF
 {
     public interface IUnitOfWork
     {

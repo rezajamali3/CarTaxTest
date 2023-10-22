@@ -1,6 +1,6 @@
-﻿using CarTax.City.Domain.ValueObjects;
+﻿
 
-namespace CarTax.Car.Domain.ValueObjects
+namespace CarTax.Area.Domain.ValueObjects
 {
     public class AreaName 
     {

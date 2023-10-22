@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTax.Car.Domain.ValueObjects
+namespace CarTax.Area.Domain.ValueObjects
 {
     public class AreaId : ValueObject<AreaId>
     {

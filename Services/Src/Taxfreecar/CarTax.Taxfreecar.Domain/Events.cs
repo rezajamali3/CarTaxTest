@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarTax.Taxfreecar.Message
+{
+    public static class Events
+    {
+        public static class V1
+        {
+
+
+            public record NewTaxfreecar
+            {
+
+                public int TypeCarId { get; set; }
+
+                public int AreaId { get; set; }
+
+                public bool IsActive { get; set; }
+
+                public override string ToString()
+                    => $"{nameof(NewTaxfreecar)}";
+
+            }
+
+            public record ChancheTaxfreecar
+            {
+                public int Id { get; set; }
+                public int TypeCarId { get; set; }
+
+                public int AreaId { get; set; }
+
+                public bool IsActive { get; set; }
+
+                public override string ToString()
+                    => $"{nameof(ChancheTaxfreecar)}";
+            }
+
+            public record TaxfreecarDelete
+            {
+
+                public int Id { get; set; }
+
+                public override string ToString() 
+                    => $"{nameof(TaxfreecarDelete)}";
+
+            }
+
+            public record TaxfreecarActive
+            {
+
+                public int Id { get; set; }
+
+                public override string ToString()
+                    => $"{nameof(TaxfreecarActive)}";
+            }
+
+            public record TaxfreecarDeActive
+            {
+
+                public int Id { get; set; }
+
+
+                public override string ToString()
+                    => $"{nameof(TaxfreecarDeActive)}";
+            }
+
+
+        }
+    }
+}

@@ -10,7 +10,7 @@ namespace CarTax.City.Domain
     public class Citys : AggregateRoot<CityId>
     {
 
-
+        #region Constructor
 
         public Citys() { }
 
@@ -22,6 +22,8 @@ namespace CarTax.City.Domain
             CityCode = cityCode;
             IsActive = isActive;
         }
+
+        #endregion Constructor
 
         #region Property
 

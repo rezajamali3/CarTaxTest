@@ -17,19 +17,11 @@ namespace CarTax.CarType.Infrastruchar
 
         public CarTypeDBContext(DbContextOptions<CarTypeDBContext> options) : base(options) { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                //  optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Chinook");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.ApplyConfiguration(new CarTypeFlunt());
-
 
             base.OnModelCreating(modelBuilder);
 

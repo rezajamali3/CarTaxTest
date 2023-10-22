@@ -6,18 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTax.City.Domain.ValueObjects
+namespace CarTax.Area.Domain.ValueObjects
 {
     public class Name
     {
 
-        public string Value;
+        public string Value { get; }
 
         public Name(string name)
         {
             Value = name;
         }
-
 
         public static Name Create(string name)
         {
@@ -31,8 +30,6 @@ namespace CarTax.City.Domain.ValueObjects
 
             return new Name(name);
         }
-
-
 
     }
 }

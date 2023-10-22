@@ -2,14 +2,16 @@
 using CarTax.CarType.Domain.ValueObjects;
 using CarTax.CarType.Message;
 using Library_Domain.Model;
+using System.Transactions;
 
 namespace CarTax.CarType.Domain
 {
 
     public class CarTypes : AggregateRoot<CarTypeId>
     {
-       
 
+        #region Constructor
+      
         public CarTypes(CarTypeId id)
             : base(id) { }
 
@@ -23,6 +25,19 @@ namespace CarTax.CarType.Domain
 
         }
 
+        #endregion Constructor
+
+        #region Prpertiy
+
+        public TypeCarName TypeCarName { get; private set; }
+
+        public bool? IsActive { get; private set; }
+
+        public bool? IsTaxActive { get; private set; }
+
+        public CarTypesState State { get; private set; }
+
+        #endregion Prpertiy
 
         #region Behavior
 
@@ -55,6 +70,8 @@ namespace CarTax.CarType.Domain
         public void TaxCarTypeDelete()      => Apply(new Events.V1.TaxCarTypeDelete { });
 
         #endregion Behavior
+
+        #region Status check
 
         protected override void When(object @event)
         {
@@ -120,24 +137,12 @@ namespace CarTax.CarType.Domain
                 );
         }
 
-        #region Prpertiy
-
-        public TypeCarName TypeCarName { get; private set; }
-
-        public bool? IsActive { get; private set; }
-
-        public bool? IsTaxActive { get; private set; }
-
-        public CarTypesState State { get; private set; }
-
-        #endregion Prpertiy
-
-
-
         public enum CarTypesState
         {
             Create, ChanchName, Active, DeActive, Tax, NoTax, Delete
         }
+
+        #endregion Status check
 
     }
 }

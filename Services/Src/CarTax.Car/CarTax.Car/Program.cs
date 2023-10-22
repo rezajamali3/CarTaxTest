@@ -10,11 +10,6 @@ var builder = WebApplication
     .CreateBuilder(args);
 
 
-string? st= builder.Configuration.GetConnectionString("Car_ConnectionsStrings");
-
-var st12 = builder.Configuration.GetSection("Logging:LogLevel");
-
-string? st13 = st12.GetValue<string>("Default");
 
 builder
     .Services

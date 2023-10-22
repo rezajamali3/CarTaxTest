@@ -1,10 +1,7 @@
-﻿using CarTax.Car.Application;
+﻿
+using Library_EF;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CarTax.City.Infrastruchar.Configurtions.Service
 {

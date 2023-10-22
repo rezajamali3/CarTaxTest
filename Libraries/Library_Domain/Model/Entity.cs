@@ -5,41 +5,30 @@ using Library_Domain.Interface;
 
 namespace Library_Domain.Model
 {
-    public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : ValueObject<TId>
+    public abstract class Entity<TId> : IInternalEventHandler
+      where TId : ValueObject<TId>
     {
+        public Entity() { }
 
+        //protected Entity(TId id) => Id = id;
 
-        public TId Id { get;  }
+        protected readonly Action<object> _applier;
 
-        public Entity(TId Id)
-        {
-            this.Id = Id;
-            _events = new List<object>();
-        }
+        protected Entity(Action<object> applier) => _applier = applier;
 
+        public TId Id { get; protected set; }
 
-        #region Events
+        void IInternalEventHandler.Handle(object @event) => When(@event);
 
-        protected Entity() => _events = new List<object>();
-
-        private readonly List<object> _events;
+        protected abstract void When(object @event);
 
         protected void Apply(object @event)
         {
             When(@event);
+            _applier(@event);
             EnsureValidState();
-            _events.Add(@event);
         }
-
-        protected abstract void When(object @event);
-
-        public IEnumerable<object> GetChanges() => _events.AsEnumerable();
-
-        public void ClearChanges() => _events.Clear();
-
         protected abstract void EnsureValidState();
-
-        #endregion Events
 
         #region Immutable
 

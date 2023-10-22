@@ -43,8 +43,8 @@ namespace CarTax.CarType.Infrastruchar.Configurtions.Maping
             builder.Property<bool?>(p => p.IsTaxActive)
                  .HasColumnType("bit");
 
-          
 
+            builder.Ignore(o => o.State);
             builder.ToTable("CarTypes");
 
         }

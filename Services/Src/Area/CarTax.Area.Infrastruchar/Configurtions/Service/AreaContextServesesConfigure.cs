@@ -1,0 +1,37 @@
+﻿
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+
+namespace CarTax.Area.Infrastruchar.Configurtions.Service
+{
+    public static class AreaContextServesesConfigure
+    {
+
+        public static IServiceCollection DBContextServesiesConfigure
+            (
+            this IServiceCollection services,
+                 IConfiguration configuration 
+            )
+        {
+            services.AddDbContext<AreasDBContext>(
+                option
+                =>
+                {
+
+                    option.UseSqlServer( configuration.GetConnectionString("Area_ConnectionsStrings"),
+                        settings =>  settings.EnableRetryOnFailure() .CommandTimeout(60));
+
+                     option.EnableSensitiveDataLogging(true);
+
+                }
+            );
+
+            return services;
+        }
+
+    }
+}

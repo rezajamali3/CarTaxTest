@@ -12,12 +12,7 @@ namespace CarTax.Car.Domain
     public class Cars : AggregateRoot<CarId>
     {
 
-        public enum CarState
-        {
-            Create,Chanch,  Active, DeActive, Delete
-        }
-
-
+        #region  Constructor
 
         private Cars(CarId? id) : base(id)
         {
@@ -32,6 +27,22 @@ namespace CarTax.Car.Domain
             CarName = carName;
 
         }
+
+        #endregion Constructor 
+
+        #region Property
+
+        public byte CarTypeId { get; private set; }
+
+        public CarName CarName { get; private set; }
+
+        public Plack Plack { get; private set; }
+
+        public bool IsActive { get; private set; }
+
+        public CarState State { get; private set; }
+
+        #endregion Property
 
         #region Behavior
 
@@ -75,6 +86,8 @@ namespace CarTax.Car.Domain
          => Apply(new Events.V1.CarDelete());
 
         #endregion Behavior
+
+        #region Chack State
 
         protected override void When(object @event)
         {
@@ -140,21 +153,13 @@ namespace CarTax.Car.Domain
                     this, $"Post-checks failed in state {State}"
                 );
         }
+        public enum CarState
+        {
+            Create, Chanch, Active, DeActive, Delete
+        }
 
 
-        #region Properti
-
-        public byte CarTypeId { get; private set; }
-
-        public CarName CarName { get; private set; }
-
-        public Plack Plack { get; private set; }
-
-        public bool IsActive { get; private set; }
-
-        public CarState  State { get; private set; }
-
-        #endregion Properti
+        #endregion Chack State
 
     }
 }

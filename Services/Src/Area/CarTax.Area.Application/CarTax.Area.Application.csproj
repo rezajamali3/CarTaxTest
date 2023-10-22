@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CarTax.Area.Domain\CarTax.Area.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
+    <ProjectReference Include="..\CarTax.Area.Infrastruchar\CarTax.Area.Infrastruchar.csproj" />
+    <ProjectReference Include="..\CarTax.Area.Message\CarTax.Area.Message.csproj" />
+  </ItemGroup>
+
+</Project>

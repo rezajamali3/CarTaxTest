@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarTax.Taxfreecar.Domain\CarTax.Taxfreecar.Domain.csproj" />
+    <ProjectReference Include="..\CarTax.Taxfreecar.Infrastruchar\CarTax.Taxfreecar.Infrastruchar.csproj" />
+    <ProjectReference Include="..\CarTax.Taxfreecar.Message\CarTax.Taxfreecar.Message.csproj" />
+  </ItemGroup>
+
+</Project>

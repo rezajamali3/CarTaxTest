@@ -42,9 +42,5 @@ namespace CarTax.Car.Controllers
         public Task<IActionResult> Delete(Commands.V1.CarDelete request)
             => RequestHandler.HandleCommand(request, _applicationService.Handle, Log);
 
-      
-
-
-
     }
 }

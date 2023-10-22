@@ -1,11 +1,10 @@
 ﻿
 
 
-using CarTax.Car.Application;
+
 using CarTax.CarType.Application;
 using CarTax.CarType.Domain.Repositorys;
-using CarTax.CarType.Infrastruchar;
-using CarTax.CarType.Infrastruchar.Repositories;
+using Library_EF;
 using Microsoft.Extensions.DependencyInjection;
 
 

@@ -1,12 +1,11 @@
 
 
-using CarTax.Car.Application;
-
 using CarTax.City.Domain;
 using CarTax.City.Domain.Repositorys;
 using CarTax.City.Domain.ValueObjects;
 using CarTax.City.Message;
 using Library_Domain.Interface;
+using Library_EF;
 
 namespace CarTax.CarType.Application
 {

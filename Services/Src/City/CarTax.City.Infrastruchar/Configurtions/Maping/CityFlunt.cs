@@ -39,8 +39,8 @@ namespace CarTax.City.Infrastruchar.Configurtions.Maping
             builder.Property<bool?>(p => p.IsActive)
                  .HasColumnType("bit");
 
-       
-          
+
+            builder.Ignore(o => o.State);
 
             builder.ToTable("Citys");
 

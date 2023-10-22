@@ -1,7 +1,5 @@
 ﻿
 
-
-using CarTax.Car.Application;
 using CarTax.CarType.Domain.Repositorys;
 using CarTax.CarType.Infrastruchar;
 using CarTax.CarType.Infrastruchar.Repositories;

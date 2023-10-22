@@ -30,7 +30,7 @@ namespace CarTax.Car.Message
                     => $"{nameof(NewCar)}";
             }
 
-            public class ChanchDetailsCar
+            public record ChanchDetailsCar
             {
                 public int Id { get; set; }
 
@@ -49,7 +49,7 @@ namespace CarTax.Car.Message
                     => $"{nameof(ChanchDetailsCar)}";
             }
 
-            public class CarActive
+            public record CarActive
             {
                 public int Id { get; set; }
 
@@ -60,7 +60,7 @@ namespace CarTax.Car.Message
             }
 
 
-            public class CarDeActive
+            public record CarDeActive
             {
                 public int Id { get; set; }
 
@@ -71,7 +71,7 @@ namespace CarTax.Car.Message
             }
 
 
-            public class CarDelete
+            public record CarDelete
             {
                 public int Id { get; set; }
 
