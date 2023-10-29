@@ -14,7 +14,7 @@ namespace CarTax.CarType.Domain.Repositorys
     public interface ICarTypeRepository : IAsyncRepository<CarTypes>
     {
       
-        public Task<bool> Exists(CarTypeId carTypeId);
+        public Task<bool>           Exists(CarTypeId carTypeId);
         public Task<CarTypes>       Load(CarTypeId entity);
     
     }

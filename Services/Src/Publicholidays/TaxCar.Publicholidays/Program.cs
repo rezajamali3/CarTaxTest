@@ -1,15 +1,11 @@
 
 
-
-using TaxCar.Publicholidays.Infrastruchar.Configurtions.Service;
+using CarTax.Publicholidays.Infrastruchar.Configurtions.Service;
 using TaxCar.Publicholidays.Application.Configurtion.Servises;
-using System.Drawing;
-using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication
-    .CreateBuilder(args);
-
-
+.CreateBuilder(args);
 
 builder
     .Services
@@ -24,24 +20,29 @@ builder
     .AddSwaggerGen();
 
 builder.Services
-    .DBContextServesiesConfigure(builder.Configuration)
-    .AllDBServisePublicholidayConfig(builder.Configuration);
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-app.UseSwagger();
-app.UseSwaggerUI();
-//}
+    .InfrastrucharservicesConfig(builder.Configuration)
+    .ApplaicationservicesConfig();
 
 
+var app = builder
+    .Build();
 
 
-app.UseAuthorization();
+app
+    .UseSwagger();
 
-app.MapControllers();
-app.Services.MigrateDatabase();
+app
+    .UseSwaggerUI();
+
+
+app
+    .UseAuthorization();
+
+app
+    .MapControllers();
+app
+    .Services
+    .MigrateDatabase();
 
 app.Run();
+

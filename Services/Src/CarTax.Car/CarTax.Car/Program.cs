@@ -1,10 +1,11 @@
 
-
-
 using CarTax.Car.Infrastruchar.Configurtions.Service;
-using CarTax.Car.Application.Configurtion.Servises;
-using System.Drawing;
-using Microsoft.Extensions.Configuration;
+using TaxCar.Car.Applaication.Configgurtions.Services;
+using TaxCar.Car.Presentation.Configgurtions.Services;
+
+
+
+
 
 var builder = WebApplication
     .CreateBuilder(args);
@@ -24,20 +25,15 @@ builder
     .AddSwaggerGen();
 
 builder.Services
-    .DBContextServesiesConfigure(builder.Configuration)
-    .AllDBServiseCarConfig(builder.Configuration);
+    .InfrastrucharservicesConfig(builder.Configuration)
+    .ApplaicationservicesConfig()
+    .PresentationservicesConfig();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-//}
 
-
-
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 

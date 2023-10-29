@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using CarTax.Car.Infrastruchar;
 using Library_EF;
 
-namespace CarTax.CarType.Infrastruchar
+namespace TaxCar.CarType.Infrastruchar
 {
     public class UnitOfWork 
         : IUnitOfWork

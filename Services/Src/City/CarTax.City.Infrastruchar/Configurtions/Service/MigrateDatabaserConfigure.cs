@@ -29,7 +29,7 @@ namespace CarTax.City.Infrastruchar.Configurtions.Service
                     bool areMigrationsPending = appContext.AreMigrationsPending();
                     bool hasMigrationsApplied = appContext.HasMigrationsApplied();
 
-                    if (!areMigrationsPending)
+                    if (areMigrationsPending)
                     {
                         appContext.Database.Migrate();
                       

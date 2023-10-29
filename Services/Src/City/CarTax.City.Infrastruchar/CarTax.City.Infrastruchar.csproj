@@ -11,12 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
     <ProjectReference Include="..\CarTax.City.Domain\CarTax.City.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

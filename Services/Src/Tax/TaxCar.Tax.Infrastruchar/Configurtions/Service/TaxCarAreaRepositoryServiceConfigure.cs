@@ -1,17 +1,18 @@
 ﻿
 
 
-using CarTax.City.Domain.Repositorys;
+
+using CarTax.Tax.Domain.Repositorys;
 using CarTax.Tax.Infrastruchar.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 
 
-namespace CarTax.Tax.Infrastruchar.Configurtions.Service
+namespace TaxCar.Tax.Infrastruchar.Configurtions.Service
 {
     public static class TaxCarAreaRepositoryServiceConfigure
     {
-        public static IServiceCollection CarTypeRepositoryServiceConfig(this IServiceCollection services)
+        public static IServiceCollection TaxCarAreaRepositoryServiceConfig(this IServiceCollection services)
         {
 
             services.AddScoped<ITaxCarAreaRepository, TaxCarAreaRepository>();

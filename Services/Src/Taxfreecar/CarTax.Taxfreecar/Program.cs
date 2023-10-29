@@ -1,24 +1,46 @@
 
-using CarTax.Taxfreecar.Aplication.Configurtion.Servises;
+
+using CarTax.Taxfreecar.Infrastruchar.Configurtions.Service;
+using CarTax.Taxfreecar.Application.Configurtions.Service;
+var builder = WebApplication
+.CreateBuilder(args);
+
+builder
+    .Services
+    .AddControllers();
+
+builder
+    .Services
+    .AddEndpointsApiExplorer();
+
+builder
+    .Services
+    .AddSwaggerGen();
+
+builder.Services
+    .InfrastrucharservicesConfig(builder.Configuration)
+    .ApplaicationservicesConfig();
 
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AllDBServiseTaxfreecarConfig(builder.Configuration);
-
-var app = builder.Build();
-
-app.UseSwagger();
-app.UseSwaggerUI();
+var app = builder
+    .Build();
 
 
-app.UseAuthorization();
-app.Services.MiggrationDatabaseServise();
-app.MapControllers();
+app
+    .UseSwagger();
+
+app
+    .UseSwaggerUI();
+
+
+app
+    .UseAuthorization();
+
+app
+    .MapControllers();
+app
+    .Services
+    .MigrateDatabase();
 
 app.Run();
+

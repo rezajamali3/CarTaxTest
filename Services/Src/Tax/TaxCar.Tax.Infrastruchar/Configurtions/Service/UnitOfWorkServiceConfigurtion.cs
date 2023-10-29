@@ -3,7 +3,7 @@ using Library_EF;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace CarTax.Tax.Infrastruchar.Configurtions.Service
+namespace TaxCar.Tax.Infrastruchar.Configurtions.Service
 {
     public static class UnitOfWorkServiceConfigurtion
     {

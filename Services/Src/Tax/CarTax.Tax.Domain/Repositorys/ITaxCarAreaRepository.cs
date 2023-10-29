@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTax.City.Domain.Repositorys
+namespace CarTax.Tax.Domain.Repositorys
 {
 
     public interface ITaxCarAreaRepository : IAsyncRepository<TaxCarArea>

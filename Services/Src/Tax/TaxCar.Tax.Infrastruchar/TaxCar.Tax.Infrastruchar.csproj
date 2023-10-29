@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -11,8 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
     <ProjectReference Include="..\CarTax.Tax.Domain\CarTax.Tax.Domain.csproj" />
+    <ProjectReference Include="..\TaxCar.Tax.Message\TaxCar.Tax.Message.csproj" />
   </ItemGroup>
 
 </Project>

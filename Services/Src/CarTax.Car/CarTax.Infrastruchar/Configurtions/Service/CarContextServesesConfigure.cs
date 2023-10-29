@@ -24,6 +24,7 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Service
 
                     option.UseSqlServer( configuration.GetConnectionString("Car_ConnectionsStrings"),
                         settings =>  settings.EnableRetryOnFailure() .CommandTimeout(60));
+                  
                     option.EnableSensitiveDataLogging(true);
 
                 }

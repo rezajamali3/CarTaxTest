@@ -19,7 +19,6 @@ namespace Library_EF
         private void SeedData(EntityTypeBuilder<T> builder)
         {
 
-
             IEnumerable<T> values = DataDefultConfig<T>();
 
             if (DataExists(builder)==false)

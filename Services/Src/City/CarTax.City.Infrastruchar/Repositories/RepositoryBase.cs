@@ -24,19 +24,19 @@ namespace CarTax.City.Infrastruchar.Repositories
         }
 
         public async Task AddAsync(Citys entity)
-            => await _dbContext.CarTypes.AddAsync(entity);
+            => await _dbContext.Citys.AddAsync(entity);
 
         public async Task<bool> Exists(CityId carTypeId)
          => await _dbContext
-           .CarTypes
+           .Citys
            .FindAsync(carTypeId.Value)
             is not null;
 
         public async Task<Citys> Load(CityId carTypeId)
-         => await _dbContext.CarTypes.FindAsync(carTypeId);
+         => await _dbContext.Citys.FindAsync(carTypeId);
 
         public async Task DeleteAsync(Citys entity)
-       =>  _dbContext.CarTypes.Remove(entity);
+       =>  _dbContext.Citys.Remove(entity);
 
         public void Dispose() => _dbContext.Dispose();
 

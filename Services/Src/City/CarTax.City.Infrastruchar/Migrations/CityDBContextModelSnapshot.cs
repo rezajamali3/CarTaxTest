@@ -24,8 +24,11 @@ namespace CarTax.City.Infrastruchar.Migrations
             modelBuilder.Entity("CarTax.City.Domain.Citys", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("CityId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CityCode")
                         .IsRequired()
@@ -38,7 +41,7 @@ namespace CarTax.City.Infrastruchar.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("State")
+                    b.Property<int>("Version")
                         .HasColumnType("int");
 
                     b.HasKey("Id")

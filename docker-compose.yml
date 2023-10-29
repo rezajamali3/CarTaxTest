@@ -1,0 +1,175 @@
+version: '3.4'
+
+services:
+
+    # GetWays
+  apigetways:
+    container_name: api.getways
+    image: ${DOCKER_REGISTRY-}apiaggregator
+    build:
+      context: .
+      dockerfile: ApiGetway\ApiGetWays\Dockerfile
+    depends_on:
+     - areaapi
+     - areadb
+     - carapi
+     - cardb
+     - cityapi
+     - citydb
+     - publicholidaysapi 
+     - publicholidaysdb
+     - taxapi
+     - taxdb
+     - cartypeapi 
+     - cartypedb
+     - taxfreecarapi
+     - taxfreecardb
+     - rabitmq
+
+  # aggregator
+  apiaggregator:
+    container_name: api.aggregator
+    image: ${DOCKER_REGISTRY-}apiaggregator
+    build:
+      context: .
+      dockerfile: Api.Aggregator/Dockerfile
+    depends_on:
+     - areaapi
+     - areadb
+     - carapi
+     - cardb
+     - cityapi
+     - citydb
+     - publicholidaysapi 
+     - publicholidaysdb
+     - taxapi
+     - taxdb
+     - cartypeapi 
+     - cartypedb
+     - taxfreecarapi
+     - taxfreecardb
+     - rabitmq
+
+
+  # Area
+  areadb:
+    container_name: area.db
+    image: mcr.microsoft.com/mssql/server
+
+  areaapi:
+    container_name: area.api
+    image: ${DOCKER_REGISTRY-}areaapi
+    build:
+      context: .
+      dockerfile: Services/Src/Area/CarTax.Area/Dockerfile
+    depends_on:
+      - areadb 
+      - rabitmq
+
+  # Car
+  cardb:
+    container_name: car.db
+    image: mcr.microsoft.com/mssql/server
+
+  carapi:
+    container_name: car.api
+    image: ${DOCKER_REGISTRY-}carapi
+    build:
+      context: .
+      dockerfile: Services/Src/CarTax.Car/CarTax.Car/Dockerfile
+    depends_on:
+      - cardb 
+
+  # City
+  citydb:
+    container_name: city.db
+    image: mcr.microsoft.com/mssql/server
+
+  cityapi:
+    container_name: city.api
+    image: ${DOCKER_REGISTRY-}cityapi
+    build:
+      context: .
+      dockerfile: CarTax.City/Dockerfile
+    depends_on:
+      - citydb 
+
+  # Publicholidays
+  publicholidaysdb:
+    container_name: publicholidays.db
+    image: mcr.microsoft.com/mssql/server
+
+  publicholidaysapi:
+    container_name: publicholidays.api
+    image: ${DOCKER_REGISTRY-}publicholidaysapi
+    build:
+      context: .
+      dockerfile: Services/Src/Publicholidays/TaxCar.Publicholidays/Dockerfile
+    depends_on:
+      - publicholidaysdb 
+
+
+  # Tax
+  taxdb:
+    container_name: tax.db
+    image: mcr.microsoft.com/mssql/server
+
+  taxapi:
+    container_name: tax.api
+    image: ${DOCKER_REGISTRY-}taxapi
+    build:
+      context: .
+      dockerfile: Services/Src/Tax/TaxCar.Tax/Dockerfile
+    depends_on:
+      - taxdb 
+      - rabitmq
+
+  # CarType
+  cartypedb:
+    container_name: cartype.db
+    image: mcr.microsoft.com/mssql/server
+
+  cartypeapi:
+    container_name: cartype.api
+    image: ${DOCKER_REGISTRY-}cartypeapi
+    build:
+      context: .  
+      dockerfile: Services/Src/CarTax.Car/CarTax.CarType/Dockerfile
+    depends_on:
+     - cartypedb 
+
+
+ # Taxfreecar
+  taxfreecardb:
+    container_name: taxfreecar.db
+    image: mcr.microsoft.com/mssql/server
+
+  taxfreecarapi:
+    container_name: taxfreecar.api
+    image: ${DOCKER_REGISTRY-}taxfreecarapi
+    build:
+      context: .
+      dockerfile: Services/Src/Taxfreecar/CarTax.Taxfreecar/Dockerfile
+    depends_on:
+      - taxfreecardb 
+
+
+ # Combinedstation
+  combinedstationdb:
+    container_name: combinedstation.db
+    image: mcr.microsoft.com/mssql/server
+
+  combinedstationapi:
+    container_name: combinedstation.api
+    image: ${DOCKER_REGISTRY-}combinedstationapi
+    build:
+      context: .
+      dockerfile: Services/Src/Combinedstation/TaxCar.Combinedstation.WebApi/Dockerfile
+    depends_on:
+      - combinedstationdb 
+      - rabitmq
+      
+ # Rabitmq
+  rabitmq:
+    container_name: rabitmq
+    image: bitnami/rabbitmq:latest

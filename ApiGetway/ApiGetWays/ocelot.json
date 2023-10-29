@@ -1,0 +1,19 @@
+{
+  "GlobalConfiguration": { "BaseUrl": "http://localhost:5010" },
+  "Routes": [
+
+    {
+      "UpstreamPathTemplate": "/api/ExistsAreaId?{AreaId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/Area/ExistsAreaId?{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ]
+    }
+  ]
+
+}

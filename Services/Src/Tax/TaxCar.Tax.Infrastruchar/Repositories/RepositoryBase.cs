@@ -6,7 +6,7 @@ using CarTax.Tax.Domain;
 
 using CarTax.Tax.Domain.ValueObjects;
 using TaxCar.Tax.Infrastruchar;
-using CarTax.City.Domain.Repositorys;
+using CarTax.Tax.Domain.Repositorys;
 
 namespace CarTax.Tax.Infrastruchar.Repositories
 {

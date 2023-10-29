@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
     <ProjectReference Include="..\CarTax.Car.Domain\CarTax.Car.Domain.csproj" />
   </ItemGroup>
@@ -17,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Configurtions\DataDefault\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

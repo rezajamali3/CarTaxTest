@@ -41,6 +41,9 @@ namespace CarTax.City.Domain
 
         public static Citys Create( CityName cityName, CityCode cityCode,bool isActive)
         {
+
+
+
             var city = new Citys()
             {
              
@@ -113,14 +116,14 @@ namespace CarTax.City.Domain
 
         protected override void EnsureValidState()
         {
-            var valid = Id  is not null && CityName is not null && CityCode is not null
+            var valid =  CityName is not null && CityCode is not null
                &&  (State switch
                  {
+                     CityState.Create => Id is  null,
+                     CityState.Active => Id is not null && IsActive == true,
+                     CityState.DeActive => Id is not null && IsActive == false,
 
-                     CityState.Active => IsActive == true,
-                     CityState.DeActive => IsActive == false,
-
-                     _ => true
+                     _ => Id is not null && true
                  });
 
             if (!valid)

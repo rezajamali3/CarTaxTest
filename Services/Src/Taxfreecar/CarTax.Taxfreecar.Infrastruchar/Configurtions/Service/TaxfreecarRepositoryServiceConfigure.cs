@@ -9,7 +9,7 @@ namespace CarTax.Taxfreecar.Infrastruchar.Configurtions.Service
 {
     public static class TaxfreecarRepositoryServiceConfigure
     {
-        public static IServiceCollection CarTypeRepositoryServiceConfig(this IServiceCollection services)
+        public static IServiceCollection TaxfreecarRepositoryServiceConfig(this IServiceCollection services)
         {
 
             services.AddScoped<TaxfreecarRepository, TaxfreecarRepository>();

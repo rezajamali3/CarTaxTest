@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
     <ProjectReference Include="..\CarTax.City.Domain\CarTax.City.Domain.csproj" />
-    <ProjectReference Include="..\CarTax.City.Infrastruchar\CarTax.City.Infrastruchar.csproj" />
     <ProjectReference Include="..\CarTax.City.Message\CarTax.City.Message.csproj" />
   </ItemGroup>
 

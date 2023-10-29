@@ -7,6 +7,7 @@ using CarTax.CarType.Domain;
 
 using NPOI.SS.Formula.Functions;
 using CarTax.CarType.Domain.ValueObjects;
+using TaxCar.CarType.Infrastruchar;
 
 namespace CarTax.CarType.Infrastruchar.Repositories
 {

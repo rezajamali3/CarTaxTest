@@ -2,12 +2,17 @@
 
 
 using CarTax.Area.Infrastruchar.Configurtions.Service;
-using CarTax.Area.Application.Configurtion.Servises;
-using System.Drawing;
-using Microsoft.Extensions.Configuration;
+using TaxCar.Area.Applaication.Configgurtions.Services;
+using TaxCar.Area.Presentation.Configgurtions.Services;
 
 var builder = WebApplication
     .CreateBuilder(args);
+
+
+
+
+
+
 
 builder
     .Services
@@ -21,9 +26,15 @@ builder
     .Services
     .AddSwaggerGen();
 
-builder.Services
-    .DBContextServesiesConfigure(builder.Configuration)
-    .AllDBServiseAreaConfig(builder.Configuration);
+builder.Services.InfrastrucharservicesConfig(builder.Configuration)
+    .ApplaicationservicesConfig()
+    .PresentationservicesConfig();
+
+
+
+
+
+
 
 var app = builder.Build();
 

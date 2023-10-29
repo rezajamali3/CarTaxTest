@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaxCar.Tax.Infrastruchar;
 
-namespace CarTax.Tax.Infrastruchar.Configurtions.Service
+namespace TaxCar.Tax.Infrastruchar.Configurtions.Service
 {
     public static class TaxCarAreaContextServiceConfigure
     {

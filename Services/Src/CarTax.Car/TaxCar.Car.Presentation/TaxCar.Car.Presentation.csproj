@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\CarTax.Car.Message\CarTax.Car.Message.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\CarTax.Car.Application\CarTax.Car.Application.csproj" />
+    <ProjectReference Include="..\CarTax.CarType.Application\CarTax.CarType.Application.csproj" />
+  </ItemGroup>
+
+</Project>

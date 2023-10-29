@@ -38,7 +38,7 @@ namespace CarTax.Area.Infrastruchar.Configurtions.Service
                     else if (hasMigrationsApplied)
                     {
                         appContext.Database.EnsureCreated();
-                        Console.WriteLine("All migrations have been applied.");
+                       
                     }
                     else
                     {

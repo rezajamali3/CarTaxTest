@@ -2,14 +2,14 @@
 
 namespace TaxCar.Tax.Message
 {
-    public static class Commands
+    public  class Commands
     {
         public static class V1
         {
 
           public record newTax
           {
-            public DateTime? CreateDate { get; set; }
+            public DateTime CreateDate { get; set; }
 
             public decimal Tax { get; set; }
 

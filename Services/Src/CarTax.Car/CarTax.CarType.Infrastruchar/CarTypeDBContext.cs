@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTax.CarType.Infrastruchar
+namespace TaxCar.CarType.Infrastruchar
 {
     public class CarTypeDBContext : DbContext
     {

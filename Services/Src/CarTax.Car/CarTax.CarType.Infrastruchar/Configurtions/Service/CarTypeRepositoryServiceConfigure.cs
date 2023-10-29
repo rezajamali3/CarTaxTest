@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 
-namespace CarTax.Car.Infrastruchar.Configurtions.Service
+namespace TaxCar.CarType.Infrastruchar.Configurtions.Service
 {
     public static class CarTypeRepositoryServiceConfigure
     {

@@ -49,7 +49,7 @@ namespace CarTax.Taxfreecar.Aplication
 
 
             var cartype = TaxFreeCar.Create(
-          
+                    cmd.Id,
                     cmd.AreaId,
                     cmd.TypeCarId,
                    cmd.IsActive

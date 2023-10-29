@@ -15,7 +15,7 @@ namespace CarTax.Taxfreecar.Infrastruchar.Configurtions.Service
             services.AddDbContext<TaxfreecarDBContext>(
                 option =>
                 {
-                    option.UseSqlServer(configuration.GetConnectionString("CarType_ConnectionsStrings"),
+                    option.UseSqlServer(configuration.GetConnectionString("Taxfreecar_ConnectionsStrings"),
                         settings => settings.EnableRetryOnFailure().CommandTimeout(60));
                    option.EnableSensitiveDataLogging();
                 }

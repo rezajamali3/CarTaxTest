@@ -4,9 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
@@ -14,6 +17,7 @@
     <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
     <ProjectReference Include="..\CarTax.Car.Application\CarTax.Car.Application.csproj" />
     <ProjectReference Include="..\CarTax.Infrastruchar\CarTax.Car.Infrastruchar.csproj" />
+    <ProjectReference Include="..\TaxCar.Car.Presentation\TaxCar.Car.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

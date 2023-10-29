@@ -17,7 +17,7 @@ namespace CarTax.City.Infrastruchar.Configurtions.Maping
             builder.HasKey(p => p.Id).HasName("CityId");
 
             builder.Property(p => p.Id)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasConversion(
             CartyprId => CartyprId.Value,
                      Value => CityId.Create(Value))

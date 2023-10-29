@@ -42,9 +42,9 @@ namespace CarTax.AggregateRoot
         #region Behavior
 
 
-        public static TaxFreeCar Create(int areaId,int TypeCarId, bool isActive)
+        public static TaxFreeCar Create(int id,int areaId,int TypeCarId, bool isActive)
         {
-            var taxfreecar = new TaxFreeCar(default);
+            var taxfreecar = new TaxFreeCar(TaxfreecarId.Create(id));
 
             taxfreecar.Apply(new Events.V1.NewTaxfreecar
             {
@@ -120,12 +120,13 @@ namespace CarTax.AggregateRoot
         protected override void EnsureValidState()
         {
             var valid =
-              Id is not null && AreaId != null &&
+               AreaId != 0 &&
               (State switch
               {
-
-                  TaxfreeState.Active => IsActive == true ,
-                  TaxfreeState.DeActive => IsActive == false,
+                  TaxfreeState.Create => Id is not null,
+                  TaxfreeState.Chanch => Id is not null ,
+                  TaxfreeState.Active => Id is not null&& IsActive == true ,
+                  TaxfreeState.DeActive => Id is not null && IsActive == false,
                  
                   _ => true
               });

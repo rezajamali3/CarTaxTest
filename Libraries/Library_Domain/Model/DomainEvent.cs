@@ -35,21 +35,11 @@ namespace Library_Domain.Model
 
 
 
-       
 
-        //public bool Equals(NewTaxCarEnterEvent other)
-        //{
-        //    if (other == null)
-        //        return false;
-
-        //    // بررسی ویژگی‌های مورد نظر برای برابری رویدادها
-        //    return true;
-        //}
 
         public override int GetHashCode()
         {
-            // پیاده‌سازی کد هش برای رویداد
-            // می‌توانید از مقادیر مورد نظر برای محاسبه کد هش استفاده کنید
+            
             return 48;
         }
 

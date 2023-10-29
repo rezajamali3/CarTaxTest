@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MassTransit" Version="8.1.1" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.1" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Event.Bus\Event.Bus.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Libraries_Helper\Libraries_Helper.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\TaxCar.Combinedstation.Domain\TaxCar.Combinedstation.Core.csproj" />
+    <ProjectReference Include="..\TaxCar.Combinedstation.Infrastruchar\TaxCar.Combinedstation.Infrastruchar.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -6,11 +6,11 @@ namespace Library_API.EventSoursing
 {
     public interface IAggregateStore<T>
     {
-        Task<bool> Exists(AggregateId aggregateId);
+        //Task<bool> Exists(AggregateId aggregateId);
 
-        Task Save(T aggregate) ;
+        //Task Save(T aggregate) ;
 
-        Task<T> Load(AggregateId aggregateId) ;
+        //Task<T> Load(AggregateId aggregateId) ;
     }
 
     public interface IFunctionalAggregateStore

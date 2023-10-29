@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarTax.Area.Application\CarTax.Area.Application.csproj" />
+    <ProjectReference Include="..\CarTax.Area.Infrastruchar\CarTax.Area.Infrastruchar.csproj" />
+    <ProjectReference Include="..\TaxCar.Area.Presentation\TaxCar.Area.Presentation\TaxCar.Area.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

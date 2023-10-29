@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
     <ProjectReference Include="..\TaxCar.Publicholidays.Domain\TaxCar.Publicholidays.Domain.csproj" />
   </ItemGroup>

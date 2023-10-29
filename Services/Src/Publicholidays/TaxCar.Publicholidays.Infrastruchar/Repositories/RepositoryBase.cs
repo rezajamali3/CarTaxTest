@@ -2,9 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TaxCar.Publicholiday.Domain.ValueObjects;
-using TaxCar.Publicholidays.Domain;
 using TaxCar.Publicholidays.Domain.Repository;
-using TaxCar.Publicholidays.Infrastruchar;
 
 namespace TaxCar.Publicholidays.Infrastruchar.Repositories
 {

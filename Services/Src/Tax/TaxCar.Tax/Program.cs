@@ -1,23 +1,48 @@
-var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+using TaxCar.Tax.Infrastruchar.Configurtions.Service;
+using TaxCar.Tax.Application.Configurtion.Servises;
+using CarTax.Tax.Application.Configurtion.Servises;
 
-var app = builder.Build();
+var builder = WebApplication
+.CreateBuilder(args);
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+builder
+    .Services
+    .AddControllers();
 
-app.UseAuthorization();
+builder
+    .Services
+    .AddEndpointsApiExplorer();
 
-app.MapControllers();
+builder
+    .Services
+    .AddSwaggerGen();
+
+builder.Services
+    .InfrastrucharservicesConfig(builder.Configuration)
+    .ApplaicationservicesConfig();
+
+
+var app = builder
+    .Build();
+
+
+app
+    .UseSwagger();
+
+app
+    .UseSwaggerUI();
+
+
+app
+    .UseAuthorization();
+
+app
+    .MapControllers();
+app
+    .Services
+    .MigrateDatabase();
 
 app.Run();
+

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
 
-namespace CarTax.CarType.Infrastruchar.Configurtions.Service
+namespace TaxCar.CarType.Infrastruchar.Configurtions.Service
 {
     public static class MigrateDatabaserConfigure
     {

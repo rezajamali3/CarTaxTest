@@ -7,6 +7,7 @@
 
             public record NewTaxfreecar
             {
+                public int Id { get; set; }
 
                 public int TypeCarId { get; set; }
 

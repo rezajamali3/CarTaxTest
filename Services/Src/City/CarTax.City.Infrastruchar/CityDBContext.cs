@@ -16,22 +16,12 @@ namespace CarTax.City.Infrastruchar
 
         public CityDBContext(DbContextOptions<CityDBContext> options) : base(options) { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                //  optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Chinook");
-            }
-        }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.ApplyConfiguration(new CityFlunt());
-
-
             base.OnModelCreating(modelBuilder);
-
         }
 
         public bool AreMigrationsPending()
@@ -46,7 +36,7 @@ namespace CarTax.City.Infrastruchar
             return appliedMigrations.Any();
         }
 
-        public DbSet<Citys> CarTypes { get; set; }
+        public DbSet<Citys> Citys { get; set; }
        
 
     }

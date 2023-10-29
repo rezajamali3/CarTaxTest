@@ -4,9 +4,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
+using TaxCar.Publicholidays.Infrastruchar;
 
-
-namespace TaxCar.Publicholidays.Infrastruchar.Configurtions.Service
+namespace CarTax.Publicholidays.Infrastruchar.Configurtions.Service
 {
     public static class MigrateDatabaserConfigure
     {

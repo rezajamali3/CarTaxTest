@@ -9,7 +9,6 @@ namespace CarTax.Tax.Domain
 {
     public class TaxCarArea : AggregateRoot<TaxCarAreaId>
     {
-
         #region Constructor
 
         private TaxCarArea(TaxCarAreaId id) : base(id)
@@ -47,9 +46,6 @@ namespace CarTax.Tax.Domain
 
         #endregion  Property
 
-
-
-
         #region Behavior
 
 
@@ -75,7 +71,6 @@ namespace CarTax.Tax.Domain
 
 
         #endregion Behavior
-
 
         #region Chack State
 

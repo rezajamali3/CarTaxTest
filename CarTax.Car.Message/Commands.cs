@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace CarTax.Car.Message
 {
@@ -14,7 +10,7 @@ namespace CarTax.Car.Message
             public record NewCar
             {
 
-                public int Id { get; set; }
+              
 
                 public byte CarTypeId { get; set; }
 

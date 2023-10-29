@@ -28,15 +28,13 @@ namespace CarTax.Taxfreecar.Infrastruchar.Configurtions.Service
                     bool areMigrationsPending = appContext.AreMigrationsPending();
                     bool hasMigrationsApplied = appContext.HasMigrationsApplied();
 
-                    if (areMigrationsPending)
+                    if (!areMigrationsPending)
                     {
                         appContext.Database.Migrate();
-                      
                     }
                     else if (hasMigrationsApplied)
                     {
                         appContext.Database.EnsureCreated();
-                       
                     }
                    
                 });

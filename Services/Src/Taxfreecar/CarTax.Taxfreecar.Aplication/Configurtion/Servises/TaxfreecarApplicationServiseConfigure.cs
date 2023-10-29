@@ -10,7 +10,7 @@ namespace CarTax.Taxfreecar.Aplication.Configurtion.Servises
 {
     public static class TaxfreecarApplicationServiseConfigure
     {
-        public static IServiceCollection CarTypeApplicationServiceConfig(this IServiceCollection services)
+        public static IServiceCollection TaxfreecarApplicationServiceConfig(this IServiceCollection services)
         {
 
 

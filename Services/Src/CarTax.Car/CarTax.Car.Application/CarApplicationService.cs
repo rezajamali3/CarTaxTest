@@ -41,14 +41,10 @@ namespace CarTax.Car.Application
 
         private async Task HandleCreate(V1.NewCar cmd)
         {
-            if (await _repository.Exists(CarId.Create(cmd.Id)))
-                throw new InvalidOperationException(  $"Entity with id {cmd.Id} already exists" );
-
-
-
+          
             var car = Cars
                    .Create(
-                    CarId.Create(cmd.Id),
+                   
                     cmd.CarTypeId,
                     CarName
                    .Create(Name.Create(cmd.CarName)),

@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
+using Microsoft.Extensions.Logging;
 
-namespace CarTax.Car.Application
+namespace Library_API
 {
     public static class RequestHandler
     {
@@ -14,7 +14,6 @@ namespace CarTax.Car.Application
         {
             try
             {
-
                 log.Debug(" Handling HTTP request of type {type}", typeof(T).Name);
                 await handler(request);
                 return new OkResult();
@@ -22,15 +21,11 @@ namespace CarTax.Car.Application
             }
             catch (Exception e)
             {
-
-              
                 log.Error(e," Error Handling The Command ");
                 return new BadRequestObjectResult(new
                 {
                     error = e.Message, stackTrace = e.StackTrace
                 });
-
-
             }
         }
         
@@ -44,7 +39,7 @@ namespace CarTax.Car.Application
             }
             catch (Exception e)
             {
-                log.Error(e, " Error handling the query");
+                log.Error(e, "Error handling the query");
                 return new BadRequestObjectResult(new
                 {
                     error = e.Message, stackTrace = e.StackTrace

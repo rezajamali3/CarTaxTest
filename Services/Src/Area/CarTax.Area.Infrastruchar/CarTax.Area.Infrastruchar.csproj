@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\CarTax.Area.Domain\CarTax.Area.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
     <ProjectReference Include="..\..\..\..\Libraries\Library_EF\Library_EF.csproj" />
   </ItemGroup>
 

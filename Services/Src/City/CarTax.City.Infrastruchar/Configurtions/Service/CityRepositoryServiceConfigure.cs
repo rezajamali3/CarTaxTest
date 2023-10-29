@@ -11,7 +11,7 @@ namespace CarTax.City.Infrastruchar.Configurtions.Service
 {
     public static class CityRepositoryServiceConfigure
     {
-        public static IServiceCollection CarTypeRepositoryServiceConfig(this IServiceCollection services)
+        public static IServiceCollection CityRepositoryServiceConfig(this IServiceCollection services)
         {
 
             services.AddScoped<ICityRepository, CitysRepository>();

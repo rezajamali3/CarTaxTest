@@ -25,11 +25,14 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Maping
             builder.HasKey(p => p.Id).HasName("CarId");
 
             builder.Property(p => p.Id)
-                 .ValueGeneratedNever()
-                 .HasColumnType("integer")
-                 .HasConversion(
-                 CarId => CarId.Value,
-                 Value => CarId.Create(Value));
+                 .ValueGeneratedOnAdd()
+                 .HasColumnType("int")
+                 .IsRequired()
+                 .HasConversion
+                 (
+                  CarId => CarId.Value,
+                  Value => CarId.Create(Value)
+                 );
 
             builder.Property(p => p.CarName)
                     .HasConversion(
@@ -58,10 +61,13 @@ namespace CarTax.Car.Infrastruchar.Configurtions.Maping
 
             builder.Ignore(o => o.State);
 
+
+
             builder.Property(c => c.CarTypeId)
                    .HasColumnType("tinyint");
 
-
+            builder.Property(c => c.Version)
+                 .HasColumnType("int");
 
             builder.ToTable("Cars");
 

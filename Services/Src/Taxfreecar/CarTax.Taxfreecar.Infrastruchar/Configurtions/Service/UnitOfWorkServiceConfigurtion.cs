@@ -14,12 +14,10 @@ namespace CarTax.Taxfreecar.Infrastruchar.Configurtions.Service
     {
         public static IServiceCollection UnitOfWorkServiceConfig(this IServiceCollection services)
         {
-           
-                
-           services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             return services;
-
         }
     }
 }

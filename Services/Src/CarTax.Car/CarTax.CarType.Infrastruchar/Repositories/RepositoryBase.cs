@@ -7,9 +7,8 @@ using CarTax.Car.Infrastruchar;
 using CarTax.CarType.Domain;
 using CarTax.CarType.Domain.Repositorys;
 using CarTax.CarType.Domain.ValueObjects;
-using CarTax.CarType.Infrastruchar;
-using Library_Domain.Model;
-using Library_Domain.Interface;
+
+using TaxCar.CarType.Infrastruchar;
 
 namespace CarTax.Car.Infrastruchar.Repositories
 {

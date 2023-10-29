@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 
-namespace CarTax.Car.Infrastruchar.Configurtions.Service
+namespace CarTax.CarType.Application.Configurtions.Service
 {
     public static class CarTypeApplicationServiseConfigure
     {

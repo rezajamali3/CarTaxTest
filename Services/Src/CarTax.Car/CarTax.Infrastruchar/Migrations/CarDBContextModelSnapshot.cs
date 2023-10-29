@@ -24,7 +24,10 @@ namespace CarTax.Car.Infrastruchar.Migrations
             modelBuilder.Entity("CarTax.Car.Domain.Cars", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CarName")
                         .IsRequired()
@@ -36,7 +39,7 @@ namespace CarTax.Car.Infrastruchar.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("State")
+                    b.Property<int>("Version")
                         .HasColumnType("int");
 
                     b.HasKey("Id")
@@ -50,7 +53,7 @@ namespace CarTax.Car.Infrastruchar.Migrations
                     b.OwnsOne("CarTax.Car.Domain.ValueObjects.Plack", "Plack", b1 =>
                         {
                             b1.Property<int>("CarsId")
-                                .HasColumnType("integer");
+                                .HasColumnType("int");
 
                             b1.Property<string>("CodePlack")
                                 .IsRequired()

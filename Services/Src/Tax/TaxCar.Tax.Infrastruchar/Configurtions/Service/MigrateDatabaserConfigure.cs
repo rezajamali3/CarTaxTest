@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Polly;
 using TaxCar.Tax.Infrastruchar;
 
-namespace CarTax.Tax.Infrastruchar.Configurtions.Service
+namespace TaxCar.Tax.Infrastruchar.Configurtions.Service
 {
     public static class MigrateDatabaserConfigure
     {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaxCar.Publicholidays.Infrastruchar;
 
-namespace TaxCar.Publicholidays.Infrastruchar.Configurtions.Service
+namespace CarTax.Publicholidays.Infrastruchar.Configurtions.Service
 {
     public static class PublicholidayContextServesesConfigure
     {

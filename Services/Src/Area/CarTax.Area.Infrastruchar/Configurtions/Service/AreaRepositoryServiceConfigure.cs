@@ -1,11 +1,7 @@
 ﻿
-
-
 using CarTax.Area.Domain.Repository;
 using CarTax.Area.Infrastruchar.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-
-
 
 namespace CarTax.Area.Infrastruchar.Configurtions.Service
 {

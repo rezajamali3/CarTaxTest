@@ -7,7 +7,7 @@ using CarTax.City.Message;
 using Library_Domain.Interface;
 using Library_EF;
 
-namespace CarTax.CarType.Application
+namespace CarTax.City.Application
 {
     public class CityApplicationService : IApplicationService
     {
@@ -43,13 +43,6 @@ namespace CarTax.CarType.Application
 
         private async Task HandleCreate(Commands.V1.NewCity cmd)
         {
-
-            //if (await _repository.Exists(CityId.Create(cmd.id)))
-            //    throw new InvalidOperationException(
-            //        $"Entity with id {cmd.id} already exists"
-            //    );
-
-
 
             var cartype = Citys.Create(
                 

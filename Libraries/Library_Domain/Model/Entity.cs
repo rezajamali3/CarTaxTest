@@ -10,8 +10,6 @@ namespace Library_Domain.Model
     {
         public Entity() { }
 
-        //protected Entity(TId id) => Id = id;
-
         protected readonly Action<object> _applier;
 
         protected Entity(Action<object> applier) => _applier = applier;

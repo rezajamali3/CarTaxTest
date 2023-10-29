@@ -19,7 +19,6 @@ namespace CarTax.CarType.Message
                 public string carName { get; set; }
                 public bool isActive { get; set; }
                 public bool isTaxActive { get; set; }
-
                 public override string ToString()  => $"{nameof(NewTaxCarType)}";
             }
 
@@ -27,7 +26,6 @@ namespace CarTax.CarType.Message
             {
                 public byte? id { get; set; }
                 public string carName { get; set; }
-
 
                 public override string ToString()  => $"{nameof(ChancheCarTypeName)}";
             }

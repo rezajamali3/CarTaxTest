@@ -22,7 +22,7 @@ namespace CarTax.City.Infrastruchar.Configurtions.Maping
                     .HasConversion(
             CartyprId => CartyprId.Value,
                      Value => TaxCarAreaId.Create(Value))
-                    .HasColumnType("Guid")
+                    .HasColumnType("uniqueidentifier")
                     .HasColumnName("TaxCarAreaId");
 
 
@@ -35,7 +35,7 @@ namespace CarTax.City.Infrastruchar.Configurtions.Maping
                 .HasColumnType("decimal(18,2)");
 
             builder.Property<Guid>(p => p.CarId)
-                 .HasColumnType("Guid");
+                 .HasColumnType("uniqueidentifier");
 
             builder.Property<int>(p => p.Areaid)
                 .HasColumnType("int");

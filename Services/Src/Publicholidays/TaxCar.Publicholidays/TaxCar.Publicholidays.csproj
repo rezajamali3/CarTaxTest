@@ -16,8 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
     <ProjectReference Include="..\TaxCar.Publicholidays.Applaication\TaxCar.Publicholidays.Application.csproj" />
+    <ProjectReference Include="..\TaxCar.Publicholidays.Infrastruchar\TaxCar.Publicholidays.Infrastruchar.csproj" />
+    <ProjectReference Include="..\TaxCar.Publicholidays.Presesntations\TaxCar.Publicholidays.Presesntations.csproj" />
   </ItemGroup>
 
 </Project>

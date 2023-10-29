@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTax.CarType.Infrastruchar.Configurtions.Service
+namespace TaxCar.CarType.Infrastruchar.Configurtions.Service
 {
     public static class CarTypeContextServiceConfigure
     {

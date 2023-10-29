@@ -1,0 +1,190 @@
+version: '3.4'
+
+services:
+
+  apigetways:
+    container_name: api.getways
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2000:80"
+
+  # aggregator
+  apiaggregator:
+    container_name: api.aggregator
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "1000:80"
+
+
+
+  # area
+  areadb:  
+    container_name: area.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "3234:1433"
+
+  areaapi:
+    container_name: area.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:Area_ConnectionsStrings=Server=area.db;Database=area;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5000:80"
+
+
+     
+  # Car
+  cardb:  
+    container_name: car.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "4244:1433"
+
+  carapi:
+    container_name: car.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:Car_ConnectionsStrings=Server=car.db;Database=area;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5001:80"
+
+
+  # City    
+  citydb:  
+    container_name: city.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "4114:1433"
+
+  cityapi:
+    container_name: city.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:City_ConnectionsStrings=Server=city.db;Database=City;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5002:80"
+
+
+
+  # Publicholidays
+  publicholidaysdb:  
+    container_name: publicholidays.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "5234:1433"
+
+  publicholidaysapi:
+    container_name: publicholidays.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:Publicholiday_ConnectionsStrings=Server=publicholidays.db;Database=publicholidays;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5003:80"
+
+
+  # Tax
+  taxdb:  
+    container_name: tax.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "6234:1433"
+
+  taxapi:
+    container_name: tax.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:TaxCarArea_ConnectionsStrings=Server=tax.db;Database=Tax;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5004:80"
+
+
+  # TaxCarType
+  cartypedb:  
+    container_name: cartype.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "7234:1433"
+
+  cartypeapi:
+    container_name: cartype.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:cartype_ConnectionsStrings=Server=cartype.db;Database=cartype;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True" 
+    ports:
+     - "5005:80"
+
+
+  # Taxfreecar
+  taxfreecardb:  
+    container_name: taxfreecar.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "8131:1433"
+
+  taxfreecarapi:
+    container_name: taxfreecar.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:Taxfreecar_ConnectionsStrings=Server=taxfreecar.db;Database=taxfreecar;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True"
+    ports:
+     - "5006:80"
+
+  # Combinedstation
+  combinedstationdb:  
+    container_name: combinedstation.db
+    environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "123456qrjA@" 
+    restart: always
+    ports:
+      -  "4101:1433"
+
+  combinedstationapi:
+    container_name: combinedstation.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:Combinedstation_ConnectionsStrings=Server=combinedstation.db;Database=Taxfreecar;User Id=sa;Password=123456qrjA@;TrustServerCertificate=True;MultiSubnetFailover=True"
+    ports:
+     - "5007:80"
+
+
+
+
+
+
+
+  rabitmq:  
+    container_name: rabitmq 
+    environment:
+      - RABBITMQ_DEFAULT_USER=yarsoft
+      - RABBITMQ_DEFAULT_PASS=123456qrjA@
+      - RABBITMQ_DEFAULT_VHOST= 'vhost'
+
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"

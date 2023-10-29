@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Library_API\Library_API.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Library_Dapper\Library_Dapper.csproj" />
+    <ProjectReference Include="..\TaxCar.Tax.Application\TaxCar.Tax.Application.csproj" />
+    <ProjectReference Include="..\TaxCar.Tax.Message\TaxCar.Tax.Message.csproj" />
+  </ItemGroup>
+
+</Project>

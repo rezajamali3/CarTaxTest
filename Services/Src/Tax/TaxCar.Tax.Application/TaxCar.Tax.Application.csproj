@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.15" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarTax.Tax.Domain\CarTax.Tax.Domain.csproj" />
+    <ProjectReference Include="..\TaxCar.Tax.Infrastruchar\TaxCar.Tax.Infrastruchar.csproj" />
+    <ProjectReference Include="..\TaxCar.Tax.Message\TaxCar.Tax.Message.csproj" />
+  </ItemGroup>
+
 </Project>
